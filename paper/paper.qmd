@@ -1,13 +1,14 @@
 ---
 title: "Shifting Dynamics of Gender Representation in Canadian Municipal Elections"
-subtitle: "An Analysis of Female Candidate Success Over Time, with a Focus on Trends, Incumbency, and Electoral Factors."
+subtitle: "An Analysis of Female Candidate Success in Canadian Municipal Election Over Time, with a Focus on Trends and Incumbency."
 author: 
   - Hanqing Yang
-thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
+thanks: "Code and data are available at: [https://github.com/Lorina-Y/Canadian_Municipal_election.git]."
 date: today
 date-format: long
-abstract: "This paper examines how gender and other electoral factors influence the likelihood of candidates being elected in Canadian municipal elections, with a focus on how these dynamics have evolved over time. Using a logistic regression model that accounts for interactions between gender, election year, and incumbency, the study finds that while female candidates historically faced significant disadvantages, their probabilities of election have increased steadily in recent decades, particularly for non-incumbent candidates. Incumbency remains a strong predictor of electoral success, though male candidates benefit more from this advantage. These findings underscore the progress made toward gender equity in municipal elections while highlighting the persistent structural barriers that require continued attention to achieve full political representation."
+abstract: "This paper investigates the impact of gender and incumbency on the likelihood of candidates being elected in Canadian municipal elections, with a focus on how these dynamics have changed over time, and provide a model for predict future success rate. The results show that while female candidates historically faced significant disadvantages, their chances of being elected have improved steadily in recent decades, and incumbency remains a powerful predictor of electoral success, though it disproportionately benefits male candidates. These findings highlight progress toward gender equity in municipal elections but emphasize the need to address persistent structural barriers to achieve full political representation. This study provides evidence to inform policymakers and governments on strategies to promote equitable representation in local politics, ensuring a more inclusive and democratic political system in Canada."
 format: pdf
+toc: true
 number-sections: true
 bibliography: references.bib
 ---
@@ -26,10 +27,13 @@ library(kableExtra)
 library(patchwork)
 library(modelsummary)
 library(arrow)
+library(pROC)
+library(car)
+library(arm)
+library(scales)
+library(boot)
 
-data <- read_csv("../data/02-analysis_data/analysis_data.csv") |> 
-  mutate(gender = as.factor(gender),
-         incumbent = as.factor(incumbent))
+data <- read_parquet("../data/02-analysis_data/analysis_data.parquet")
 train_data <- read_parquet("../data/02-analysis_data/train_data.parquet")
 test_data <- read_parquet("../data/02-analysis_data/test_data.parquet")
 
@@ -37,65 +41,74 @@ test_data <- read_parquet("../data/02-analysis_data/test_data.parquet")
 ```
 
 
-# Introduction
+# Introduction {#sec-intro}
 
 ## Overview
-Gender representation in politics is a key measure of societal progress and equality. Despite advancements, women remain underrepresented in municipal governance, even in developed democracies like Canada. Municipal elections are vital to shaping local governance and often act as entry points for future political leaders. However, the factors influencing female candidates' success at this level are not well understood.
+The representation of women in politics is a key measure of societal progress and gender equality, reflecting broader social and political dynamics. Canadian municipalities play an important role in shaping local policies and fostering political leadership, serving as a foundation for inclusive governance and pathways to higher political office.  Understanding gender disparities in this context is important for fostering inclusivity. While previous research has broadly addressed gender representation in politics, there remains a need to explore the factors influencing electoral success and how female representation in the Canadian local government has evolved over time. This study focuses on Canadian municipal elections, providing a view into gender dynamics at the local level.
 
-This paper investigates how gender and other election factors influence electoral outcomes in Canadian municipal elections, with a focus on whether female candidates’ chances of being elected have improved over time. Leveraging data from the Canadian Municipal Elections Database (CMED), the analysis centers on the roles of gender, incumbency, and temporal trends, addressing gaps in understanding the evolving dynamics of gender representation at the municipal level.
+This paper investigates the impact of gender and incumbency status on electoral outcomes in Canadian municipal elections, with a focus on how these dynamics have evolved over time. Using data from the Canadian Municipal Elections Database (CMED) [@CMED], which spans from 1862 to 2022 and includes candidate gender, incumbency status, election outcomes, and election years. The model analysis excludes pre-1910 data due to the absence of female candidates before that year. A logistic regression model with interaction terms, including gender with election year and gender with incumbency, is employed to assess the direct effects of gender and incumbency while examining how these effects vary across time. This approach provides a detailed view of historical shifts and contemporary patterns in gender representation, emphasizing both the structural barriers and progress toward gender equity in local governance.
 
 ## Estimand
-The primary goal of this study is to estimate the effect of being a female candidate on the probability of election success in Canadian municipal elections, accounting for the roles of incumbency and election year. By including interaction terms for gender with election year and incumbency, the analysis investigates not only the main effects but also how these relationships have shifted over time. This approach allows for a detailed examination of gender dynamics in electoral success, capturing the interplay of structural and temporal factors.
+This study estimates the relationship between candidate identity factors—gender and incumbency status—and election success in Canadian municipal elections, incorporating interactions between gender and election year, as well as gender and incumbency. The inclusion of interaction terms allows for the analysis of both the main effects and the evolution of these relationships over time. The objective is to identify trends and key factors influencing electoral success, with a focus on shifting gender dynamics and the impact of incumbency.
 
-## Results
-The findings reveal that while female candidates have historically faced disadvantages in electoral success, these disparities have narrowed significantly over time. Interaction terms in the logistic regression model highlight that female candidates’ success rates have improved in more recent election years, especially for non-incumbent candidates. However, incumbency remains a significant predictor of election success, with male candidates benefiting more from this advantage compared to their female counterparts. The results indicate meaningful progress toward gender equity in municipal elections, although certain systemic advantages, such as incumbency, continue to reinforce inequalities.
-
-## Why It Matters
-Understanding the dynamics of gender representation in municipal elections is critical for advancing broader political equity. Municipal governance forms the backbone of political systems and directly impacts local policies and community outcomes. Equitable representation at this level not only ensures more inclusive decision-making but also creates pathways for women to ascend to higher political offices. By identifying the factors that influence female electoral success and how they evolve over time, this research provides valuable insights for policymakers, scholars, and activists working toward gender equality. Highlighting both progress and persistent barriers, the study contributes to ongoing discussions about fostering inclusivity and diversity in political institutions.
+## Results and Importance
+The findings show that while female candidates have historically faced significant disadvantages, their success rates have improved steadily over time, especially for non-incumbent candidates. Additionally, incumbency remains a strong predictor of electoral success, though male candidates benefit more from this advantage. These results highlight both progress and persistent barriers in achieving gender equity in municipal elections. This study provides evidence to inform policymakers and advocates on strategies for promoting gender-inclusive representation in local governance, contributing to broader efforts toward equality.
 
 ## Paper Structure
-The remainder of this paper follows a structure @sec-data,@sec-model about the logistic regression model,@sec-result,@sec-discussion, @sec-appendix1 about survey methodology, @sec-data-details, @sec-model-details.
-
-## Software, data and packages used
-I use the statistical programming language R [@citeR], data from [@SP2/4MZJPQ_2020], and following packages: ggplot2 [@ggplot2], ggmosaic [@ggmosaic], modelsummary [@modelsummary], kableExtra [@kableExtra], knitr [@knitr], arrow [@arrow], and the data cleaning use package tidyverse [@tidyverse], dplyr [@dplyr], janitor[@janitor], rsample[@rsample].
+The paper is structured as follows: After the introduction in @sec-intro, the data section @sec-data provides an overview of the dataset. The model specification is detailed in @sec-model, where the logistic regression framework and its statistical rationale are explained. The results are presented in @sec-result, highlighting key trends and patterns related to gender and electoral outcomes in Canadian municipal elections. @sec-discussion interprets the findings in depth, within the broader context of gender representation in local politics, explain limitations and offering directions for future research. And appendix @sec-appendix1 give aspect of sampling method and observational data. @sec-data-details provide additional details of data and data cleaning process, @sec-model-details provide the model summary and validation.
 
 
 # Data {#sec-data}
+
 ## Overview
-We use the statistical programming language R [@citeR] to analyze the Canadian Municipal Elections Data. The dataset was obtained from the Borealis website [@SP2/4MZJPQ_2020] as of November 22, 2024. We chose the Archival format for its pre-cleaned, standardized structure, which simplifies analysis while retaining all relevant variables, consists of complete municipal election results for municipalities across Canada. Following statistical methods from "Telling Stories with Data" [@tellingstories], we predict the effect of gender on election outcomes and examine its interaction with election year to analyze trends in female representation over time.
+I use the statistical programming language R [@citeR] to analyze the Canadian Municipal Elections Data(CMED). The dataset was obtained from the Borealis website [@CMED] as of November 22, 2024. The website offer the dataset in the original format and Archival format, I chosen to use the Archival format for its smaller size and pre-cleaned, standardized structure, which simplifies analysis while retaining all relevant variables, consists of complete municipal election results for municipalities across Canada.
 
-This dataset includes 110,800 observations and 19 variables, covering candidate detail such as incumbency status, gender, and election context across different provinces and years.To ensure reliable and efficient analysis, we removed observations with missing values and duplicate rows, retaining 84,028 records from various regions across Canada, ensuring high generalizability.
+This raw dataset includes 110,800 observations and 19 variables. It provides detailed records of candidates in Canadian municipal elections. Each observation covering candidate detail such as name, incumbency status, gender, and election context across different provinces and years, The selection of dataset was motivated by its direct relevance to the research question, since it forming the foundation for my investigation into gender disparities and electoral trends. Initial data processing involving eliminate data irrelevant to my focus, and I removed observations with missing values and duplicate rows to ensure reliable and efficient analysis, retaining 84,028 records from various regions across Canada, ensuring high generalizability. More detail on data cleaning is included under @sec-data-details.
 
-While similar datasets exist at the provincial level (e.g., CivicInfoBC or Élections Québec), CMED stands out for its national scope, since provincial election results lack nationwide coverage and some of them missing gender data, making them unsuitable for studying gender representation across Canada.
+While similar datasets exist at the provincial level (e.g., CivicInfoBC or Élections Québec), CMED stands out for its national scope, since provincial election results lack nationwide coverage and some of them missing gender data, making them unsuitable for studying gender representation in all local municipalities across Canada.
 
-## Data cleaning and Constructed variable
-The original raw dataset has 110800 observation, but the cleaned dataset we use after omit observation with missing value has 84028 observation.Still big enough for give representative statistical result.
-A constructed variable, `predicted_prob`, was added to the test dataset to represent the predicted probability of election success for each candidate. This variable was generated using the logistic regression model described in the model section, allowing for direct comparison between predicted probabilities and actual election outcomes. Additionally, it facilitates analyses of how predicted success rates vary across key factors such as gender, incumbency, and election year, aligning with the study’s aim to explore the dynamics influencing electoral success.
+Following statistical methods from "Telling Stories with Data" [@tellingstories], I investigate the effect of gender and incumbency status on election outcomes and examine interaction between 'gender * election year' and 'gender * incumbent' to analyze trends in female representation over time.
+
+## Software, data and packages used
+I use the statistical programming language R [@citeR], data from [@CMED], and following packages: ggplot2 [@ggplot2], ggmosaic [@ggmosaic], modelsummary [@modelsummary], kableExtra [@kableExtra], knitr [@knitr], arrow [@arrow], and the data cleaning use package tidyverse [@tidyverse], dplyr [@dplyr], janitor [@janitor], rsample [@rsample], pROC [@pROC], car [@car], arm [@arm], scales [@scales], boot [@boot].
+
 
 ## Measurement
-The Canadian Municipal Elections Database (CMED) captures real-world electoral phenomena through a combination of official records, archival materials, and manual coding. For instance, the `gender` variable was often missing in original datasets, particularly for historical records. In these cases, gender was coded manually using candidate photographs, self-descriptions, and pronoun usage from online sources, ensuring accurate representation. Similarly, `incumbent` status, which identifies whether a candidate held the same office prior to the election, was verified through official election results and cross-referenced with newspaper archives, such as the *Calgary Herald* and *Edmonton Journal*, providing a reliable measure of incumbency.
+The Canadian Municipal Elections Database (CMED) captures real-world electoral phenomena through a combination of official records, archival materials, and manual coding. For instance, the `gender` variable sometimes are missing in original datasets, particularly for historical records. In these cases, gender was coded manually using candidate photographs, self-descriptions, and pronoun usage from online sources, ensuring accurate representation. Similarly, `incumbent` status, which identifies whether a candidate held the same office prior to the election, was verified through official election results and cross-referenced with newspaper archives, such as the *Calgary Herald* and *Edmonton Journal*, providing a reliable measure of incumbency.
 
 The `elected` variable reflects whether a candidate won (`1`) or lost (`0`), directly measuring electoral success. For example, in Quebec and British Columbia, provincial databases provided detailed election results, while in cities like Toronto and Montreal, election data were manually digitized from archived municipal records. These processes converted fragmented and varied election results into a standardized dataset, ensuring a consistent and accurate representation of municipal elections across Canada.
 
-## Outcome variables
+## Variables
+### Constructed variable
+A constructed variable, `predicted_prob`, was added to the test dataset to represent the predicted probability of election success for each candidate. This variable was generated using the logistic regression model and predict() function, allowing for direct comparison between predicted probabilities and actual election outcomes for model validation. Additionally, it facilitates analyses of how predicted success rates vary across key factors such as gender, incumbency, and election year, aligning with my study’s aim to explore the dynamics influencing electoral success.
+
+### Outcome variables
 ```{r,fig.height= 5, fig.width = 8}
-#| label: fig-summary
-#| fig-cap: Summary table showing the distribution of candidates' elected status, including the total number and percentage of those elected ('Elected') and not elected, along with an overall total row to provide a comprehensive overview of the dataset's balance.
+#| label: tbl-elected
+#| tbl-cap: Showing the distribution of candidates' elected status in CMED, including the total number and percentage of those elected and not elected, along with an overall total rows.
 #| echo: false
 
+# Load scales library for comma formatting
+# library(scales)
+
 # Summary table
-outcome_summary <- data %>%
-  group_by(elected) %>%
+outcome_summary <- data |>
+  group_by(elected) |>
   summarise(
     Count = n(),
     Percentage = round((n() / nrow(data)) * 100, 2)
-  ) %>%
-  mutate(Elected_Status = ifelse(elected == 1, "Elected", "Not Elected")) %>%
-  select(Elected_Status, Count, Percentage) %>%
+  ) |>
+  mutate(
+    Count = comma(Count),  # Add comma separator to Count
+    Elected_Status = ifelse(elected == 1, "Elected", "Not Elected")
+  ) |>
+  dplyr::select(Elected_Status, Count, Percentage) |>
   bind_rows(
-    tibble(Elected_Status = "Total",
-           Count = nrow(data),
-           Percentage = 100)
+    tibble(
+      Elected_Status = "Total",
+      Count = comma(nrow(data)),  # Add comma separator to total
+      Percentage = 100
+    )
   )
 
 knitr::kable(outcome_summary)
@@ -103,8 +116,8 @@ knitr::kable(outcome_summary)
 ```
 
 ```{r}
-#| label: fig-mosaic
-#| fig-cap:  Mosaic plot showing the distribution of elected status ('Elected' and 'Not Elected') by gender ('Male' and 'Female'), highlighting the relative proportions of male and female candidates in each elected category, with percentages of male/female candidate being elected/not elected annotated.
+#| label: fig-elected
+#| fig-cap:  Graph showing the distribution of elected status ('Elected' and 'Not Elected') by gender ('Male' and 'Female'), highlighting the relative proportions of male and female candidates in each elected category, with percentages of male/female candidate being elected/not elected annotated.
 #| echo: false
 #| warning: false
 #| message: false
@@ -117,9 +130,9 @@ knitr::kable(outcome_summary)
 # Calculate percentages to label on the mosaic plot
 
 # 1. Percentage of male and female in the election race
-gender_race_percentage <- data %>%
-  group_by(gender) %>%
-  summarise(Count = n(), .groups = "drop") %>%
+gender_race_percentage <- data |>
+  group_by(gender) |>
+  summarise(Count = n(), .groups = "drop") |>
   mutate(
     Total = sum(Count),
     Percentage = round((Count / Total) * 100, 1),
@@ -127,10 +140,10 @@ gender_race_percentage <- data %>%
   )
 
 # 2. Percentage of male and female being elected
-elected_percentage <- data %>%
-  filter(elected == 1) %>%
-  group_by(gender) %>%
-  summarise(Count = n(), .groups = "drop") %>%
+elected_percentage <- data |>
+  filter(elected == 1) |>
+  group_by(gender) |>
+  summarise(Count = n(), .groups = "drop") |>
   mutate(
     Total = sum(Count),
     Percentage = round((Count / Total) * 100, 1),
@@ -139,10 +152,10 @@ elected_percentage <- data %>%
   )
 
 # 3. Percentage of male and female being not elected
-not_elected_percentage <- data %>%
-  filter(elected == 0) %>%
-  group_by(gender) %>%
-  summarise(Count = n(), .groups = "drop") %>%
+not_elected_percentage <- data |>
+  filter(elected == 0) |>
+  group_by(gender) |>
+  summarise(Count = n(), .groups = "drop") |>
   mutate(
     Total = sum(Count),
     Percentage = round((Count / Total) * 100, 1),
@@ -154,7 +167,7 @@ not_elected_percentage <- data %>%
 percentages <- bind_rows(elected_percentage, not_elected_percentage)
 
 # Adjust positions for annotations
-percentages <- percentages %>%
+percentages <- percentages |>
   mutate(
     x = ifelse(elected_status == "Not Elected", 0.25, 0.75), # Assign x position for "Not Elected" and "Elected"
     y = ifelse(Gender == "Male", 0.25, 0.9), # Assign y position for "Male" and "Female" within each category
@@ -185,15 +198,42 @@ ggplot(data = data) +
 
 
 ```
-The **outcome variable** in this study is `elected`, which indicates whether a candidate was successfully elected (`1`) or not (`0`) in a given municipal race. According to the codebook, this variable is available for all observations in the Canadian Municipal Elections Database (CMED) and captures the fundamental result of each race. Figure (@fig-summary) show 51.68% of candidates were elected, while 48.32% were not, providing a relatively balanced outcome for analysis.
+The **outcome variable** in this study is `elected`, which indicates whether a candidate was successfully elected (`1`) or not (`0`) in a given municipal race. This variable is available for all observations in the Canadian Municipal Elections Database (CMED) and captures the fundamental result of each race. @tbl-elected shows 51.68% of candidates were elected, while 48.32% were not, providing a relatively balanced outcome for analysis.
 
-The variable is critical for this study as it allows the examination of factors influencing electoral success, such as gender, incumbency, and election year, and enables an investigation into how gender dynamics have evolved over time. By analyzing the patterns in `elected`, the study aims to understand broader trends in gender representation and equality across Canada’s municipal elections. 
+The variable is important for this study as it allows the examination of factors influencing electoral success, such as gender, incumbency, and election year, and enables an investigation into how gender dynamics have evolved over time. By analyzing the patterns in `elected`, the study aims to understand broader trends in gender representation and equality across the Canadian municipal elections. 
 
-The mosaic plot (@fig-mosaic) visualizes the outcome variable `elected`, depicting the proportion of candidates by gender across "Elected" and "Not Elected" categories. It highlights the gender distribution in electoral outcomes, revealing that among those elected, 73.8% are male and 26.2% are female, underscoring a notable gender imbalance in local government representation in Canada.
+@fig-elected visualizes the outcome variable `elected`, depicting the proportion of candidates by gender across "Elected" and "Not Elected" categories. It highlights the gender distribution in electoral outcomes, show that among those elected, 73.8% are male and 26.2% are female, imply a notable gender imbalance in local government representation in Canada.
 
-## Predictor variables
-### Gender
-```{r,fig.height= 6, fig.width = 8}
+### Predictor variables
+#### Gender
+```{r,fig.height= 5, fig.width = 8}
+#| label: tbl-gender
+#| tbl-cap: Showing the distribution of candidates' gender in CMED, including the total number and percentage of female and male, along with an overall total rows.
+#| echo: false
+
+gender_summary <- data |>
+  group_by(gender) |>
+  summarise(
+    Count = n(),
+    Percentage = round((n() / nrow(data)) * 100, 2)
+  ) |>
+  mutate(
+    Count = comma(Count),  # Add comma separator to Count
+    Gender = ifelse((gender) == 1, "Female", "Male")
+  ) |>
+  dplyr::select(Gender, Count, Percentage) |>
+  bind_rows(
+    tibble(
+      Gender = "Total",
+      Count = comma(nrow(data)),  # Add comma separator to total
+      Percentage = 100
+    )
+  )
+
+knitr::kable(gender_summary)
+```
+
+```{r,fig.height= 7, fig.width = 8}
 #| label: fig-gender
 #| fig-cap:  Plot illustrating the gender distribution of candidates, with the number of male and female candidates represented by bar heights and their respective percentages labeled above each bar to highlight proportional representation.
 #| echo: false
@@ -205,9 +245,9 @@ The mosaic plot (@fig-mosaic) visualizes the outcome variable `elected`, depicti
 # library(dplyr)
 
 # Summarize the gender variable
-gender_summary <- data %>%
-  group_by(gender) %>%
-  summarise(Frequency = n()) %>%
+gender_summary <- data |>
+  group_by(gender) |>
+  summarise(Frequency = n()) |>
   mutate(
     Percentage = round((Frequency / sum(Frequency)) * 100, 1),
     Label = paste0(Percentage, "%")
@@ -226,15 +266,43 @@ ggplot(gender_summary, aes(x = gender, y = Frequency, fill = gender)) +
   theme_minimal()
 
 ```
-The `gender` variable captures the candidate's gender and is included in the full Canadian Municipal Elections Database (CMED). It is coded as a binary factor (`Female = 1`, `Male = 0`) to facilitate analysis of the baseline gender effect on election outcomes. Despite minor missing data in some datasets, primarily due to incomplete candidate name information, this variable serves as a key predictor for examining the influence of gender on electoral success.
+The `gender` variable captures the candidate's gender and is included in the full Canadian Municipal Elections Database (CMED). It is coded as a binary factor (`Female = 1`, `Male = 0`) to facilitate analysis of the baseline gender effect on election outcomes. Despite minor missing data in raw dataset due to incomplete candidate name information, this variable serves as a key predictor for examining the influence of gender on electoral success.
 
-The plot (@fig-gender) illustrates the distribution of gender among candidates in Canadian municipal election races, show a notable gender imbalance over time. Specifically, 75.8% of candidates are male, while only 24.2% are female, highlighting the underrepresentation of women in local government elections.
+@tbl-gender and @fig-gender illustrates the distribution of gender among candidates in Canadian municipal election races, show a notable gender imbalance in the Canadian municipal elections. Specifically, 75.8% of candidates are male, while only 24.2% are female, highlighting the underrepresentation of women in local government elections.
 
 
-### Incumbent
+#### Incumbent
+
+```{r,fig.height= 5, fig.width = 8}
+#| label: tbl-incumbent
+#| tbl-cap: Showing the distribution of candidates' incumbency status in CMED, including the total number and percentage of candidates who were incumbent and non-incumbent before election, along with an overall total rows.
+#| echo: false
+
+incumbent_summary <- data |>
+  group_by(incumbent) |>
+  summarise(
+    Count = n(),
+    Percentage = round((n() / nrow(data)) * 100, 2)
+  ) |>
+  mutate(
+    Count = comma(Count),  # Add comma separator to Count
+    Incumbency_status = ifelse((incumbent) == 1, "Incumbent", "Not Incumbent")
+  ) |>
+  dplyr::select(Incumbency_status, Count, Percentage) |>
+  bind_rows(
+    tibble(
+      Incumbency_status = "Total",
+      Count = comma(nrow(data)),  # Add comma separator to total
+      Percentage = 100
+    )
+  )
+
+knitr::kable(incumbent_summary)
+```
+
 ```{r}
 #| label: fig-incumbent
-#| fig-cap: Mosaic plot visualizing the relationship between elected status ("Elected" and "Not Elected") and incumbency status ("Not Incumbent" in yellow and "Incumbent" in green), highlighting the distribution of incumbents and non-incumbents across election outcomes.
+#| fig-cap: A plot visualizing the relationship between elected status ("Elected" and "Not Elected") and incumbency status ("Not Incumbent" in yellow and "Incumbent" in green), highlighting the distribution of incumbents and non-incumbents across election outcomes.
 #| echo: false
 #| warning: false
 #| message: false
@@ -242,30 +310,30 @@ The plot (@fig-gender) illustrates the distribution of gender among candidates i
 # mosaic plot for visualizing incumbent variable
 ggplot(data = data) +
   geom_mosaic(aes(x = product(elected), fill = incumbent)) +
-  labs(title = "Mosaic Plot of Elected Status by incumbent",
+  labs(title = "Elected Status by incumbent",
        x = "Elected Status",
        fill = "incumbent") +
   scale_x_productlist(labels = c("0" = "Not Elected", "1" = "Elected")) +
-  scale_fill_manual(values = c("yellow", "green"),
+  scale_fill_manual(values = c("yellow", "lightgreen"),
                     labels = c("not incumbent", "incumbent")) +
   theme_minimal()
 
 ```
 The **incumbent** variable (`Incumbent = 1`, `Not Incumbent = 0`) identifies whether a candidate held the same office prior to the election and is available for the full CMED dataset. Incumbency is a key predictor of electoral success, often linked to advantages like name recognition, experience, and access to resources. 
-The mosaic plot (@fig-incumbent) illustrates the relationship between incumbency and electoral outcomes, showing that incumbents are more likely to be elected than challengers.
 
+As shown in @tbl-incumbent, 65.91% of candidates were not incumbents at the time of their election bid, while 34.09% were. This suggests that the majority of candidates competing in municipal elections are challengers rather than current officeholders. Furthermore, @fig-incumbent highlights that incumbents have a significantly higher likelihood of being elected compared to non-incumbents, emphasizing the electoral advantage conferred by holding office.
 
-### Election Year
+#### Election Year
 ```{r}
 #| label: fig-year
-#| fig-cap: "Line plot showing the number of male and female candidates in Canadian municipal elections over time, highlighting a sharp increase in candidate participation post-2000 and a persistent gender gap, with male candidates consistently outnumbering female candidates."
+#| fig-cap:  Showing the number of male and female candidates in Canadian municipal elections over time, highlighting a sharp increase in candidate participation post-2000 and a persistent gender gap, with male candidates consistently outnumbering female candidates."
 #| echo: false
 #| warning: false
 #| message: false
 
 # Count candidates by election year and gender
-yearly_counts <- data %>%
-  group_by(election_year, gender) %>%
+yearly_counts <- data |>
+  group_by(election_year, gender) |>
   summarise(Count = n(), .groups = "drop")
 
 # Line plot for visulizing election_year
@@ -279,58 +347,85 @@ ggplot(yearly_counts, aes(x = election_year, y = Count, color = gender, group = 
     color = "Gender"
   ) +
   theme_minimal()
+
+
+earliest_years <- data |>
+  group_by(gender) |>
+  summarise(Earliest_Year = min(election_year, na.rm = TRUE))
+
+
 ```
-The **election_year** variable records the year of each election.It is critical for analyzing temporal trends, enabling an understanding of how electoral outcomes, candidate participation, and gender representation have evolved over time. 
-(@fig-year) depicts the number of male and female candidates across election years, showing a sharp increase in participation post-2000, while also highlighting a persistent gender gap, with male candidates consistently outnumbering female candidates.
+
+The **election_year** variable records the year of each election, important for analyzing trends in outcomes, participation, and gender representation. It interacts with gender in the model to capture changes over time. 
+As shown in (@fig-year), candidate numbers surged after 2000, with male candidates consistently outnumbering females. From 1867 to 1910, only men participated in municipal elections, but women began running thereafter, marking a key shift in gender representation.
 
 ```{r}
 #| label: tbl-summaryx
-#| fig-cap: Summary table displaying key descriptive statistics for predictor variables, including the counts and proportions of female and male candidates, incumbent and non-incumbent candidates, and the range of election years covered in the dataset.
+#| tbl-cap: Key descriptive statistics for predictor variables, including the counts and proportions of female and male candidates, incumbent and non-incumbent candidates, and the range of election years covered in the dataset.
 #| echo: false
 #| warning: false
 #| message: false
+
 # Generate summary for each predictor
-summary_table <- data %>%
+summary_x <- data |>
   summarise(
     # Gender
-    Gender_Female = sum(gender == 1, na.rm = TRUE),
-    Gender_Male = sum(gender == 0, na.rm = TRUE),
-    Gender_Proportion_Female = round(mean(gender == 1, na.rm = TRUE) * 100, 2),
+    Number_of_Female = sum(gender == 1, na.rm = TRUE),
+    Number_of_Male = sum(gender == 0, na.rm = TRUE),
+    Female_Proportion = round(mean(gender == 1, na.rm = TRUE) * 100, 2),
     
     # Incumbent
-    Incumbent = sum(incumbent == 1, na.rm = TRUE),
-    Non_Incumbent = sum(incumbent == 0, na.rm = TRUE),
+    Incumbent_number = sum(incumbent == 1, na.rm = TRUE),
+    Non_Incumbent_number = sum(incumbent == 0, na.rm = TRUE),
     Incumbent_Proportion = round(mean(incumbent == 1, na.rm = TRUE) * 100, 2),
     
     # Election Year
     Min_Election_Year = min(election_year, na.rm = TRUE),
     Max_Election_Year = max(election_year, na.rm = TRUE)
-    ) %>%
-  pivot_longer(cols = everything(), names_to = "Variable", values_to = "Value")
+  ) |>
+  pivot_longer(cols = everything(), names_to = "Variable", values_to = "Value") 
+
+# Add formatting for display
+summary_x <- summary_x |>
+  mutate(
+    Value = ifelse(grepl("Proportion|Year", Variable),
+                   as.character(Value),  # Keep proportions and years as-is
+                   scales::comma(Value))  # Add commas for counts
+  )
 
 # Print the summary table
-summary_table
+knitr::kable(summary_x)
+
 
 ```
-Finally, the table @tbl-summaryx give a summary table for this 3 predictor variables: gender, incumbent and election_year.
 
-### Interaction term
+The table @tbl-summaryx gives a summary for important feature of this 3 predictor variables: gender, incumbent and election_year.
+
+#### Interaction term
 **Gender * Election Year**
 ```{r}
 #| label: fig-gender_year
-#| fig-cap: Line plot showing the proportion of candidates elected over time by gender, with separate lines for male (blue) and female (pink) candidates, highlighting trends in gender representation across election years.
+#| fig-cap: Showing the proportion of candidates elected over time by gender, with separate lines for male (blue) and female (pink) candidates, highlighting trends in gender representation across election years.
 #| echo: false
 #| warning: false
 #| message: false
-# Calculate proportions of elected by gender and year
-gender_year_data <- data %>%
-  group_by(election_year, gender) %>%
-  summarise(Proportion_Elected = mean(elected == 1, na.rm = TRUE), .groups = "drop")
 
-# Line plot
+
+# Calculate proportions of elected by gender and year
+# library(dplyr)
+# library(tidyr)
+
+gender_year_data <- data |>
+  group_by(election_year, gender) |>
+  summarise(Proportion_Elected = mean(elected == 1),  
+            .groups = "drop") |>
+  mutate(gender = factor(gender, labels = c("Male", "Female")))
+
+
+
 ggplot(gender_year_data, aes(x = election_year, y = Proportion_Elected, color = gender, group = gender)) +
-  geom_line(size = 1.2) +
-  scale_color_manual(values = c("pink", "blue"), labels = c("Female", "Male")) +
+  geom_line(size = 1) +
+  scale_color_manual(values = c("blue", "pink"), labels = c("Male", "female")) +
   labs(
     title = "Proportion of Candidates Elected Over Time by Gender",
     x = "Election Year",
@@ -340,15 +435,14 @@ ggplot(gender_year_data, aes(x = election_year, y = Proportion_Elected, color = 
   theme_minimal()
 
 ```
-The interaction between gender and election_year provides insights into how the relationship between gender and electoral success evolves over time. Examining this interaction helps assess whether gender disparities in municipal election outcomes have changed or remained consistent across different years.
+The interaction between gender and election_year shows how the relationship between gender and electoral success has evolved over time. It is important for understanding whether gender disparities in municipal elections have diminished, persisted, or shifted in favor of inclusivity.
 
-The plot (@fig-gender_year) illustrates the proportion of male and female candidates elected over time. Male candidates consistently show higher success rates, with significant year-to-year fluctuations, while female candidates exhibit a more stable trend but consistently lower proportions. Although the gender gap appears to narrow slightly in recent years, the persistent disparity highlights the importance of analyzing how gender and election year jointly influence electoral outcomes.
-
+@fig-gender_year shows the proportion of male and female candidates elected over time, highlighting shifts in gender disparities. While male candidates participation consistently outnumber females, female candidates often achieve higher success rates, though with greater year-to-year variation. And male candidates show more stable but lower success proportions in recent years, reflecting a narrowing gender gap. The absence of female data before 1910 aligns with historical restrictions on women's participation in elections, emphasizing the evolving trends in gender representation.
 
 **Gender * Incumbent**
 ```{r}
 #| label: fig-gender_incumbent
-#| fig-cap: Faceted bar chart showing the proportion of elected outcomes ("Elected" and "Not Elected") by gender ("Male" and "Female") for incumbents and non-incumbents, illustrating how incumbency influences election success differently for male and female candidates.
+#| fig-cap: Showing the proportion of elected outcomes ("Elected" and "Not Elected") by gender ("Male" and "Female") for incumbents and non-incumbents, illustrating how incumbency influences election success differently for male and female candidates.
 #| echo: false
 #| warning: false
 #| message: false
@@ -357,7 +451,7 @@ The plot (@fig-gender_year) illustrates the proportion of male and female candid
 ggplot(data, aes(x = gender, fill = as.factor(elected))) +
   geom_bar(position = "fill", color = "grey") +
   facet_wrap(~incumbent, labeller = labeller(incumbent = c("0" = "Not Incumbent", "1" = "Incumbent"))) +
-  scale_fill_manual(values = c("purple", "lightblue"), labels = c("Not Elected", "Elected")) +
+  scale_fill_manual(values = c("yellow", "lightgreen"), labels = c("Not Elected", "Elected")) +
   scale_x_discrete(labels = c("0" = "Male", "1" = "Female")) +
   labs(
     title = "Elected Outcomes by Gender and Incumbency",
@@ -369,22 +463,31 @@ ggplot(data, aes(x = gender, fill = as.factor(elected))) +
 
 ```
 The interaction term `gender * incumbent` examines how incumbency status influences election outcomes for male and female candidates. This term allow us to understand whether the incumbency advantage differs by gender, highlighting disparities in electoral success.
-(@fig-gender_incumbent) shows the proportion of elected outcomes by gender, split by incumbency status. Among non-incumbents, both male and female candidates show low success rates, with male candidates being slightly less likely to be elected. while among incumbents, the election success rates for both genders are substantially higher, indicating incumbency strongly enhances electoral success for both genders but suggests potential differences in how gender interacts with incumbency.
+
+@fig-gender_incumbent shows the proportion of elected outcomes by gender, split by incumbency status. Among non-incumbents, both male and female candidates show low success rates, with male candidates being slightly less likely to be elected. while among incumbents, the election success rates for both genders are substantially higher, indicating incumbency strongly enhances electoral success for both genders but suggests potential differences in how gender interacts with incumbency.
 
 
 # Model {#sec-model}
-The goal of our modelling strategy is to use logistic regression model to investigate the relationship between Canadian Municipal Election outcome and the gender, incumbency status of candidate, and year of elections, and compare the difference in predicted probability of election success rate across gender.
+The goal of our modelling strategy is to use logistic regression model to investigate the relationship between Canadian Municipal Election outcome and the gender, incumbency status of candidate, and compare the difference in predicted probability of election success rate across gender over time.
+
 Model detail, validation and diagnostics are included in [Appendix -@sec-model-details].
 
-We fit a model with three main predictors **gender**, **incumbent** and **election_year**, and two interaction terms including **gender *election_year** and **gender * incumbent**. 
+
+## Alternative model
+A Bayesian approach was considered but rejected primarily due to computational impracticality with 55,961 training observations. While Frequentist logistic regression offers a more efficient alternative, providing stable maximum likelihood estimates for large datasets. Additionally, the lack of well-informed priors reduced the potential benefits of Bayesian modeling, making the frequentist approach a simpler and more practical choice.
+
+Additionally, a simpler **base model** with three predictors—gender, incumbent, and election_year was considered to explore main effects, but not used because it assumes static and independent effects. This assumption contradicts EDA findings, which shown a relationship between gender and election_year (@fig-gender_year). The full model, with interaction terms (gender × election_year and gender × incumbent), was used to capture the evolving gender gap and its variation with incumbency. Without these interactions, the base model could not adequately address the study's aim of analyzing how gender dynamics in electoral success have changed over time. Thus, the full model was chosen for its ability to provide deeper understandings.
+
+## Model Set-up
+A logistic regression model was chosen to analyze the binary response variable (`elected`), which follows a Bernoulli distribution, indicating whether a candidate was successfully elected (`elected = 1`) or not (`elected = 0`) in a municipal election. This method models the probability of being elected by applying the logit link function, which maps the linear combination of predictors onto a probability scale, ensuring the predicted probabilities lie between 0 and 1.
+
+I fit a model with two main predictors **gender** and **incumbent**, and two interaction terms including **gender * election_year** and **gender * incumbent**. 
 
 The model use following predictors:
 
    - **gender**: categorical variable record candidates' gender, 1 for female, 0 for male. Use to analyze the influence of gender on electoral success.
 
-   - **incumbent**: categorical variable to account for the incumbency advantage.
-
-   - **election_year**: numerical variable record year of election, to investigate changes over time.
+   - **incumbent**: categorical variable to account for the incumbency advantage, 1 for incumbent, 0 for not incumbent.
 
    - **Interactions**:
 
@@ -392,29 +495,24 @@ The model use following predictors:
 
      - **gender * incumbent**: To examine whether incumbency impacts male and female candidates differently.
 
-## Alternative model
-While a Bayesian approach was initially considered for this analysis, it was ultimately not chosen for several reasons. First, the lack of well-informed priors limited the utility of Bayesian modeling, as priors would need to be based on strong external evidence to improve model performance. Second, the dataset's large size (62959 observations) supports the stability of maximum likelihood estimates, making frequentist logistic regression a computationally efficient and reliable choice. The frequentist approach avoids the added complexity and computational demands of Bayesian modeling, which can be especially significant for large datasets with many predictors and interactions.
-Additionally, a simpler **base model** with only three predictors—gender, incumbent, and election_year—was considered to allow exploration of the main effects. However, this approach assumes that the effects of these predictors are independent and static over time. The full model, in contrast, includes interaction terms (gender × election_year and gender × incumbent) that are essential to address the study's aim of examining the evolving impact of gender on election success. These interaction terms capture how the gender gap changes over time and varies with incumbency. As the base model lacks the ability to capture these relationships, it was deemed insufficient for both interpretation and prediction. Thus, the full logistic regression model was chosen for its ability to align with the research objectives and provide a more detailed analysis.
-
-## Model Set-up
-A logistic regression model was chosen to analyze the numerical response variable (`elected`) with binary outcome, which follows a Bernoulli distribution and indicates whether the candidate was successfully elected (`elected = 1`) or not (`elected = 0`) in a municipal election. This framework models the probability of being elected using the logit function, which transforms the linear combination of predictors into probabilities.
-
 **Model**
 \begin{align*}
     elected_i &\sim \text{Bernoulli}(\text{Pr}(elected_i = 1)) \\
-    \text{logit}(\text{Pr}(elected_i = 1)) &= \beta_0 + \beta_1 \cdot \text{gender}_i + \beta_2 \cdot \text{incumbent}_i + \beta_3 \cdot \text{election\_year}_i \\
-    &\quad + \beta_4 \cdot (\text{gender}_i \times \text{election\_year}_i) + \beta_5 \cdot (\text{gender}_i \times \text{incumbent}_i) 
+    \text{logit}(\text{Pr}(elected_i = 1)) &= \beta_0 + \beta_1 \cdot \text{gender}_i + \beta_2 \cdot \text{incumbent}_i \\
+    &\quad + \beta_3 \cdot (\text{gender}_i \times \text{election\_year}_i) + \beta_4 \cdot (\text{gender}_i \times \text{incumbent}_i) 
 \end{align*}
 
 \textbf{Where:}
 \begin{itemize}
     \item $\beta_0$ is the intercept term, represents the baseline log-odds of being elected when all predictors are at their reference level.
-    \item $\beta_1, \beta_2, \beta_3, \beta_4, \beta_5$ are the coefficients for each predictor, correspond to the effects of the predictors on the log-odds of being elected
+    \item $\beta_1, \beta_2, \beta_3, \beta_4$ are the coefficients for each predictor, correspond to the effects of the predictors on the log-odds of being elected
 \end{itemize}
 
-This modeling approach allows for an exploration of both the main effects and the potential interactions between gender, incumbency, and time. It allow investigation of effect of gender, incumbent and election_year on election outcome, and also explain how gender dynamics in elections have evolved over time and how incumbency advantages differ between male and female candidates. 
+This modeling approach allows for an exploration of both the main effects and the potential interactions between gender, incumbency, and time. It allow investigation of effect of candidate's gender and incumbency status on election outcome, and also explain how gender dynamics in elections have evolved over time and how incumbency advantages differ between male and female candidates. Additionally, the model can also be used to predict the outcomes of future Canadian municipal elections, providing a tool for forecasting and enabling further analysis and comparison of gender effects on election success over time.
 
-We run the model in R [@citeR] by using the function glm() to build a prediction-focused logistic regression model on training data.
+Since I found in the data section that female candidates' data are missing before 1910 (@fig-gender_year), the model is fit using only data with `election_year >= 1910` to ensure the analysis accurately captures gender differences in election success within a time frame where both male and female candidates actively participated.
+
+I run the model in R [@citeR] by using the function glm() to build a logistic regression model on training data.
 ```{r}
 #| echo: false
 #| eval: true
@@ -426,99 +524,49 @@ model <-
 ```
 
 
-### Model justification
+## Model justification
 Existing research and political science theories suggest that factors such as candidate gender, incumbency status, and the year of the election can influence electoral outcomes in Canadian municipal elections. Historically, male candidates have historically been more likely to succeed than female candidates, particularly in earlier years, highlighting persistent gender disparities in political representation. Incumbents benefit from name recognition, political experience, and access to resources, giving them a substantial advantage in elections. Over time, societal shifts toward inclusivity and equity are hypothesized to reduce these disparities, which motivates the inclusion of interaction terms, such as between gender and election year. Similarly, the interaction between gender and incumbency allows for assessing whether the advantage of incumbency is distributed equitably across genders. These predictors were selected based on their relevance to the research question and their clear definition in the data section.
 
 A logistic regression model was used because the response variable—whether a candidate is elected—is binary, making it well-suited to a Bernoulli distribution. Logistic regression is ideal for modeling binary outcomes as a function of multiple predictors, providing interpretable log-odds of being elected. The inclusion of interaction terms enables an exploration of changing gender dynamics over time and across incumbency statuses, aligning with the study's objective to examine how gender and other election factors jointly influence electoral success.
 
-Including interaction terms in the model adds complexity but is justified by theoretical motivations and supported by the dataset's large size. This approach provides a richer, context-specific understanding of the interplay between gender, incumbency, and election year, offering a deeper analysis of the factors driving electoral outcomes.
+The model balances complexity by including theoretically motivated interaction terms while excluding unnecessary predictors like **`election_year`**, instead capturing its effect through interactions, reduce multicollinearity unrelated to the study's aim. This approach provides an understanding of the interplay between gender, incumbency, and election year, enabling deeper analysis of factors influencing electoral outcomes. 
 
-## Model validation and checking
-### Train Test Validation
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
-# Predict probabilities on the test set
-test_data$predicted_prob <- predict(model, newdata = test_data, type = "response")
+However, there are limitation of the model. The logistic regression model assumes a linear relationship between predictors and the log-odds of being elected. While appropriate for gender, incumbency, and their interactions, this assumption may oversimplify complex relationships, such as regional or socioeconomic factors not captured in the dataset. Additionally, the inclusion of interaction terms inherently increases the risk of multicollinearity, particularly between gender and its interaction with election year. This can lead to inflated standard errors, making coefficient interpretation more challenging.
 
-# Convert probabilities to binary predictions (threshold = 0.5)
-test_data$predicted_class <- ifelse(test_data$predicted_prob > 0.5, 1, 0)
+Another assumption is the independence of observations. This is generally valid for election data but may be violated in cases where candidates are clustered within the same municipality or election year. Such clustering could introduce correlation among observations, leading to biased standard errors.
 
-```
-
-```{r}
-#| label: fig-matrix
-#| fig-cap: Confusion matrix justify the prediction of the model
-#| echo: false
-#| warning: false
-#| message: false
-
-confusion <- table(test_data$elected, test_data$predicted_class, dnn = c("Actual", "Predicted"))
-knitr::kable(confusion)
-```
-
-```{r}
-#| echo: false
-#| eval: false
-#| warning: false
-#| message: false
-accuracy <- sum(diag(confusion)) / sum(confusion)
-accuracy
-```
-
-
-```{r}
-#| echo: false
-#| eval: false
-#| warning: false
-#| message: false
-null_deviance <- model$null.deviance
-residual_deviance <- model$deviance
-mcfadden_r2 <- 1 - (residual_deviance / null_deviance)
-mcfadden_r2
-
-```
-
-A train-test split validation approach was employed to evaluate the performance of the logistic regression model in predicting the probabilities of being elected in Canadian municipal elections. The dataset was randomly divided into a training set (70%) for model fitting and a test set (30%) for evaluation.
-
-The model was fitted using the `glm()` function on the training data, and predictions were generated for the test set. A confusion matrix (@fig-matrix) highlights the model's strengths and weaknesses: it performs well in predicting "Not Elected" but has greater difficulty predicting "Elected," likely reflecting data imbalance or complexities in modeling election dynamics.
-
-Two key performance metrics were calculated:
-
-- **Accuracy:** 70.16%, indicating that the model correctly classifies about 70% of the test set observations. However, accuracy alone may not fully capture model performance, especially if the dataset is imbalanced (e.g., more "Not Elected" cases than "Elected").
-
-- **McFadden's R^2:** 0.15, suggesting a modest model fit. While lower than R square values typically observed in linear regression, this is acceptable in logistic regression, where values between 0.2 and 0.4 are considered strong.
-
-Overall, the validation metrics indicate that the model is reasonably effective, though there may be limitations in capturing the nuances of factors influencing election success.
-
+More details about the model validation and checking is in @sec-model-details.
 
 # Results {#sec-result}
+
+## Interpretation of coefficient 
 ```{r}
 #| label: tbl-modelresult
-#| fig-cap: "Summary table of coefficients and fit statistics for the logistic regression models predicting election probability."
+#| fig-cap: Summary of coefficients and fit statistics for the logistic regression models predicting election probability.
 #| echo: false
 #| warning: false
 #| message: false
 
 # Generate the table
 modelsummary(
-  list(model),
-  fmt = 1
+  list("Logistic Regression Model" = model),
+  fmt = 2
 )
 ```
 
-Our results are summarized in @tbl-modelresult  by use package [@modelsummary].
-The results from the logistic regression model show how the factors influencing electoral success and how these relationships vary across gender, incumbency, and over time. The coefficient for `gender1` is strongly negative (-33.466, standard error: 3.143), indicating that female candidates generally have a lower probability -33.5% of being elected compared to male candidates. However, the interaction term between `gender` and `election_year` (0.017, standard error: 0.002) is positive and statistically significant, which suggests that the disparity in election success rates between genders has decreased over time, favoring female candidates more in recent years.
+Our results are summarized in @tbl-modelresult using the [@modelsummary] package. The logistic regression model evaluates the impact of gender, incumbency, and their interactions influence electoral success and highlights key variations over time in Canadian municipal elections.
 
-The coefficient for `incumbent1` is positive (2.146, standard error: 0.024), underscoring the significant advantage incumbents have in election outcomes. The interaction between `gender` and `incumbent` is negative (-0.260, standard error: 0.042), suggesting that the incumbency advantage is not uniform between genders and is less pronounced for female candidates. The coefficient for `election_year` is close to zero (0.000, standard error: 0.000), indicating minimal direct change in the probability of election success attributable solely to the passage of time.
+The **Intercept** (-8.13, SE = 0.78) represents the baseline log-odds of election success for non-incumbent male candidates at the reference election year. The coefficient for **`gender1`** (-23.46, SE = 3.15) represents the log-odds difference in election probability between female (gender = 1) and male (gender = 0) candidates when all other predictors (such as incumbency and interactions) are held constant at their reference levels, indicates that female candidates face significantly lower log-odds of being elected compared to male candidates in earlier years. However, the positive coefficient for the interaction term **`gender1 × election_year`** (0.02, SE = 0.00) demonstrates that this gender disparity diminishes over time, with female candidates experiencing a gradual improvement in election outcomes in more recent years.
 
-Overall, the model highlights the evolving dynamics of gender and election success, emphasizing the importance of considering interaction effects to capture the complexity of these relationships. While the main effect of `gender` suggests a disadvantage for female candidates, the positive interaction with `election_year` shows that this gap has been gradually narrowing. The strong and consistent incumbency effect across the model and its differential impact by gender also illustrate the nuances in electoral success influenced by candidate characteristics and election history.
+The strong positive coefficient for **`incumbent1`** (2.19, SE = 0.02) show incumbent male candidate have a higher log-odds of election success compare to non-incumbent male, highlights the significant advantage incumbency provides to candidates. Yet, the interaction term **`gender1 × incumbent1`** (-0.34, SE = 0.05) shows that female incumbents benefit less from this advantage compared to their male counterparts, indicating a differences in how incumbency influences electoral success across genders.
 
-### Predicted Probabilities of Being Elected Over Time for Male and Female Candidates
+Overall, the model highlights the evolving dynamics of gender and election success, emphasizing the importance of considering interaction effects to capture the complexity of these relationships. While the main effect of `gender` suggests a disadvantage for female candidates, the positive interaction with `election_year` shows that this gap has been gradually narrowing. Additionally, while incumbency benefits both genders, male candidates gain a marginally higher advantage from incumbency compared to female candidates.
+
+
+
+## Predicted Probabilities of Being Elected Over Time for Male and Female Candidates
 ```{r}
-#| label: fig-result2
+#| label: fig-result1
 #| fig-cap: Predicted probabilities of being elected over time for male and female candidates, separated by incumbent status, highlighting differences in gender dynamics and trends across election years.
 #| echo: false
 #| warning: false
@@ -526,6 +574,10 @@ Overall, the model highlights the evolving dynamics of gender and election succe
 
 # Load required libraries
 # library(ggplot2)
+
+# Calculate predicted probabilities
+test_data$predicted_prob <- predict(model, newdata = test_data, type = "response")
+
 
 # facet line plot
 ggplot(test_data, aes(x = election_year, y = predicted_prob, color = as.factor(gender))) +
@@ -544,29 +596,28 @@ ggplot(test_data, aes(x = election_year, y = predicted_prob, color = as.factor(g
 
 
 ```
-The model which includes interaction terms for both gender and election year, as well as gender and incumbency status, provides a detailed analysis of the evolving gender dynamics in electoral outcomes. In (@fig-result2), for non-incumbents, the predicted probability of election for female candidates has steadily increased over time, eventually surpassing that of male candidates in recent years. This trend suggests significant progress toward gender parity for non-incumbent candidates. On the other hand, among incumbents, the probability of election for female candidates has consistently increased at a steeper rate than for male candidates, narrowing the gap but not completely eliminating it. The interaction effects highlight how gender and incumbency jointly shape electoral success, illustrating broader societal shifts toward inclusivity. The results suggest that while progress is being made, female candidates—particularly incumbents—still face challenges in achieving parity with their male counterparts.
-
+In (@fig-result1), for non-incumbents, the predicted probability of election for female candidates has steadily increased over time, eventually surpassing that of male candidates in recent years. This trend suggests significant progress toward gender parity for non-incumbent candidates. On the other hand, among incumbents, the probability of election for female candidates has consistently increased at a steeper rate than for male candidates, eventually reaching parity. Male candidates exhibit relatively stable probabilities over time in both categories, with a slight upward trend. The results highlight a historical disadvantage for female candidates in elections but demonstrate considerable progress toward achieving greater gender equity in recent years.
 
 
 ## Gender Gap in Predicted Election Probability Over Time
 ```{r}
-#| label: fig-result3
+#| label: fig-result2
 #| fig-cap: Gender gap in predicted probability of being elected (Male - Female) over time, illustrating changes in gender disparities in electoral success across election years. Gaps in the plot reflect missing data for specific gender-election year combinations.
 #| echo: false
 #| warning: false
 #| message: false
 
 # Aggregate predictions by gender and election year
-gender_gap_data <- test_data %>%
-  group_by(gender, election_year) %>%
-  summarise(predicted_prob = mean(predicted_prob), .groups = "drop") %>%
-  spread(key = gender, value = predicted_prob) %>%
+gender_gap_data <- test_data |>
+  group_by(gender, election_year) |>
+  summarise(predicted_prob = mean(predicted_prob), .groups = "drop") |>
+  spread(key = gender, value = predicted_prob) |>
   mutate(gap = `0` - `1`)  # Male (0) - Female (1)
 
 
 # Plot gender gap
 ggplot(gender_gap_data, aes(x = election_year, y = gap)) +
-  geom_line(color = "darkred", size = 2) +
+  geom_line(color = "darkred", size = 1.5) +
   labs(
     x = "Election Year",
     y = "Gender Gap (Male - Female)"
@@ -574,45 +625,418 @@ ggplot(gender_gap_data, aes(x = election_year, y = gap)) +
   theme_minimal()
 
 ```
-The plot (@fig-result3) illustrates the evolution of the gender gap in predicted probabilities of being elected (Male - Female) over time, capturing how disparities in electoral success have shifted. The gender gap shows a decreasing trend, particularly in recent decades, reflecting a narrowing of the difference in predicted probabilities between male and female candidates. This trend suggests that female candidates have experienced increasing success in municipal elections, consistent with societal shifts toward gender equity.
+The plot (@fig-result2) provides a detailed visualization of the gender gap in predicted probabilities of being elected (Male - Female) over time, capturing shifts in disparities across election years. The gender gap demonstrates a consistent decreasing trend, particularly in recent decades, indicating a narrowing difference in predicted election probabilities between male and female candidates. This reflects progress in reducing gender-based disparities in municipal election outcomes.
 
-The gaps or missing segments in the line plot likely correspond to years in which data for either male or female candidates were insufficient or absent. Such gaps emphasize potential limitations in the dataset, possibly due to a lack of female participation in earlier elections. The overall trend highlights progress in closing the gender gap in electoral outcomes, particularly for non-incumbent candidates, but also underscores the historical underrepresentation of women in electoral contexts. This result aligns with the study's goal of examining evolving gender dynamics in electoral success.
+The missing segments in the plot correspond to years where data for either male or female candidates were insufficient or unavailable, highlighting potential dataset limitations, especially due to the historically lower participation of female candidates in earlier elections. Overall, the plot underscores the study's focus on examining evolving gender dynamics in electoral success, showing both progress toward gender parity and the existence of historical inequities.
+
+## Predicted Probabilities by Gender and Incumbency
+```{r}
+#| label: fig-result3
+#| fig-cap: Predicted probabilities of being elected for male and female candidates are shown by incumbency status. Highlights notable differences in election probabilities between incumbents and non-incumbents across genders. Female candidates exhibit higher predicted probabilities than male candidates in both categories, with incumbents showing significantly elevated probabilities of election success regardless of gender.
+#| echo: false
+#| warning: false
+#| message: false
+
+# Aggregate predicted probabilities by gender and incumbency
+gender_incumbency_probs <- test_data |>
+  group_by(gender, incumbent) |>
+  summarise(mean_prob = mean(predicted_prob, na.rm = TRUE), .groups = "drop")
+
+# Plot predicted probabilities by incumbency
+ggplot(gender_incumbency_probs, aes(x = as.factor(incumbent), y = mean_prob, fill = as.factor(gender))) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Predicted Probabilities of Election by Gender and Incumbency",
+    x = "Incumbency Status",
+    y = "Predicted Probability",
+    fill = "Gender"
+  ) +
+  scale_fill_manual(values = c("blue", "pink"), labels = c("Male", "Female")) +
+  theme_minimal()
+
+```
+The plot (@fig-result3) displays the predicted probabilities of election for male and female candidates, separated by incumbency status. Among non-incumbents, female candidates show a higher predicted probability of being elected compared to male candidates, highlighting a notable gender advantage in this category. In contrast, for incumbents, the predicted probabilities are more balanced between genders, with female candidates having a slight edge. These results illustrate how incumbency status interacts with gender to influence electoral success, with incumbency narrowing the gender gap observed in non-incumbent candidates. 
+
+## Predictive Ability of the Model for Future Elections
+The logistic regression model demonstrates its utility in predicting future election outcomes by achieving an Area Under the ROC Curve (AUC) of 0.7414. This AUC value indicates that the model has a reasonable ability to distinguish between successful and unsuccessful candidates based on the predictors. But the matrix show that the model do better in predicting not elected rather than elected. Detail provided in @sec-model-details.
+
+These results suggest that the model can be used to predict the likelihood of a candidate's success in future Canadian municipal elections. It provides a practical tool for analyzing how gender, incumbency, and their interactions influence election probabilities over time. However, we should be careful in use it for prediction since it perform better in predict failure rather than success in a election.
 
 
 # Discussion {#sec-discussion}
 
-## 1. What is done in this paper?
-This paper investigates the relationship between electoral success in Canadian municipal elections and factors such as gender, incumbency status, and election year, with a primary focus on understanding how the impact of gender has changed over time. A logistic regression model with interaction terms was used to analyze how these predictors and their combinations influence the likelihood of being elected. The model accounts for the evolving role of gender dynamics over time and the potential variation in incumbency advantages across genders, and predict the probability of be elected for both male and female to compare the gender gap change. Train-test validation was employed to evaluate the model's performance, providing measures such as accuracy and McFadden’s R square, which confirmed the model's adequacy for studying these relationships and making predictions.
+## Overview: Gender Dynamics and Incumbency in Canadian Municipal Elections
+This study explored how gender and incumbency status shape election outcomes in Canadian municipal elections, emphasizing trends over time and differences in incumbency advantages between male and female candidates. The results demonstrate a narrowing gender gap, indicating progress toward equity in electoral success. This shift reflects broader societal changes, such as increased advocacy for gender representation in politics and evolving voter attitudes toward female leadership. However, the persistence of historical disadvantages for female candidates highlights the ongoing need to address structural barriers, such as biases in campaign funding and media coverage.
 
-## 2. What is something that we learn about the world?
-The findings underscore significant progress in gender equity in municipal elections over the past century. Historically, male candidates enjoyed a clear advantage in electoral success, particularly among incumbents. However, the interaction between gender and election year reveals a meaningful narrowing of this gender gap, with female candidates’ success rates improving notably in recent decades. For non-incumbents, female candidates’ predicted probabilities of election now approach or exceed those of male candidates, suggesting that societal and institutional shifts are contributing to more equitable outcomes. Incumbency, however, remains a powerful predictor of success, benefiting candidates of both genders but with a somewhat larger advantage observed for male incumbents. These results highlight how broader social changes have influenced gender disparities in electoral outcomes while pointing to areas where inequities persist.
+The interaction effects in the model suggest that while incumbency remains a critical predictor of success, it benefits male candidates more consistently than female candidates. This disparity may point to additional challenges female incumbents face, such as heightened scrutiny or fewer resources for re-election campaigns. These findings call for further investigation into why incumbency advantages vary by gender and how interventions can ensure equitable access to the benefits of incumbency for all candidates.
 
+## Implications for Gender Dynamics
+The observed narrowing of the gender gap in election probabilities (@fig-result2) indicates significant progress toward gender equity in the Canadian municipal elections over the past century. Historically, female candidates faced substantial disadvantages, but recent trends suggest increasing voter support for first-time female candidates. This aligns with findings from the World Economic Forum's Global Gender Gap Report 2024 [@GlobalGenderGapReport2024], which notes that gender parity in parliamentary representation has reached a record high of 33%, nearly doubling since 2006. 
 
-## 3. What is another thing that we learn about the world?
-The analysis demonstrates that the interaction effects between gender, incumbency, and election year capture nuanced patterns that single predictors cannot reveal. For instance, while incumbency generally boosts electoral success, male incumbents appear to benefit more from this advantage than their female counterparts. The gender gap in predicted probabilities of election success is most pronounced among non-incumbents, emphasizing the continued challenges for female candidates without established political presence. These findings highlight the importance of considering intersectional factors to understand electoral disparities comprehensively.
-
-## 4. What are some weaknesses of what was done?
-One limitation of this study lies in the potential multicollinearity between gender and its interactions, particularly between the `gender` variable and its interaction term with `election_year` in the model, which may complicate coefficient interpretation. While centering election year could mitigate this issue, it was not implemented to preserve the interpretability of the results. Additionally, the analysis assumes that all included variables are measured without bias or error, which may not fully capture the complexities of electoral dynamics. The dataset, although extensive, does not include other potentially influential variables, such as campaign funding or voter demographics, which could further elucidate the observed patterns.
-
-## 5. What is left to learn or how should we proceed in the future?
-Future research could explore additional predictors, such as socioeconomic factors, voter turnout, or candidate campaign characteristics, to refine the understanding of electoral success. Incorporating qualitative data, such as interviews with candidates, might provide deeper insights into the barriers female candidates face. Methodologically, Bayesian modeling with well-informed priors could be revisited to incorporate expert knowledge and assess uncertainty more robustly. Lastly, extending this analysis to other countries or levels of government could offer a comparative perspective on the factors shaping electoral outcomes across different political contexts.
+However, the reduced incumbency advantage for female candidates highlights persistent challenges. Female incumbents may encounter difficulties in maintaining voter support due to biases in public perception, resource allocation, or systemic barriers such as unequal access to campaign funding or media coverage. Research [@StrategicGenderBias] indicates that incumbency advantages can constrain female political representation, as parties may exhibit strategic gender bias, favoring male incumbents. This suggests that while progress has been made in leveling the playing field for female candidates entering politics, structural inequalities persist, particularly for female incumbents seeking re-election. Addressing these disparities is essential to achieving full equity in political representation. 
 
 
+## Practical Implications for Policy and Practice
+The model's results have practical applications for policymakers and electoral strategists. The narrowing gender gap indicates that efforts to promote female participation in politics are yielding measurable benefits. However, challenges faced by female incumbents suggest the need for targeted interventions to support women in retaining office. Implementing mentorship programs, such as those provided by organizations like WINGS for Growth [@WINGS], can empower women leaders through structured mentorship, leadership workshops, and networking opportunities.  Additionally, media training to counter biases and financial assistance to address funding disparities could help female incumbents compete on a level playing field and secure reelection, ensuring greater continuity and representation of women in leadership roles.
+
+Beyond gender dynamics, the study underscores the strong influence of incumbency on electoral outcomes, with incumbents of both genders consistently enjoying a significant advantage. While incumbency provides benefits such as name recognition and experience, it can also entrench existing power structures and reduce electoral competition. Policymakers might consider reforms like term limits, stricter campaign finance regulations, or enhanced support for non-incumbent candidates to foster a more competitive and inclusive electoral landscape. For instance, research [@StanfordIncumbency] indicates that incumbency leads to a substantial increase in campaign contributions, creating a financial advantage that precedes and amplifies the electoral incumbency advantage.  Addressing these issues could promote diversity and innovation in political leadership while ensuring a fair balance between experience and renewal in public office. 
+
+
+## Limitations of the Study
+This paper has several limitations that affect the accuracy in interpretation of relationship and prediction. One limitation lies in the potential multicollinearity between gender and its interaction terms, particularly the interaction with `election_year`. Multicollinearity can inflate standard errors, complicating the interpretation of coefficients and reducing the reliability of individual parameter estimates. Although the model effectively captures interaction effects, the presence of multicollinearity may obscure the strength and direction of relationships, requiring caution in drawing conclusions about individual predictors.
+
+Another limitation of this study is the choice of a frequentist logistic regression model instead of a Bayesian approach. A Bayesian logistic regression model with default normal priors (mean of 0 and standard deviation of 2.5) could provide several advantages. These priors are relatively non-informative, allowing the data to primarily shape the posterior distributions unless the evidence strongly suggests otherwise. Additionally, moderately wide priors can regularize the model, helping to reduce issues such as high multicollinearity and the risk of overfitting. This approach could yield more stable coefficient estimates.
+
+Although the dataset is extensive and spanning over a century, it lacks key variables that could provide a more comprehensive understanding of electoral dynamics. For example, the absence of campaign funding data, voter demographics, and political party affiliations limits the study's ability to account for contextual factors that significantly influence election outcomes. These unobserved variables may interact with gender and incumbency in ways not captured by the model, leading to potentially incomplete explanations of observed trends.
+
+Another limitation is the model's predictive performance. While the matrix (@tbl-matrix) indicates that the model performs well in predicting electoral failure, its ability to accurately predict electoral success is weaker. This imbalance may reflect inherent biases in the dataset, such as the underrepresentation of successful female candidates or systematic challenges in capturing the nuanced factors that drive election success. This limitation underscores the need to refine the model or explore alternative methods to improve predictive accuracy, particularly for elected candidates.
+
+
+## Future Research Directions
+Future research could explore additional predictors to refine the understanding of electoral success. Variables such as socioeconomic factors, voter turnout, and candidate campaign strategies might provide deeper insights into the mechanisms driving election outcomes. For example, examining disparities in campaign funding or media coverage could illuminate structural barriers that disproportionately affect female or non-incumbent candidates. Incorporating qualitative data, such as interviews with candidates, may also offer a richer perspective on the challenges female candidates face, complementing the quantitative trends observed in this study.
+
+Expanding the analysis to other political contexts, such as elections in other countries or at different levels of government, could provide a comparative framework to assess whether the patterns identified in Canadian municipal elections are consistent globally or reflect unique local dynamics. Furthermore, studying longitudinal data on individual candidates to tracking their participation and outcomes across multiple election cycles could help uncover sustained trends in gender equity and identify factors influencing long-term electoral success. These directions would strengthen the broader understanding of gender dynamics and incumbency in elections.
 
 \newpage
 
 \appendix
 
-# Appendix1 {#sec-appendix1}
+# Appendix: Observational data {#sec-appendix1}
+The CMED used in this study is a comprehensive observational dataset spanning over 150 years of municipal elections across Canada. It compiles candidate-level data from provincial archives, municipal records, and newspapers to capture electoral trends. This appendix examines the dataset's sampling framework, observational nature, and potential biases,and evaluation of its strengths and limitations.
+
+## Measurement details
+### Data Sources and Collection Methods
+CMED integrates data from:
+
+  - **Primary Sources**: Provincial and municipal organizations like CivicInfoBC and Données Québec, alongside historical archives from cities such as Toronto and Montreal.
+
+  - **Secondary Sources**: Online repositories, municipal websites, and regional election offices were used to supplement gaps, particularly for smaller municipalities.
+
+Collection methods evolved over time:
+
+  - **Early Records**: Information was sparse, particularly for gender and incumbency. For example, in early elections where gender information was unavailable, researchers manually coded gender by analyzing candidates' photographs from archival election posters or identifying pronouns in written descriptions.
+
+  - **Recent Records**: Post-2000 data benefitted from standardized practices, such as manual digitization from archives (e.g., Toronto, Montreal) and use of online resources for contemporary elections (e.g., CivicInfoBC, Données Québec). IT ensuring more reliable and complete information, particularly in provinces like British Columbia and Quebec.
+
+### Regional and Temporal Variability
+  - **Provincial Differences**: Provinces with centralized databases, such as British Columbia and Quebec, have more comprehensive records. Smaller provinces often have less consistent data due to decentralized practices.
+
+  - **Municipality Size**: Larger municipalities are better represented due to better archival systems, while smaller ones, especially in earlier years, may be underrepresented or entirely missing. For example, in smaller municipalities, even election results may be incomplete, and only partial lists of candidates or winners could be retrieved from local newspapers or unofficial records.
+
+### Implications
+1. **Strengths**:
+   - CMED consolidates extensive election data, offering a view of Canadian municipal politics.
+   - Standardized data practices in recent years ensure high-quality information for contemporary analyses.
+
+2. **Limitations**:
+   - Historical and regional inconsistencies, particularly for small municipalities and early records, could bias analyses.
+   - Manual gender coding in older data introduces potential for error and subjectivity.
+   - The underrepresentation of smaller municipalities may skew findings related to rural-urban dynamics or trends over time. For example some provinces like Quebec are overrepresented, while other smaller territories have limited data.
+   - As an observational dataset, the CMED cannot account for unmeasured variables like campaign funding or voter turnout, which may influence election outcomes.
+
+
+
+## Observational Data and implications
+The **Canadian Municipal Elections Database (CMED)** is an observational dataset that captures real-world electoral outcomes without experimental manipulation. While it enables analysis of relationships between variables such as gender, incumbency, and election success, it does not establish causality. For instance, observed gender disparities in election outcomes could be influenced by unmeasured factors like regional attitudes toward female leadership or voter demographics, which are not included in the dataset.
+
+Potential confounders such as campaign funding and media coverage, also play significant roles in electoral success but are absent from CMED. As noted by [@SpringerMediaAttention], the absence of media coverage data in CMED limits the ability to fully account for factors influencing electoral success. Additionally, campaign spending has been shown to influence election outcomes, as increased financial resources can enhance a candidate's visibility and voter outreach [@EmoryCampaignSpending]. The absence of these variables in CMED means that analyses may conflate the effects of gender with other underlying factors, potentially biasing the results.
+
+Despite these limitations, CMED provides a valuable foundation for identifying trends and patterns in electoral behavior. It offers a basis for future research that incorporates additional variables or employs experimental designs to explore causal relationship. For example, future research can consider integrating additional contextual variables, such as voter turnout, campaign funding, and party affiliations, to provide a better understanding of electoral success. 
+
+
+## Simulation: Sampling Bias and Validation
+
+```{r}
+#| label: tbl-bias
+#| fig-cap: Bootstrap summary statistics showing the mean success rates and standard deviations for female candidates in 'Small' municipalities (fewer than 10 female candidates) and 'Large' municipalities, highlighting higher average success rates and lower variability in smaller municipalities compared to larger ones.
+#| echo: false
+#| warning: false
+#| message: false
+
+# Load required libraries
+# library(dplyr)
+# library(boot)
+
+
+# Step 1: Calculate municipality-level success rates for female candidates
+municipality_success <- train_data |>
+  filter(gender == 1) |>  # Only female candidates
+  group_by(municipality) |>
+  summarise(
+    success_rate = mean(elected == 1),
+    total_candidates = n()
+  ) |>
+  ungroup()
+
+# Step 2: Classify municipalities as small or large based on candidate count
+# Assume small municipalities have fewer than 10 female candidates
+municipality_success <- municipality_success |>
+  mutate(size_category = ifelse(total_candidates < 10, "Small", "Large"))
+
+
+set.seed(1202)  # For reproducibility
+
+# Number of bootstrap iterations
+n_boot <- 1000
+
+# Initialize storage for bootstrap results
+small_rates <- numeric(n_boot)
+large_rates <- numeric(n_boot)
+
+# Perform bootstrap
+for (i in 1:n_boot) {
+  # Resample the data with replacement
+  bootstrap_sample <- municipality_success[sample(1:nrow(municipality_success), replace = TRUE), ]
+  
+  # Calculate mean success rates for each size category
+  summary <- bootstrap_sample |>
+    group_by(size_category) |>
+    summarise(mean_success_rate = mean(success_rate, na.rm = TRUE), .groups = "drop")
+  
+  # Extract values for "Small" and "Large" categories
+  small_rates[i] <- summary$mean_success_rate[summary$size_category == "Small"]
+  large_rates[i] <- summary$mean_success_rate[summary$size_category == "Large"]
+}
+
+# Summarize bootstrap results
+summary_stats <- data.frame(
+  Size = c("Small", "Large"),
+  Mean_Success_Rate = c(mean(small_rates, na.rm = TRUE), mean(large_rates, na.rm = TRUE)),
+  SD = c(sd(small_rates, na.rm = TRUE), sd(large_rates, na.rm = TRUE))
+)
+
+
+# Print the summary statistics
+print(summary_stats)
+
+```
+```{r}
+#| label: fig-bias
+#| fig-cap: Plot of bootstrap distributions for female candidates' success rates in 'Small' (fewer than 10 female candidates) and 'Large' municipalities, showing higher success rates with lower variability in smaller municipalities and lower success rates with higher variability in larger ones."
+#| echo: false
+#| warning: false
+#| message: false
+
+# Plot the distributions
+bootstrap_results <- data.frame(
+  Success_Rate = c(small_rates, large_rates),
+  Size = rep(c("Small", "Large"), each = n_boot)
+)
+
+ggplot(bootstrap_results, aes(x = Success_Rate, fill = Size)) +
+  geom_density(alpha = 0.6) +
+  labs(
+    title = "Bootstrap Distribution of Success Rates by Municipality Size",
+    x = "Success Rate",
+    y = "Density",
+    fill = "Size Category"
+  ) +
+  theme_minimal()
+
+```
+
+### Bootstrap Methodology
+A bootstrap analysis was performed to evaluate sampling biases in the dataset, focusing on how municipality size affects female candidate success rates. Using 1,000 resamples to estimated success rates for "Small" municipalities (fewer than 10 female candidates) and "Large" municipalities separately. This method captures the variability and central tendency of success rates without assuming a specific underlying distribution, making it well-suited for observational data like the CMED.
+
+### Results and Implications
+The bootstrap results (@tbl-bias) and (@fig-bias) show that female candidates in small municipalities have higher average success rates compared to those in large municipalities. This suggests that smaller municipalities may provide a more supportive electoral environment, while larger municipalities present more complex and competitive dynamics. These findings indicate the potential for sampling bias, as the overrepresentation of smaller municipalities could skew observed trends in gender-related election success.
+
+The disparities in candidate distribution across municipalities further highlight the potential for sampling bias in the dataset. Since the smallest municipalities hosting far fewer candidates than the largest ones, this imbalance underscores the need to consider municipality size as a factor influencing electoral outcomes and to address potential biases in the dataset. Failure to address these biases could lead to overestimating the overall success rates of female candidates and misinterpreting the broader gender dynamics in Canadian municipal elections.
+
+### Possible Alternative Methodologies
+An possible approach for improving the analysis of the CMED dataset would involve weighting to adjust for over- or underrepresentation of specific municipalities or candidate groups. For instance, smaller municipalities, which tend to have disproportionately high success rates for female candidates, could be weighted less to prevent biases in gender-related analyses. Similarly, larger municipalities could receive higher weights to better reflect their influence in overall electoral trends
+
 
 # Additional data details {#sec-data-details}
 
-# Model details {#sec-model-details}
+## Data cleaning processes
+
+After extract Achieved format of raw data [@CMED] from Borealis website. I prepare the raw data for analysis using several R packages. Including **`tidyverse`** for data manipulation and transformation, **`janitor`** for cleaning column names, **`dplyr`** for selecting and mutating variables, and **`rsample`** for splitting the dataset into training and test sets.
+
+The data cleaning process followed these steps:
+
+1. **Column Selection and Naming**: The **`janitor::clean_names()`** function was used to standardize column names to a consistent format. Only relevant columns were retained, including `race_id`, `first_name`, `last_name`, `municipality`, `gender`, `elected`, `incumbent`, `election_year`, and `province`.
+
+2. **Variable Transformation**: The `gender` variable originally has value 'M' and 'F' indicating male and female, I used mutate() function to recode it with binary values, with `1` representing female candidates and `0` representing male candidates. The `incumbent` and `elected` columns were converted to factors, ensuring appropriate data types for analysis.
+
+3. **Handling Missing Values and Duplicates**: Observations with missing values were removed using **`tidyr::drop_na()`**, and duplicate rows were eliminated using **`dplyr::distinct()`**, ensuring data consistency.
+
+4. **Factor Level Reordering**: The `elected` variable was reordered with levels `0` (not elected) and `1` (elected) to ensure clarity in logistic regression modeling.
+
+5. **Data Splitting**: The cleaned dataset was randomly split into training (70%) and test (30%) sets using **`rsample::initial_split()`**, with a fixed random seed for reproducibility. These sets formed the basis for model fitting and validation.
+
+6. **Identifying Earliest Year of Female Participation**: The dataset was grouped by gender to identify the first year female candidates participated in elections, guiding the decision to use only data after 1910 to ensure both genders were represented.
+
+7. **Filtering by Year**: To address the absence of female candidates in early years, only elections after 1910 were included in the training and test datasets, ensuring balanced representation for gender-based analysis.
+
+Finally, I saved the cleaned dataset and the training/testing splits in CSV and Parquet formats using [@arrow], facilitating efficient storage and future accessibility.
+
+## Cleaned dataset 
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: tbl-clean
+#| tbl-cap: Cleaned dataset before spliting into train and test dataset
+
+# library(kableExtra)
+
+# Display a cleaner table
+head(data) |>
+  kable(
+    caption = "Cleaned dataset before splitting into train and test dataset",
+    col.names = c("Race ID", "First", "Last", "City", "Gender", "Elect", "Incumb", "Year", "Prov")
+  ) |>
+  kable_styling(bootstrap_options = c("striped", "condensed"), full_width = FALSE, font_size = 8)
 
 
+```
+@tbl-clean provides a glimpse of the cleaned dataset before spliting into train and test data.
+
+# Model details: summary, validation and checking {#sec-model-details}
+## Model Summary
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: tbl-model-coefficients
+#| tbl-cap: Summary of the model
+
+# Extract coefficients
+coefficients <- broom::tidy(model, conf.int = TRUE)
+coefficients |> kable(digits = 2)
+```
+
+@tbl-model-coefficients presents my logistic regression model's coefficients alongside their standard errors and 95% credible intervals. The standard error (SE) indicates how accurately a sample statistic represents the corresponding population parameter, reflecting the variability of sample estimates around the true population value.
+
+## Train Test Validation
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+# Convert probabilities to binary predictions (threshold = 0.5)
+test_data$predicted_class <- ifelse(test_data$predicted_prob > 0.5, 1, 0)
+
+```
+
+```{r}
+#| label: tbl-matrix
+#| tbl-cap: A Matrix justify the prediction of the model:Evaluate the model’s performance for both "elected-1" and "not elected-0" cases.
+#| echo: false
+#| warning: false
+#| message: false
+
+confusion <- table(
+  Actual = factor(test_data$elected, levels = c(0, 1), labels = c("Not Elected", "Elected")),
+  Predicted = factor(test_data$predicted_class, levels = c(0, 1), labels = c("Not Elected", "Elected"))
+)
+
+# Display the matrix with labels
+knitr::kable(confusion)
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+accuracy <- sum(diag(confusion)) / sum(confusion)
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+null_deviance <- model$null.deviance
+residual_deviance <- model$deviance
+mcfadden_r2 <- 1 - (residual_deviance / null_deviance)
+
+```
+
+```{r}
+#| label: fig-roc
+#| fig-cap: ROC Curve for the logistic regression model, illustrating the trade-off between sensitivity and specificity, with an AUC of 0.7414 reflecting a fair level of discriminatory accuracy in predicting election outcomes.
+#| echo: false
+#| warning: false
+#| message: false
 
 
+# Load required library
+# library(pROC)
 
+# Generate ROC curve
+roc_curve <- roc(test_data$elected, test_data$predicted_prob)
+
+# Plot the ROC curve
+plot(
+  roc_curve,
+  main = "ROC Curve",
+  col = "blue",
+  lwd = 2
+)
+
+# Add AUC to the plot
+legend("bottomright", legend = paste("AUC =", round(auc(roc_curve), 4)), col = "blue", lwd = 2)
+
+```
+
+A train-test split validation approach was employed to evaluate the performance of the logistic regression model in predicting the probabilities of being elected in Canadian municipal elections. The dataset was randomly divided into a training set (70%) for model fitting and a test set (30%) for evaluation.
+
+The model was fitted using the `glm()` function on the training data, and predictions were generated for the test set. A matrix (@tbl-matrix) highlights the model's strengths and weaknesses: it performs well in predicting "Not Elected" but has greater difficulty predicting "Elected," likely reflecting data imbalance or complexities in modeling election dynamics.
+
+Three key performance metrics were calculated:
+
+- **Accuracy:** 70.92%, indicating that the model correctly classifies about 70% of the test set observations. However, accuracy alone may not fully capture model performance, especially if the dataset is imbalanced (e.g., more "Not Elected" cases than "Elected").
+
+- **McFadden's R^2:** 0.16, suggesting a modest model fit. While lower than R square values typically observed in linear regression, this is acceptable in logistic regression, where values between 0.2 and 0.4 are considered strong.
+
+- **ROC Curve and AUC:** 0.7414, The ROC curve (@fig-roc) evaluates the model's ability to distinguish between elected and non-elected candidates, with an AUC of 0.7414 indicating a fair level of discriminatory power.
+
+Overall, the validation indicators indicate that the model is reasonably effective in predicting election outcomes based on gender, incumbency, and interactions, aligning with the study's objective of analyzing the factors influencing electoral success. Though there may be limitations in capturing the factors influencing election success.
+
+## Residual plot:
+```{r}
+#| label: fig-residual
+#| fig-cap: "Showing residuals vs. fitted values for the logistic regression model, indicating a reasonable fit with minor deviations at extreme fitted values."
+#| echo: false
+#| warning: false
+#| message: false
+
+# Load arm package
+# library(arm)
+
+# Generate binned residual plot
+binnedplot(
+  fitted(model), 
+  residuals(model, type = "response"), 
+  xlab = "Fitted Values", 
+  ylab = "Residuals", 
+  main = "Binned Residual Plot"
+)
+
+```
+@fig-residual evaluates the goodness-of-fit of the logistic regression model by examining the relationship between fitted values and residuals. In this plot, most residuals cluster around the horizontal dashed line at zero, indicating that the model's predictions align well with observed outcomes. There are no obvious systematic patterns or trends, which suggests that the model effectively captures the relationship between predictors and the outcome variable. However, there is noticeable variability at the extremes of the fitted values (near 0.2 and 0.8), which may indicate potential issues with model accuracy for these ranges. This could result from fewer observations at these extremes or limitations in the model's ability to capture the underlying patterns. Overall, the lack of significant deviations or systematic biases in residuals supports the model's validity, while the observed variability at the edges highlights areas where the model might be improved, such as through additional predictors or interaction terms. This plot provides evidence that the model is appropriate for addressing the research aim of analyzing the effects of gender and incumbency on election outcomes.
+
+
+## Check Multicollinearity
+```{r}
+#| label: tbl-vif
+#| tbl-cap: "Variance Inflation Factor (VIF) values for the predictors in the logistic regression model."
+#| echo: false
+#| warning: false
+#| message: false
+
+# library(car)
+# library(knitr)
+# library(kableExtra)
+
+# VIF table
+vif(model)
+
+```
+@tbl-vif shows the **Variance Inflation Factor (VIF)** values which measure potential multicollinearity in the model. The high VIF for `gender` (\(147.19\)) and the interaction term `gender:election_year` (\(12.13\)) reflects a common characteristic of models with interaction terms, as base variables like `gender` inherently overlap with their interactions. This multicollinearity does not invalidate the model but highlights the trade-off between capturing relationships and increased variable dependency. Notably, `incumbent` (\(1.15\)) and `gender:incumbent` (\(1.26\)) exhibit low VIF values, suggesting little collinearity for these predictors. The inclusion of interaction terms is central to this study’s aim of examining gender and incumbency effects over time and across contexts, making the added complexity from multicollinearity both anticipated and justified. This ensures the model effectively captures the evolving dynamics of electoral outcomes, aligning with the research objectives.
 
 \newpage
 

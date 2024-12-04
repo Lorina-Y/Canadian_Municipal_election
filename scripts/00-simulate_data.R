@@ -1,52 +1,76 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the 
-  #state and party that won each division.
-# Author: Rohan Alexander
-# Date: 26 September 2024
-# Contact: rohan.alexander@utoronto.ca
+# Purpose: Simulated the analysis dataset
+# Author: Hanqing Yang
+# Date: 30 November 2024
+# Contact: hanq.yang@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: The `tidyverse` package must be installed
-# Any other information needed? Make sure you are in the `starter_folder` rproj
+# Pre-requisites: None
 
 
 #### Workspace setup ####
 library(tidyverse)
-set.seed(853)
+set.seed(1202)
 
 
 #### Simulate data ####
-# State names
-states <- c(
-  "New South Wales",
-  "Victoria",
-  "Queensland",
-  "South Australia",
-  "Western Australia",
-  "Tasmania",
-  "Northern Territory",
-  "Australian Capital Territory"
+# Number of rows in the dataset
+n <- 1000
+
+# Generate race_id
+race_id <- sample(c("Abbotsford2022Mayor99", "AlertBay2022Councillor99", 
+                    "Belcarra2022Mayor99", "CacheCreek2022Mayor99", 
+                    "Courtenay2022Mayor99", "Comox2022Mayor99"),
+                  n, replace = TRUE)
+# Generate first_name, second_name values
+first_name <- sample(c("Ross", "Siemens", "D. Paul", "Dave", "Patricia", 
+                        "Mark", "Kelly", "Dave", "Sandy", "Bharathi"), 
+                      n, replace = TRUE)
+last_name <- sample(c("Manjit", "Sohi", "Pellikaan", "Sidhu", "Ross", 
+                       "Warkentin", "Chahal", "Loewen", "Blue", "Sandhu"),
+                     n, replace = TRUE)
+
+
+# municipality names
+municipality <- sample(c(
+  "Abbotsford",
+  "Hudson",
+  "Anmore",
+  "Armstrong",
+  "Ashcroft",
+  "Belcarra",
+  "Cache Creek",
+  "Campbell River"
+), n, replace = TRUE)
+
+# Generate a binary factor variable for gender
+gender <- factor(
+  sample(c(1, 0), n, replace = TRUE, prob = c(0.3, 0.7)) # Adjust probabilities if needed
 )
 
-# Political parties
-parties <- c("Labor", "Liberal", "Greens", "National", "Other")
-
-# Create a dataset by randomly assigning states and parties to divisions
-analysis_data <- tibble(
-  division = paste("Division", 1:151),  # Add "Division" to make it a character
-  state = sample(
-    states,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.25, 0.25, 0.15, 0.1, 0.1, 0.1, 0.025, 0.025) # Rough state population distribution
-  ),
-  party = sample(
-    parties,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.40, 0.40, 0.05, 0.1, 0.05) # Rough party distribution
-  )
+# Generate a binary factor variable for elected
+elected <- factor(sample(c(1, 0), n, replace = TRUE, prob = c(0.5, 0.5)) # Adjust probabilities if needed
 )
+
+# Generate a binary factor variable for incumbent
+incumbent <- factor(sample(c(1, 0), n, replace = TRUE, prob = c(0.5, 0.5)) # Adjust probabilities if needed
+)
+
+# Generate election year values
+election_year <- round(runif(n, min = 1867, max = 2022))
+
+#Province
+province <- sample(c("British Columbia", "Quebec", "Alberta", "Ontario", 
+                     "Manitoba", "Nova Scotia", "New Brunswick", 
+                     "Prince Edward Island", "Newfoundland and Labrador",
+                     "Saskatchewan", "Yukon", "Northwest Territories"), n, replace = TRUE)
+
+# Create dataframe
+simulated_data <- data.frame(race_id, first_name, last_name, municipality, gender, elected, 
+                   incumbent, election_year, province)
+
+# View the first few rows of the dataset
+head(simulated_data)
 
 
 #### Save data ####
-write_csv(analysis_data, "data/00-simulated_data/simulated_data.csv")
+write_csv(simulated_data, "data/00-simulated_data/simulated_data.csv")
