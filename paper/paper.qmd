@@ -847,6 +847,180 @@ The disparities in candidate distribution across municipalities further highligh
 An possible approach for improving the analysis of the CMED dataset would involve weighting to adjust for over- or underrepresentation of specific municipalities or candidate groups. For instance, smaller municipalities, which tend to have disproportionately high success rates for female candidates, could be weighted less to prevent biases in gender-related analyses. Similarly, larger municipalities could receive higher weights to better reflect their influence in overall electoral trends
 
 
+## Idealized Methodology: Survey
+### Overview
+This survey designed to collect data on factors influencing municipal election outcomes in Canada, with a focus on gender dynamics and the impact of incumbency. Using a hypothetical budget of $75,000, the methodology combines survey-based candidate and voter data with archival election records. The goal is to create a dataset that captures the multifaceted aspects of electoral success, including demographics, voter perceptions, campaign strategies, and municipal contexts.
+
+### Data Collection Approach
+
+#### Candidate Surveys
+
+**Objective**: Gather detailed information on candidates’ demographics, campaign strategies, and perceptions of electoral challenges.
+
+**Survey Details**:
+
+- **Key Variables**: Gender, age, campaign funding, previous office experience, party affiliation, media coverage, and voter engagement.
+
+- **Sample Size**: Target 5000 candidates across various municipalities, stratified by gender, incumbency, and municipality size.
+
+- **Distribution**: Surveys will be distributed through municipal offices, email invitations, and professional networks.
+
+#### Voter Surveys
+
+**Objective**: Understand voter perceptions and preferences regarding male and female candidates.
+
+**Survey Details**:
+
+- **Key Variables**: Voter demographics (gender, age, education), attitudes toward female candidates, incumbency preferences, and voting behavior.
+
+- **Sample Size**: Target 10,000 respondents, ensuring representation across provinces and urban/rural areas.
+
+- **Recruitment**: Use online survey panels and social media advertising to reach diverse demographics.
+
+#### Archival Election Records
+
+**Objective**: Supplement survey data with historical election results and contextual information.
+
+**Sources**:
+- Municipal and provincial archives for official election results.
+- Media archives for campaign coverage.
+
+
+### Sampling Approach
+
+#### Stratified Sampling
+
+To ensure representativeness, the sampling strategy will stratify by:
+
+- **Municipality Size**: Small, medium, and large municipalities.
+
+- **Province**: To capture regional diversity.
+
+- **Candidate Characteristics**: Gender and incumbency status.
+
+#### Sample Size and Justification
+
+- **Candidates**: A 5000-candidates sample to ensures reliable analyses of gender-incumbency interactions.
+- **Voters**: A 10,000-voter sample provides statistical reliability and captures diverse opinions across demographics.
+
+### Data Validation and Quality Control
+
+1. **Cross-Verification**: Match candidate responses with archival election records to validate accuracy.
+2. **Attention Checks**: Include control questions in voter surveys to ensure attentiveness.
+3. **Consistency Analysis**: Cross-check voter responses for logical inconsistencies.
+4. **Media Cross-Reference**: Validate reported media coverage using digital news archives.
+
+### Hypothetical Budget Allocation
+
+- **Candidate Surveys**: $20,000
+- **Voter Surveys**: $30,000
+- **Archival Research**: $15,000
+- **Data Validation and Cleaning**: $10,000
+
+### Implementation Plan
+
+1. **Survey Design and Pilot Testing**: Months 1-2
+2. **Survey Distribution and Archival Research**: Months 3-6
+3. **Data Cleaning and Validation**: Months 7-8
+4. **Analysis and Reporting**: Months 9-10
+
+
+### Survey Structures and Example Questions
+
+#### Candidate Surveys
+**Purpose**: To collect detailed information about candidates’ demographics, campaign strategies, and their experiences in municipal elections.
+
+**Structure**:
+
+1. **Demographics**  
+   - Collect information on candidates’ gender, age, ethnicity, and education.
+  **Example Questions**:  
+     - *What is your gender?*  
+       - Male / Female / Non-binary / Prefer not to say  
+     - *What is your highest level of education completed?*  
+       - High school / Associate’s degree / Bachelor’s degree / Master’s degree / Doctorate / Other  
+
+2. **Election Context**  
+   - Gather data on candidates’ incumbency status, office sought, and past political experience.  
+   **Example Questions**:  
+     - *Are you the incumbent for the office you are contesting?*  
+       - Yes / No  
+     - *Have you held any public office before? If yes, please specify.*  
+       - [Open-ended response]  
+
+3. **Campaign Details**  
+   - Obtain insights into candidates’ campaign strategies, funding, and challenges.  
+   **Example Questions**:  
+     - *What was your total campaign budget?*  
+       - [Numeric response in CAD]  
+     - *What were your top three priorities during the campaign?*  
+       - [Open-ended response]  
+     - *Did you face any barriers during your campaign due to your gender? If yes, please explain.*  
+       - [Open-ended response]  
+
+4. **Perceptions and Outcomes**  
+   - Understand candidates’ perspectives on their electoral performance and challenges.  
+   **Example Questions**:  
+     - *What do you believe was the most significant factor in your election outcome?*  
+       - [Open-ended response]  
+     - *On a scale of 1 to 5, how would you rate the fairness of media coverage you received?*  
+       - 1 (Very unfair) to 5 (Very fair)  
+
+---
+
+#### Voter Surveys
+**Purpose**: To assess voter attitudes and behaviors, particularly regarding gender and incumbency in municipal elections.
+
+**Structure**:
+
+1. **Demographics**  
+   - Collect voters’ age, gender, ethnicity, education level, and income range.  
+   **Example Questions**:  
+     - *What is your age?*  
+       - Under 18 / 18–24 / 25–34 / 35–44 / 45–54 / 55–64 / 65+  
+     - *What is your highest level of education completed?*  
+       - High school / Associate’s degree / Bachelor’s degree / Master’s degree / Doctorate / Other  
+
+2. **Voting Behavior**  
+   - Capture voters’ participation and decision-making in recent municipal elections.  
+   **Example Questions**:  
+     - *Did you vote in the most recent municipal election?*  
+       - Yes / No  
+     - *Which of the following best describes how you chose your candidate?*  
+       - Based on party affiliation / Based on campaign promises / Based on personal characteristics (e.g., gender, ethnicity) / Other  
+
+3. **Attitudes Toward Gender and Leadership**  
+   - Assess voter perceptions of gender’s role in leadership and electoral success.  
+   **Example Questions**:  
+     - *Do you believe gender affects a candidate’s chances of winning an election?*  
+       - Yes / No / Not sure  
+     - *On a scale of 1 to 5, how much do you value having women in leadership positions?*  
+       - 1 (Not at all) to 5 (Very much)  
+
+4. **Preferences for Incumbents vs. Challengers**  
+   - Gauge voter attitudes toward incumbency and its advantages.  
+   **Example Questions**:  
+     - *How often do you vote for an incumbent candidate?*  
+       - Always / Often / Sometimes / Rarely / Never  
+     - *Do you believe incumbents have an unfair advantage in elections?*  
+       - Yes / No / Not sure  
+
+
+#### Survey Implementation Notes
+- Both surveys will include attention check questions to ensure data quality. 
+
+- Surveys will be mobile-friendly and available in English and French for accessibility.  
+
+- Responses will be anonymized to maintain confidentiality and encourage honest participation.  
+
+#### Integration with Dataset
+Survey responses will complement archival election data, providing a richer context to analyze gender dynamics, voter behavior, and election outcomes. By linking survey insights with candidate and voter demographics, the methodology will enable more reliable modeling of factors influencing municipal election success.
+
+### Conclusion
+This idealized methodology combines candidate and voter surveys with archival data to build a dataset capable of addressing complex questions about gender dynamics and other factors affect electoral success in Canadian municipal elections. By integrating diverse data sources and ensuring methodological reliability, this approach would provide deeper understanding into the structural and social factors shaping election outcomes.
+
+
+
 # Additional data details {#sec-data-details}
 
 ## Data cleaning processes
