@@ -1,152 +1,1001 @@
-division,state,party
-Division 1,Victoria,Liberal
-Division 2,New South Wales,Liberal
-Division 3,Tasmania,Liberal
-Division 4,New South Wales,Liberal
-Division 5,Queensland,Liberal
-Division 6,New South Wales,Labor
-Division 7,Victoria,Liberal
-Division 8,Western Australia,Labor
-Division 9,Western Australia,Greens
-Division 10,Queensland,Labor
-Division 11,Queensland,Labor
-Division 12,Northern Territory,Liberal
-Division 13,New South Wales,Labor
-Division 14,Western Australia,Labor
-Division 15,Western Australia,National
-Division 16,Victoria,Liberal
-Division 17,South Australia,Liberal
-Division 18,Victoria,Liberal
-Division 19,Western Australia,Labor
-Division 20,South Australia,Labor
-Division 21,New South Wales,Liberal
-Division 22,Queensland,Greens
-Division 23,New South Wales,Liberal
-Division 24,New South Wales,Liberal
-Division 25,Queensland,Labor
-Division 26,Victoria,National
-Division 27,New South Wales,Liberal
-Division 28,Queensland,Liberal
-Division 29,Tasmania,Liberal
-Division 30,South Australia,Liberal
-Division 31,New South Wales,Liberal
-Division 32,Victoria,Labor
-Division 33,Tasmania,Liberal
-Division 34,New South Wales,Liberal
-Division 35,Western Australia,Labor
-Division 36,New South Wales,Liberal
-Division 37,Tasmania,Greens
-Division 38,Tasmania,Labor
-Division 39,Victoria,Greens
-Division 40,South Australia,Labor
-Division 41,New South Wales,Other
-Division 42,New South Wales,Other
-Division 43,Tasmania,Labor
-Division 44,Tasmania,National
-Division 45,Queensland,Liberal
-Division 46,Australian Capital Territory,Other
-Division 47,Queensland,Labor
-Division 48,Queensland,Other
-Division 49,South Australia,Liberal
-Division 50,Victoria,National
-Division 51,South Australia,Liberal
-Division 52,Victoria,Labor
-Division 53,South Australia,National
-Division 54,Queensland,Liberal
-Division 55,Queensland,Labor
-Division 56,South Australia,Liberal
-Division 57,New South Wales,Other
-Division 58,Northern Territory,Liberal
-Division 59,New South Wales,Labor
-Division 60,Western Australia,Labor
-Division 61,New South Wales,Liberal
-Division 62,South Australia,Liberal
-Division 63,Queensland,Labor
-Division 64,Tasmania,Labor
-Division 65,South Australia,Labor
-Division 66,Victoria,Labor
-Division 67,Queensland,Liberal
-Division 68,Queensland,Liberal
-Division 69,Tasmania,Labor
-Division 70,South Australia,National
-Division 71,Australian Capital Territory,Labor
-Division 72,Western Australia,Labor
-Division 73,Queensland,National
-Division 74,Victoria,Labor
-Division 75,Western Australia,Labor
-Division 76,Tasmania,Labor
-Division 77,Queensland,Liberal
-Division 78,Western Australia,Liberal
-Division 79,Queensland,Labor
-Division 80,Queensland,Liberal
-Division 81,Victoria,Labor
-Division 82,New South Wales,Liberal
-Division 83,Victoria,Liberal
-Division 84,Queensland,National
-Division 85,Western Australia,Liberal
-Division 86,New South Wales,Labor
-Division 87,Queensland,Liberal
-Division 88,New South Wales,Liberal
-Division 89,Tasmania,Liberal
-Division 90,South Australia,Labor
-Division 91,Victoria,Liberal
-Division 92,New South Wales,Labor
-Division 93,Tasmania,Labor
-Division 94,South Australia,Labor
-Division 95,Victoria,Liberal
-Division 96,Victoria,Labor
-Division 97,Western Australia,Liberal
-Division 98,Queensland,Liberal
-Division 99,South Australia,Liberal
-Division 100,New South Wales,Labor
-Division 101,South Australia,Labor
-Division 102,New South Wales,Labor
-Division 103,Victoria,Labor
-Division 104,Victoria,Labor
-Division 105,South Australia,Other
-Division 106,Western Australia,Labor
-Division 107,Tasmania,Liberal
-Division 108,Victoria,Labor
-Division 109,Queensland,Liberal
-Division 110,Victoria,Labor
-Division 111,Australian Capital Territory,Labor
-Division 112,Victoria,Liberal
-Division 113,Victoria,Liberal
-Division 114,Victoria,Liberal
-Division 115,Tasmania,Labor
-Division 116,Victoria,Labor
-Division 117,New South Wales,Labor
-Division 118,Victoria,Labor
-Division 119,Victoria,Greens
-Division 120,Northern Territory,Labor
-Division 121,South Australia,Liberal
-Division 122,New South Wales,Liberal
-Division 123,New South Wales,Labor
-Division 124,New South Wales,Liberal
-Division 125,New South Wales,National
-Division 126,New South Wales,Labor
-Division 127,Queensland,Labor
-Division 128,New South Wales,Other
-Division 129,Queensland,Labor
-Division 130,Australian Capital Territory,Liberal
-Division 131,Tasmania,Greens
-Division 132,New South Wales,National
-Division 133,New South Wales,Labor
-Division 134,Northern Territory,Labor
-Division 135,South Australia,National
-Division 136,Victoria,Labor
-Division 137,Tasmania,National
-Division 138,South Australia,Liberal
-Division 139,New South Wales,Labor
-Division 140,Victoria,Other
-Division 141,Queensland,Greens
-Division 142,Victoria,National
-Division 143,Western Australia,Labor
-Division 144,Victoria,Labor
-Division 145,Queensland,Liberal
-Division 146,Tasmania,Liberal
-Division 147,South Australia,Liberal
-Division 148,Victoria,Labor
-Division 149,New South Wales,National
-Division 150,New South Wales,Labor
-Division 151,Victoria,Liberal
+race_id,first_name,last_name,municipality,gender,elected,incumbent,election_year,province
+CacheCreek2022Mayor99,Ross,Ross,Belcarra,1,1,0,1902,Manitoba
+Abbotsford2022Mayor99,Mark,Sandhu,Cache Creek,1,1,1,1967,Yukon
+Belcarra2022Mayor99,Mark,Warkentin,Ashcroft,1,0,1,1984,Prince Edward Island
+CacheCreek2022Mayor99,Siemens,Sidhu,Ashcroft,0,1,1,1952,Saskatchewan
+Belcarra2022Mayor99,D. Paul,Ross,Hudson,1,0,0,1885,Manitoba
+Courtenay2022Mayor99,Mark,Manjit,Abbotsford,1,1,0,1933,Alberta
+Courtenay2022Mayor99,Dave,Chahal,Cache Creek,0,1,0,1948,Alberta
+AlertBay2022Councillor99,Kelly,Sidhu,Ashcroft,0,1,1,1957,Nova Scotia
+Abbotsford2022Mayor99,Kelly,Loewen,Campbell River,0,0,0,1967,British Columbia
+Courtenay2022Mayor99,Bharathi,Manjit,Armstrong,0,1,0,1977,British Columbia
+Belcarra2022Mayor99,Dave,Loewen,Belcarra,0,0,0,1962,Northwest Territories
+Belcarra2022Mayor99,Dave,Loewen,Abbotsford,1,0,1,2018,Quebec
+Belcarra2022Mayor99,Mark,Warkentin,Anmore,0,1,0,1879,Prince Edward Island
+Comox2022Mayor99,Ross,Sohi,Abbotsford,1,0,0,1917,New Brunswick
+Belcarra2022Mayor99,Sandy,Ross,Hudson,0,1,0,1926,British Columbia
+CacheCreek2022Mayor99,Bharathi,Sandhu,Cache Creek,0,0,0,2008,Ontario
+CacheCreek2022Mayor99,Kelly,Warkentin,Belcarra,0,0,0,1944,Saskatchewan
+Belcarra2022Mayor99,D. Paul,Sandhu,Anmore,0,0,1,1958,Saskatchewan
+AlertBay2022Councillor99,Siemens,Ross,Cache Creek,1,0,1,1995,Prince Edward Island
+AlertBay2022Councillor99,Dave,Sandhu,Belcarra,0,1,1,1991,Northwest Territories
+Belcarra2022Mayor99,Dave,Loewen,Anmore,0,0,0,1920,British Columbia
+Abbotsford2022Mayor99,Sandy,Pellikaan,Armstrong,0,1,1,1875,Quebec
+Comox2022Mayor99,Dave,Loewen,Abbotsford,0,1,1,2005,Ontario
+Abbotsford2022Mayor99,Kelly,Loewen,Campbell River,0,0,1,1988,British Columbia
+AlertBay2022Councillor99,Patricia,Ross,Campbell River,1,0,1,2018,Ontario
+AlertBay2022Councillor99,Mark,Loewen,Abbotsford,0,1,0,2013,Prince Edward Island
+Comox2022Mayor99,Siemens,Blue,Armstrong,0,1,0,1882,Manitoba
+AlertBay2022Councillor99,Mark,Sidhu,Cache Creek,0,1,1,1871,Quebec
+CacheCreek2022Mayor99,Sandy,Manjit,Cache Creek,0,0,1,1917,Northwest Territories
+AlertBay2022Councillor99,Dave,Blue,Ashcroft,0,0,0,1979,Alberta
+Belcarra2022Mayor99,Kelly,Sohi,Abbotsford,0,0,1,1942,Saskatchewan
+Courtenay2022Mayor99,Patricia,Pellikaan,Armstrong,0,1,1,1988,Manitoba
+Courtenay2022Mayor99,Dave,Loewen,Belcarra,0,1,0,1884,Manitoba
+AlertBay2022Councillor99,Mark,Ross,Cache Creek,1,0,0,1994,Manitoba
+AlertBay2022Councillor99,Sandy,Manjit,Anmore,0,1,1,1970,Northwest Territories
+AlertBay2022Councillor99,Dave,Chahal,Campbell River,0,1,0,1972,Alberta
+CacheCreek2022Mayor99,Siemens,Manjit,Campbell River,0,0,0,2001,Saskatchewan
+Comox2022Mayor99,Ross,Manjit,Anmore,0,1,1,1892,British Columbia
+AlertBay2022Councillor99,Patricia,Loewen,Armstrong,1,0,1,1955,Saskatchewan
+AlertBay2022Councillor99,Mark,Loewen,Cache Creek,0,0,1,1935,Newfoundland and Labrador
+Courtenay2022Mayor99,Siemens,Sohi,Campbell River,1,1,1,1902,Ontario
+CacheCreek2022Mayor99,Dave,Blue,Anmore,1,1,0,1870,Ontario
+CacheCreek2022Mayor99,Mark,Sidhu,Cache Creek,1,1,0,1979,New Brunswick
+Comox2022Mayor99,Ross,Sandhu,Cache Creek,0,0,0,1883,Nova Scotia
+Courtenay2022Mayor99,Patricia,Manjit,Belcarra,0,0,1,1877,British Columbia
+Comox2022Mayor99,Kelly,Sohi,Campbell River,0,1,1,1923,Nova Scotia
+AlertBay2022Councillor99,Patricia,Sidhu,Anmore,0,0,1,1872,Ontario
+AlertBay2022Councillor99,Bharathi,Warkentin,Campbell River,0,0,0,2009,Quebec
+AlertBay2022Councillor99,Kelly,Sandhu,Belcarra,1,1,0,1890,New Brunswick
+CacheCreek2022Mayor99,Kelly,Ross,Abbotsford,0,1,0,1995,Prince Edward Island
+Comox2022Mayor99,D. Paul,Ross,Abbotsford,0,1,1,1943,Newfoundland and Labrador
+Courtenay2022Mayor99,Mark,Blue,Campbell River,1,1,1,1909,Nova Scotia
+AlertBay2022Councillor99,Kelly,Sandhu,Abbotsford,1,0,0,1968,Quebec
+CacheCreek2022Mayor99,Mark,Warkentin,Belcarra,0,1,1,1895,New Brunswick
+Courtenay2022Mayor99,Sandy,Chahal,Armstrong,0,1,0,1972,Nova Scotia
+Abbotsford2022Mayor99,Dave,Pellikaan,Armstrong,0,0,1,2018,Yukon
+Abbotsford2022Mayor99,Sandy,Pellikaan,Abbotsford,0,1,1,1914,Nova Scotia
+Courtenay2022Mayor99,Siemens,Sohi,Belcarra,0,1,1,1986,Manitoba
+Comox2022Mayor99,Kelly,Loewen,Hudson,0,1,0,1928,Prince Edward Island
+AlertBay2022Councillor99,Ross,Pellikaan,Belcarra,0,1,0,1872,Saskatchewan
+Abbotsford2022Mayor99,Ross,Sidhu,Armstrong,0,0,0,1908,Northwest Territories
+AlertBay2022Councillor99,Mark,Pellikaan,Anmore,0,0,1,1877,Saskatchewan
+Comox2022Mayor99,Dave,Sandhu,Campbell River,1,0,1,1988,Nova Scotia
+CacheCreek2022Mayor99,D. Paul,Ross,Hudson,0,0,0,1969,Yukon
+Abbotsford2022Mayor99,D. Paul,Blue,Belcarra,0,1,0,1988,New Brunswick
+Abbotsford2022Mayor99,Dave,Loewen,Campbell River,0,0,0,1977,Manitoba
+Comox2022Mayor99,Dave,Manjit,Ashcroft,0,1,1,1901,Manitoba
+Abbotsford2022Mayor99,Dave,Warkentin,Campbell River,0,1,1,1978,Yukon
+Courtenay2022Mayor99,Siemens,Sandhu,Campbell River,0,0,1,2017,British Columbia
+Abbotsford2022Mayor99,Ross,Sandhu,Anmore,0,1,1,1983,New Brunswick
+Abbotsford2022Mayor99,Patricia,Loewen,Hudson,0,1,1,2017,Prince Edward Island
+Courtenay2022Mayor99,Ross,Blue,Armstrong,0,0,1,1949,Prince Edward Island
+Belcarra2022Mayor99,Dave,Manjit,Anmore,1,1,0,1931,British Columbia
+Belcarra2022Mayor99,Dave,Warkentin,Cache Creek,0,1,1,1900,Quebec
+Comox2022Mayor99,Bharathi,Blue,Ashcroft,0,1,1,2006,New Brunswick
+Belcarra2022Mayor99,Dave,Ross,Armstrong,0,1,1,2005,Ontario
+Belcarra2022Mayor99,Kelly,Sohi,Campbell River,1,0,1,1940,Manitoba
+AlertBay2022Councillor99,Dave,Sidhu,Abbotsford,1,1,0,1912,Yukon
+Comox2022Mayor99,Sandy,Manjit,Armstrong,0,1,1,2006,British Columbia
+Courtenay2022Mayor99,Dave,Blue,Ashcroft,0,0,0,1981,Alberta
+Comox2022Mayor99,Dave,Sandhu,Belcarra,0,0,0,1940,Yukon
+Abbotsford2022Mayor99,Dave,Sohi,Ashcroft,0,0,1,1916,Northwest Territories
+Belcarra2022Mayor99,Dave,Manjit,Anmore,1,1,0,1953,Yukon
+Courtenay2022Mayor99,Patricia,Manjit,Cache Creek,0,0,1,1905,New Brunswick
+CacheCreek2022Mayor99,Ross,Loewen,Belcarra,1,0,0,1934,New Brunswick
+Comox2022Mayor99,Sandy,Sohi,Cache Creek,0,0,0,1903,Prince Edward Island
+AlertBay2022Councillor99,Dave,Warkentin,Hudson,0,1,0,1895,Northwest Territories
+CacheCreek2022Mayor99,Siemens,Pellikaan,Abbotsford,0,1,0,1869,Newfoundland and Labrador
+Abbotsford2022Mayor99,Ross,Ross,Belcarra,0,0,0,1915,British Columbia
+Courtenay2022Mayor99,Siemens,Warkentin,Abbotsford,1,1,0,1911,Yukon
+CacheCreek2022Mayor99,D. Paul,Ross,Belcarra,1,0,1,1945,Yukon
+CacheCreek2022Mayor99,D. Paul,Sandhu,Campbell River,0,1,1,2003,Northwest Territories
+Belcarra2022Mayor99,Dave,Loewen,Cache Creek,0,0,1,2012,Newfoundland and Labrador
+AlertBay2022Councillor99,Bharathi,Sohi,Belcarra,0,1,0,2012,Manitoba
+Abbotsford2022Mayor99,Kelly,Sandhu,Anmore,1,0,0,2002,British Columbia
+CacheCreek2022Mayor99,Mark,Chahal,Belcarra,1,1,0,1883,Saskatchewan
+CacheCreek2022Mayor99,Sandy,Chahal,Anmore,1,1,1,1929,Manitoba
+Courtenay2022Mayor99,D. Paul,Chahal,Ashcroft,1,0,0,2007,Manitoba
+Comox2022Mayor99,Kelly,Pellikaan,Belcarra,0,0,0,1929,Quebec
+Courtenay2022Mayor99,Ross,Pellikaan,Cache Creek,0,1,0,1933,Quebec
+Belcarra2022Mayor99,Patricia,Manjit,Abbotsford,0,1,1,2000,Yukon
+Courtenay2022Mayor99,Kelly,Chahal,Hudson,0,0,1,1900,British Columbia
+AlertBay2022Councillor99,Dave,Sidhu,Campbell River,0,1,1,1914,Saskatchewan
+Abbotsford2022Mayor99,D. Paul,Loewen,Cache Creek,0,0,1,1875,Saskatchewan
+Abbotsford2022Mayor99,Kelly,Warkentin,Abbotsford,0,1,1,1988,Saskatchewan
+AlertBay2022Councillor99,Bharathi,Manjit,Cache Creek,0,0,0,1889,Nova Scotia
+AlertBay2022Councillor99,Dave,Pellikaan,Anmore,0,1,1,1970,Saskatchewan
+Belcarra2022Mayor99,Mark,Sidhu,Hudson,0,1,0,2013,Saskatchewan
+Abbotsford2022Mayor99,Ross,Sandhu,Ashcroft,0,0,0,2016,New Brunswick
+AlertBay2022Councillor99,Siemens,Sandhu,Cache Creek,0,1,1,1951,Quebec
+Abbotsford2022Mayor99,Sandy,Sandhu,Armstrong,0,1,1,1894,Ontario
+Courtenay2022Mayor99,Dave,Blue,Armstrong,0,0,1,1960,Saskatchewan
+Belcarra2022Mayor99,Sandy,Chahal,Belcarra,1,0,1,1989,Quebec
+Courtenay2022Mayor99,Siemens,Chahal,Cache Creek,0,1,0,1932,Nova Scotia
+Comox2022Mayor99,Sandy,Sohi,Armstrong,0,0,0,1891,Saskatchewan
+Comox2022Mayor99,Dave,Loewen,Cache Creek,1,0,1,1945,Nova Scotia
+CacheCreek2022Mayor99,Bharathi,Chahal,Cache Creek,1,1,0,1971,British Columbia
+Belcarra2022Mayor99,Kelly,Sandhu,Campbell River,1,0,1,1901,British Columbia
+Comox2022Mayor99,Patricia,Loewen,Belcarra,1,1,1,1920,Prince Edward Island
+Courtenay2022Mayor99,Dave,Sidhu,Cache Creek,1,1,0,1984,Manitoba
+CacheCreek2022Mayor99,Bharathi,Sidhu,Ashcroft,0,0,0,1903,Newfoundland and Labrador
+CacheCreek2022Mayor99,Kelly,Sandhu,Hudson,0,0,0,1907,Saskatchewan
+Comox2022Mayor99,Dave,Sandhu,Campbell River,0,0,1,1996,Newfoundland and Labrador
+Courtenay2022Mayor99,Kelly,Ross,Anmore,0,0,0,1994,Newfoundland and Labrador
+AlertBay2022Councillor99,Kelly,Blue,Hudson,0,1,0,1991,Prince Edward Island
+Abbotsford2022Mayor99,Siemens,Blue,Hudson,0,1,0,2020,Prince Edward Island
+Belcarra2022Mayor99,Ross,Sandhu,Armstrong,1,1,0,1965,Saskatchewan
+CacheCreek2022Mayor99,D. Paul,Blue,Anmore,0,0,0,1876,Alberta
+CacheCreek2022Mayor99,Dave,Manjit,Belcarra,0,1,1,1902,Yukon
+Courtenay2022Mayor99,Mark,Manjit,Anmore,0,1,1,1996,Nova Scotia
+Abbotsford2022Mayor99,Siemens,Chahal,Ashcroft,1,0,0,2010,Saskatchewan
+AlertBay2022Councillor99,Dave,Manjit,Armstrong,0,1,0,1984,New Brunswick
+Comox2022Mayor99,Kelly,Pellikaan,Belcarra,1,1,1,1950,British Columbia
+Belcarra2022Mayor99,Ross,Sidhu,Abbotsford,1,1,1,1919,Alberta
+CacheCreek2022Mayor99,Siemens,Chahal,Ashcroft,0,1,1,1974,New Brunswick
+Belcarra2022Mayor99,Siemens,Pellikaan,Cache Creek,0,1,0,2018,Nova Scotia
+Abbotsford2022Mayor99,Kelly,Sidhu,Armstrong,0,1,1,2009,Ontario
+Belcarra2022Mayor99,Dave,Sohi,Cache Creek,0,0,0,1934,British Columbia
+Abbotsford2022Mayor99,Kelly,Chahal,Abbotsford,1,1,0,1960,Ontario
+Courtenay2022Mayor99,Dave,Manjit,Abbotsford,0,1,0,1879,Yukon
+Belcarra2022Mayor99,Ross,Pellikaan,Belcarra,0,1,1,1875,Yukon
+Belcarra2022Mayor99,Dave,Ross,Campbell River,0,1,1,1873,Manitoba
+Comox2022Mayor99,Kelly,Blue,Armstrong,0,1,0,1981,Northwest Territories
+CacheCreek2022Mayor99,Siemens,Sohi,Anmore,0,1,1,1975,Manitoba
+Courtenay2022Mayor99,Siemens,Blue,Hudson,0,1,0,1920,Nova Scotia
+Belcarra2022Mayor99,Mark,Sandhu,Anmore,1,1,1,1885,Quebec
+AlertBay2022Councillor99,Kelly,Sandhu,Ashcroft,0,0,1,1929,Northwest Territories
+AlertBay2022Councillor99,Dave,Pellikaan,Ashcroft,0,1,0,1982,Alberta
+AlertBay2022Councillor99,Siemens,Pellikaan,Belcarra,0,0,0,1948,Manitoba
+Belcarra2022Mayor99,Ross,Sidhu,Belcarra,0,0,1,1981,New Brunswick
+CacheCreek2022Mayor99,Dave,Loewen,Ashcroft,0,0,1,1959,Saskatchewan
+Abbotsford2022Mayor99,Kelly,Blue,Hudson,0,0,0,2017,British Columbia
+Comox2022Mayor99,Kelly,Pellikaan,Hudson,1,0,0,1889,Alberta
+Abbotsford2022Mayor99,Sandy,Loewen,Armstrong,0,1,0,1922,Yukon
+CacheCreek2022Mayor99,Dave,Pellikaan,Belcarra,0,0,1,1905,Manitoba
+AlertBay2022Councillor99,Kelly,Pellikaan,Anmore,1,0,0,1890,British Columbia
+CacheCreek2022Mayor99,Patricia,Manjit,Belcarra,0,1,1,1976,Manitoba
+Comox2022Mayor99,Sandy,Blue,Anmore,0,1,0,1924,Northwest Territories
+Abbotsford2022Mayor99,Kelly,Sidhu,Campbell River,0,0,0,1929,Ontario
+Belcarra2022Mayor99,Siemens,Manjit,Anmore,0,1,1,1888,British Columbia
+Belcarra2022Mayor99,Ross,Pellikaan,Armstrong,1,1,0,1984,Manitoba
+AlertBay2022Councillor99,Sandy,Blue,Abbotsford,0,1,0,1879,Ontario
+Courtenay2022Mayor99,Mark,Manjit,Belcarra,0,0,1,1976,Saskatchewan
+CacheCreek2022Mayor99,Ross,Sidhu,Belcarra,1,0,1,1992,Yukon
+Comox2022Mayor99,Mark,Sidhu,Armstrong,1,1,1,1949,Ontario
+Abbotsford2022Mayor99,Siemens,Pellikaan,Armstrong,0,0,0,1887,British Columbia
+AlertBay2022Councillor99,Patricia,Pellikaan,Anmore,0,1,0,1894,Newfoundland and Labrador
+Comox2022Mayor99,Dave,Sandhu,Hudson,0,0,0,1980,New Brunswick
+Comox2022Mayor99,Bharathi,Pellikaan,Cache Creek,0,1,0,1944,Alberta
+Belcarra2022Mayor99,Siemens,Manjit,Armstrong,0,0,0,1884,Quebec
+Comox2022Mayor99,Kelly,Warkentin,Ashcroft,0,0,1,1957,Saskatchewan
+AlertBay2022Councillor99,Dave,Loewen,Cache Creek,0,1,0,1984,Prince Edward Island
+Courtenay2022Mayor99,Kelly,Chahal,Armstrong,0,1,0,1885,New Brunswick
+Courtenay2022Mayor99,Sandy,Sohi,Anmore,0,0,1,1940,Alberta
+Comox2022Mayor99,Dave,Chahal,Anmore,1,1,0,1963,Quebec
+Courtenay2022Mayor99,Siemens,Pellikaan,Campbell River,1,1,1,1960,Ontario
+Abbotsford2022Mayor99,Dave,Loewen,Belcarra,0,0,1,1912,New Brunswick
+Belcarra2022Mayor99,Bharathi,Loewen,Cache Creek,0,1,1,1883,Prince Edward Island
+Belcarra2022Mayor99,Bharathi,Sandhu,Hudson,0,0,0,1870,Newfoundland and Labrador
+CacheCreek2022Mayor99,Mark,Ross,Abbotsford,0,1,0,1917,Newfoundland and Labrador
+Abbotsford2022Mayor99,Kelly,Manjit,Hudson,0,1,1,1945,Northwest Territories
+Belcarra2022Mayor99,Siemens,Manjit,Belcarra,0,0,0,1875,Alberta
+Belcarra2022Mayor99,Dave,Manjit,Hudson,1,0,0,1924,Ontario
+AlertBay2022Councillor99,Siemens,Ross,Abbotsford,1,1,1,1883,Yukon
+Courtenay2022Mayor99,D. Paul,Loewen,Anmore,0,1,0,1969,Yukon
+Abbotsford2022Mayor99,Patricia,Ross,Campbell River,0,0,1,1951,Ontario
+Belcarra2022Mayor99,Patricia,Sandhu,Cache Creek,0,1,0,1873,Prince Edward Island
+Courtenay2022Mayor99,Kelly,Pellikaan,Cache Creek,1,1,1,1956,Nova Scotia
+AlertBay2022Councillor99,Patricia,Chahal,Cache Creek,0,1,0,1964,Manitoba
+Abbotsford2022Mayor99,D. Paul,Chahal,Cache Creek,0,1,0,1892,British Columbia
+Courtenay2022Mayor99,Kelly,Blue,Cache Creek,1,0,1,1975,Quebec
+AlertBay2022Councillor99,Ross,Chahal,Campbell River,1,0,1,1941,Ontario
+Abbotsford2022Mayor99,Sandy,Sidhu,Abbotsford,1,1,0,1943,Prince Edward Island
+CacheCreek2022Mayor99,Dave,Warkentin,Armstrong,0,1,0,1906,Saskatchewan
+CacheCreek2022Mayor99,Dave,Warkentin,Campbell River,0,1,1,1906,Yukon
+AlertBay2022Councillor99,Bharathi,Sidhu,Armstrong,0,1,1,2008,Ontario
+Abbotsford2022Mayor99,Patricia,Chahal,Anmore,0,0,1,1962,British Columbia
+AlertBay2022Councillor99,Siemens,Warkentin,Cache Creek,0,0,0,1994,Yukon
+CacheCreek2022Mayor99,D. Paul,Chahal,Anmore,1,0,0,1911,Prince Edward Island
+Comox2022Mayor99,Bharathi,Manjit,Ashcroft,0,0,0,1912,Ontario
+Comox2022Mayor99,Bharathi,Pellikaan,Armstrong,0,0,0,1900,Nova Scotia
+Comox2022Mayor99,Ross,Ross,Anmore,0,0,0,1911,Manitoba
+Courtenay2022Mayor99,Ross,Warkentin,Belcarra,0,0,1,2013,British Columbia
+Belcarra2022Mayor99,Patricia,Sandhu,Belcarra,1,0,1,1984,British Columbia
+Belcarra2022Mayor99,Sandy,Pellikaan,Hudson,1,0,1,1981,British Columbia
+Courtenay2022Mayor99,Dave,Sidhu,Hudson,1,1,1,1883,Quebec
+Belcarra2022Mayor99,Kelly,Blue,Abbotsford,0,0,0,1983,Quebec
+AlertBay2022Councillor99,Sandy,Sohi,Cache Creek,0,0,0,2002,Northwest Territories
+Belcarra2022Mayor99,Patricia,Sandhu,Ashcroft,1,1,1,1998,New Brunswick
+Abbotsford2022Mayor99,Bharathi,Pellikaan,Abbotsford,1,0,1,1932,Quebec
+CacheCreek2022Mayor99,Siemens,Ross,Ashcroft,0,0,1,1921,Prince Edward Island
+AlertBay2022Councillor99,Kelly,Blue,Anmore,0,1,0,1871,Nova Scotia
+Comox2022Mayor99,Mark,Warkentin,Belcarra,0,0,0,1908,Newfoundland and Labrador
+Comox2022Mayor99,Sandy,Sidhu,Abbotsford,1,1,1,2008,Nova Scotia
+Comox2022Mayor99,Sandy,Pellikaan,Ashcroft,0,1,1,1999,Newfoundland and Labrador
+Belcarra2022Mayor99,Patricia,Chahal,Abbotsford,0,1,0,1932,Nova Scotia
+Abbotsford2022Mayor99,Patricia,Ross,Campbell River,0,0,1,2011,Ontario
+Comox2022Mayor99,Mark,Ross,Hudson,1,1,0,1927,Saskatchewan
+Belcarra2022Mayor99,Mark,Sandhu,Belcarra,1,1,0,2015,Ontario
+Comox2022Mayor99,Sandy,Sohi,Cache Creek,1,1,1,1951,Yukon
+Comox2022Mayor99,Mark,Loewen,Campbell River,0,0,0,1936,Ontario
+Courtenay2022Mayor99,Mark,Ross,Hudson,0,0,0,1922,Prince Edward Island
+Courtenay2022Mayor99,Mark,Chahal,Anmore,0,0,1,1910,Nova Scotia
+CacheCreek2022Mayor99,Sandy,Manjit,Hudson,0,0,1,1886,Prince Edward Island
+CacheCreek2022Mayor99,Dave,Pellikaan,Anmore,0,0,0,1914,British Columbia
+AlertBay2022Councillor99,Mark,Loewen,Campbell River,0,1,1,1870,Quebec
+AlertBay2022Councillor99,Ross,Manjit,Anmore,0,1,0,1941,Nova Scotia
+Courtenay2022Mayor99,Bharathi,Warkentin,Ashcroft,0,1,1,1965,Nova Scotia
+AlertBay2022Councillor99,Kelly,Sandhu,Campbell River,1,0,0,1893,Newfoundland and Labrador
+AlertBay2022Councillor99,Mark,Pellikaan,Hudson,0,0,0,1912,Prince Edward Island
+Comox2022Mayor99,Dave,Warkentin,Belcarra,0,1,1,1914,Northwest Territories
+Comox2022Mayor99,Bharathi,Sandhu,Ashcroft,0,0,0,1944,Saskatchewan
+Courtenay2022Mayor99,Patricia,Warkentin,Belcarra,1,0,1,1881,Northwest Territories
+CacheCreek2022Mayor99,Mark,Pellikaan,Campbell River,0,1,1,1998,Saskatchewan
+Courtenay2022Mayor99,Siemens,Chahal,Armstrong,1,0,0,1981,Yukon
+AlertBay2022Councillor99,D. Paul,Manjit,Abbotsford,1,1,1,1903,British Columbia
+Courtenay2022Mayor99,Dave,Warkentin,Hudson,1,0,1,1923,Manitoba
+Belcarra2022Mayor99,Ross,Sandhu,Hudson,1,0,0,1948,Ontario
+CacheCreek2022Mayor99,Dave,Sandhu,Cache Creek,0,0,0,2019,Prince Edward Island
+Comox2022Mayor99,D. Paul,Manjit,Campbell River,0,0,1,1907,Yukon
+Courtenay2022Mayor99,D. Paul,Sohi,Cache Creek,0,1,0,2004,Prince Edward Island
+Courtenay2022Mayor99,Mark,Sohi,Ashcroft,0,1,0,1975,Quebec
+Abbotsford2022Mayor99,Mark,Sidhu,Ashcroft,0,0,1,1945,Saskatchewan
+AlertBay2022Councillor99,Bharathi,Sidhu,Campbell River,0,0,0,1982,Nova Scotia
+AlertBay2022Councillor99,Dave,Blue,Armstrong,1,1,0,1969,Saskatchewan
+CacheCreek2022Mayor99,Sandy,Chahal,Anmore,1,1,0,2009,Prince Edward Island
+Courtenay2022Mayor99,Bharathi,Blue,Hudson,1,1,0,1936,Ontario
+Courtenay2022Mayor99,Patricia,Pellikaan,Hudson,0,1,0,1884,Nova Scotia
+AlertBay2022Councillor99,Bharathi,Pellikaan,Ashcroft,0,0,0,1950,Northwest Territories
+AlertBay2022Councillor99,Patricia,Ross,Hudson,0,0,0,1914,Ontario
+CacheCreek2022Mayor99,Ross,Warkentin,Campbell River,0,1,0,1888,Ontario
+Comox2022Mayor99,Bharathi,Ross,Cache Creek,0,0,0,1945,Saskatchewan
+AlertBay2022Councillor99,D. Paul,Sandhu,Armstrong,0,0,0,1941,Ontario
+Abbotsford2022Mayor99,Patricia,Ross,Campbell River,0,0,0,1952,British Columbia
+Abbotsford2022Mayor99,Siemens,Loewen,Hudson,0,0,0,2006,Yukon
+Comox2022Mayor99,Sandy,Sandhu,Abbotsford,0,0,0,1889,Manitoba
+AlertBay2022Councillor99,Dave,Warkentin,Campbell River,0,0,0,1878,Newfoundland and Labrador
+AlertBay2022Councillor99,Dave,Sohi,Anmore,1,1,0,1917,British Columbia
+Courtenay2022Mayor99,Dave,Pellikaan,Cache Creek,0,1,1,1936,New Brunswick
+AlertBay2022Councillor99,Dave,Ross,Campbell River,0,0,1,1912,Newfoundland and Labrador
+Comox2022Mayor99,Dave,Sidhu,Armstrong,0,0,0,1946,Alberta
+Belcarra2022Mayor99,Bharathi,Sidhu,Belcarra,1,0,1,1966,Ontario
+Belcarra2022Mayor99,Kelly,Chahal,Hudson,0,0,0,1931,Alberta
+Belcarra2022Mayor99,Dave,Sandhu,Ashcroft,1,0,0,1964,Quebec
+Courtenay2022Mayor99,Kelly,Loewen,Ashcroft,0,1,0,1930,British Columbia
+Comox2022Mayor99,Siemens,Sohi,Campbell River,0,0,1,1938,Ontario
+CacheCreek2022Mayor99,Siemens,Ross,Abbotsford,1,0,1,2019,Newfoundland and Labrador
+Belcarra2022Mayor99,Sandy,Manjit,Armstrong,1,1,1,1978,Alberta
+Belcarra2022Mayor99,Ross,Sohi,Belcarra,1,1,1,1946,Northwest Territories
+Comox2022Mayor99,Bharathi,Chahal,Ashcroft,0,1,1,1876,New Brunswick
+Comox2022Mayor99,D. Paul,Pellikaan,Armstrong,0,0,0,1890,Nova Scotia
+Belcarra2022Mayor99,Ross,Sandhu,Belcarra,0,1,0,1877,Ontario
+Abbotsford2022Mayor99,Kelly,Sidhu,Ashcroft,0,0,1,1879,Ontario
+CacheCreek2022Mayor99,Ross,Blue,Hudson,0,0,1,2003,Saskatchewan
+Courtenay2022Mayor99,Dave,Warkentin,Cache Creek,1,0,1,1972,Ontario
+CacheCreek2022Mayor99,Sandy,Sohi,Hudson,0,1,1,1911,Saskatchewan
+Comox2022Mayor99,Bharathi,Warkentin,Hudson,0,1,1,1918,Yukon
+CacheCreek2022Mayor99,Ross,Pellikaan,Campbell River,0,1,1,1877,Nova Scotia
+Courtenay2022Mayor99,Patricia,Chahal,Abbotsford,0,0,0,1946,New Brunswick
+Abbotsford2022Mayor99,D. Paul,Blue,Campbell River,0,1,0,1968,British Columbia
+Belcarra2022Mayor99,Bharathi,Warkentin,Ashcroft,1,0,1,1946,New Brunswick
+Abbotsford2022Mayor99,D. Paul,Manjit,Cache Creek,0,0,0,1901,Saskatchewan
+AlertBay2022Councillor99,Patricia,Sandhu,Armstrong,0,0,1,1925,Northwest Territories
+CacheCreek2022Mayor99,D. Paul,Sandhu,Abbotsford,1,1,0,2021,Manitoba
+CacheCreek2022Mayor99,Sandy,Loewen,Hudson,1,1,1,1973,Saskatchewan
+Abbotsford2022Mayor99,Sandy,Ross,Campbell River,0,1,1,1919,Prince Edward Island
+Belcarra2022Mayor99,Ross,Chahal,Abbotsford,0,1,0,1966,Alberta
+Belcarra2022Mayor99,Sandy,Blue,Anmore,1,1,0,1968,Prince Edward Island
+Courtenay2022Mayor99,D. Paul,Ross,Hudson,0,1,1,1996,British Columbia
+Belcarra2022Mayor99,Dave,Manjit,Abbotsford,0,1,1,1890,British Columbia
+Comox2022Mayor99,Dave,Ross,Hudson,0,0,0,1965,Nova Scotia
+Belcarra2022Mayor99,Sandy,Sidhu,Abbotsford,1,1,0,1887,Manitoba
+AlertBay2022Councillor99,Bharathi,Warkentin,Campbell River,0,1,1,1947,New Brunswick
+Courtenay2022Mayor99,Dave,Chahal,Abbotsford,0,1,1,2001,Northwest Territories
+AlertBay2022Councillor99,Patricia,Sohi,Anmore,0,0,1,1996,Yukon
+Belcarra2022Mayor99,Patricia,Pellikaan,Armstrong,0,0,0,1978,Yukon
+Courtenay2022Mayor99,Sandy,Manjit,Hudson,0,1,1,1927,Ontario
+Courtenay2022Mayor99,Bharathi,Warkentin,Ashcroft,0,1,1,1888,Nova Scotia
+Courtenay2022Mayor99,Kelly,Sohi,Ashcroft,0,0,0,2015,Nova Scotia
+CacheCreek2022Mayor99,Dave,Manjit,Armstrong,0,0,1,1884,Northwest Territories
+Courtenay2022Mayor99,Ross,Pellikaan,Anmore,1,1,0,1984,British Columbia
+AlertBay2022Councillor99,Mark,Warkentin,Hudson,1,0,1,1974,Newfoundland and Labrador
+AlertBay2022Councillor99,Kelly,Ross,Abbotsford,1,1,0,1990,New Brunswick
+Belcarra2022Mayor99,D. Paul,Manjit,Abbotsford,1,0,0,1892,British Columbia
+Belcarra2022Mayor99,Dave,Blue,Anmore,1,0,0,1956,British Columbia
+Comox2022Mayor99,Bharathi,Warkentin,Cache Creek,0,1,0,2002,Saskatchewan
+Abbotsford2022Mayor99,Dave,Sohi,Abbotsford,0,1,1,1921,Newfoundland and Labrador
+CacheCreek2022Mayor99,D. Paul,Pellikaan,Hudson,1,0,1,1914,Alberta
+Belcarra2022Mayor99,Mark,Blue,Abbotsford,0,1,1,1880,Yukon
+Belcarra2022Mayor99,D. Paul,Loewen,Belcarra,0,0,0,2009,New Brunswick
+AlertBay2022Councillor99,Sandy,Blue,Hudson,0,0,1,1893,Nova Scotia
+Comox2022Mayor99,Sandy,Blue,Cache Creek,1,0,0,1995,Quebec
+AlertBay2022Councillor99,D. Paul,Sohi,Ashcroft,0,0,1,1886,Ontario
+Courtenay2022Mayor99,Patricia,Loewen,Campbell River,1,0,1,1901,Manitoba
+Abbotsford2022Mayor99,Ross,Blue,Cache Creek,0,0,0,1950,Yukon
+Abbotsford2022Mayor99,Kelly,Warkentin,Anmore,0,0,0,1904,Saskatchewan
+Courtenay2022Mayor99,Sandy,Manjit,Hudson,1,0,1,1916,Nova Scotia
+Courtenay2022Mayor99,Ross,Blue,Cache Creek,0,0,0,1988,Prince Edward Island
+Courtenay2022Mayor99,D. Paul,Manjit,Cache Creek,1,0,1,1941,New Brunswick
+Belcarra2022Mayor99,Kelly,Warkentin,Abbotsford,1,1,1,2008,Manitoba
+AlertBay2022Councillor99,Patricia,Warkentin,Anmore,0,1,0,1892,Manitoba
+Belcarra2022Mayor99,Mark,Blue,Ashcroft,1,1,0,1949,Prince Edward Island
+AlertBay2022Councillor99,Siemens,Pellikaan,Abbotsford,0,0,1,1991,Quebec
+Abbotsford2022Mayor99,Siemens,Blue,Abbotsford,1,1,0,1939,Nova Scotia
+Abbotsford2022Mayor99,Dave,Ross,Ashcroft,0,0,1,1885,Alberta
+AlertBay2022Councillor99,Sandy,Sohi,Ashcroft,0,0,1,1913,Alberta
+Comox2022Mayor99,Bharathi,Warkentin,Hudson,0,0,0,1929,Quebec
+CacheCreek2022Mayor99,Ross,Sandhu,Abbotsford,0,0,0,1901,Newfoundland and Labrador
+CacheCreek2022Mayor99,Siemens,Chahal,Anmore,1,1,1,2016,Ontario
+Abbotsford2022Mayor99,Siemens,Sohi,Anmore,0,0,0,1919,Ontario
+Belcarra2022Mayor99,Sandy,Loewen,Abbotsford,0,0,0,1947,Nova Scotia
+Belcarra2022Mayor99,Sandy,Manjit,Hudson,0,0,0,1877,Saskatchewan
+Abbotsford2022Mayor99,Dave,Warkentin,Campbell River,1,0,0,2018,Alberta
+CacheCreek2022Mayor99,Siemens,Warkentin,Belcarra,0,1,1,1910,British Columbia
+CacheCreek2022Mayor99,Dave,Warkentin,Belcarra,1,1,1,1884,New Brunswick
+Comox2022Mayor99,Kelly,Blue,Campbell River,0,1,1,1973,Yukon
+CacheCreek2022Mayor99,D. Paul,Pellikaan,Anmore,1,0,1,1913,Nova Scotia
+AlertBay2022Councillor99,Sandy,Pellikaan,Ashcroft,0,0,0,1917,Nova Scotia
+Comox2022Mayor99,Kelly,Loewen,Hudson,1,0,0,1931,Prince Edward Island
+AlertBay2022Councillor99,Dave,Pellikaan,Cache Creek,0,1,1,1942,Nova Scotia
+AlertBay2022Councillor99,Dave,Sidhu,Abbotsford,0,0,0,1982,Manitoba
+Courtenay2022Mayor99,Patricia,Blue,Belcarra,0,0,1,1890,Alberta
+Belcarra2022Mayor99,Patricia,Sidhu,Anmore,0,0,0,2004,Ontario
+AlertBay2022Councillor99,Ross,Blue,Ashcroft,0,0,1,1876,Northwest Territories
+Courtenay2022Mayor99,Sandy,Loewen,Hudson,0,0,0,1952,Yukon
+Comox2022Mayor99,Sandy,Warkentin,Cache Creek,0,1,1,2019,Saskatchewan
+Abbotsford2022Mayor99,Sandy,Chahal,Anmore,1,1,1,1872,Yukon
+Abbotsford2022Mayor99,Siemens,Sohi,Ashcroft,0,0,1,1970,Yukon
+Belcarra2022Mayor99,D. Paul,Chahal,Cache Creek,0,0,1,1887,Quebec
+Belcarra2022Mayor99,Dave,Sidhu,Belcarra,1,1,0,2008,Ontario
+AlertBay2022Councillor99,Dave,Sidhu,Hudson,0,1,0,1930,British Columbia
+Comox2022Mayor99,Mark,Pellikaan,Belcarra,0,1,0,1888,Saskatchewan
+Courtenay2022Mayor99,Kelly,Manjit,Armstrong,0,1,0,1963,Prince Edward Island
+AlertBay2022Councillor99,Kelly,Sidhu,Anmore,1,1,1,1871,British Columbia
+AlertBay2022Councillor99,Siemens,Ross,Cache Creek,0,0,0,1920,Yukon
+Belcarra2022Mayor99,D. Paul,Sidhu,Abbotsford,0,1,0,1892,British Columbia
+AlertBay2022Councillor99,D. Paul,Sandhu,Anmore,0,0,0,1920,Nova Scotia
+Belcarra2022Mayor99,Siemens,Sidhu,Armstrong,1,0,1,1922,Northwest Territories
+CacheCreek2022Mayor99,Bharathi,Chahal,Belcarra,0,0,0,1995,Northwest Territories
+Comox2022Mayor99,Dave,Chahal,Hudson,0,1,0,1885,Alberta
+CacheCreek2022Mayor99,Kelly,Blue,Armstrong,1,0,0,1937,Newfoundland and Labrador
+Courtenay2022Mayor99,Mark,Pellikaan,Armstrong,1,0,1,1871,British Columbia
+Comox2022Mayor99,Ross,Sohi,Anmore,0,1,1,2004,Newfoundland and Labrador
+Belcarra2022Mayor99,Dave,Warkentin,Ashcroft,0,1,1,1989,Yukon
+Courtenay2022Mayor99,Sandy,Sidhu,Cache Creek,0,1,1,2009,Prince Edward Island
+Abbotsford2022Mayor99,Ross,Ross,Abbotsford,0,1,0,2001,New Brunswick
+Courtenay2022Mayor99,Siemens,Ross,Cache Creek,0,1,1,1926,Nova Scotia
+Abbotsford2022Mayor99,Ross,Sohi,Belcarra,0,0,0,2002,Manitoba
+CacheCreek2022Mayor99,Kelly,Pellikaan,Anmore,1,0,1,1925,Quebec
+Belcarra2022Mayor99,Kelly,Sohi,Belcarra,0,1,1,1945,Quebec
+Comox2022Mayor99,Mark,Blue,Hudson,0,0,1,1954,Prince Edward Island
+Abbotsford2022Mayor99,Dave,Blue,Abbotsford,0,1,0,1908,British Columbia
+Abbotsford2022Mayor99,Siemens,Pellikaan,Ashcroft,0,0,1,1934,Ontario
+AlertBay2022Councillor99,Ross,Manjit,Hudson,0,0,0,1935,Nova Scotia
+Belcarra2022Mayor99,D. Paul,Ross,Belcarra,1,1,1,1933,New Brunswick
+Belcarra2022Mayor99,Bharathi,Blue,Belcarra,1,1,0,1944,Northwest Territories
+Comox2022Mayor99,Siemens,Warkentin,Hudson,1,1,0,1880,Ontario
+Abbotsford2022Mayor99,D. Paul,Sidhu,Ashcroft,0,1,1,1917,New Brunswick
+Abbotsford2022Mayor99,Ross,Blue,Abbotsford,0,0,0,1971,Manitoba
+Courtenay2022Mayor99,Sandy,Warkentin,Campbell River,1,1,0,1977,Saskatchewan
+Courtenay2022Mayor99,Siemens,Chahal,Hudson,0,1,1,1908,Saskatchewan
+Belcarra2022Mayor99,Dave,Blue,Armstrong,0,0,1,2007,Yukon
+Courtenay2022Mayor99,Siemens,Blue,Cache Creek,0,0,1,1981,Newfoundland and Labrador
+Courtenay2022Mayor99,Patricia,Pellikaan,Armstrong,1,0,1,1876,Nova Scotia
+Courtenay2022Mayor99,Sandy,Chahal,Armstrong,1,1,1,1867,Ontario
+AlertBay2022Councillor99,D. Paul,Sidhu,Abbotsford,0,0,0,1873,Quebec
+Comox2022Mayor99,D. Paul,Ross,Anmore,0,0,0,1985,Yukon
+AlertBay2022Councillor99,Mark,Pellikaan,Armstrong,1,0,0,1945,British Columbia
+Comox2022Mayor99,Patricia,Manjit,Anmore,1,0,0,1974,Yukon
+Courtenay2022Mayor99,D. Paul,Warkentin,Cache Creek,0,0,0,1975,Northwest Territories
+Abbotsford2022Mayor99,Patricia,Warkentin,Ashcroft,0,0,0,1874,Yukon
+Belcarra2022Mayor99,D. Paul,Sidhu,Ashcroft,0,0,1,1990,Yukon
+Comox2022Mayor99,Siemens,Manjit,Ashcroft,0,1,0,1966,Manitoba
+AlertBay2022Councillor99,Mark,Sandhu,Ashcroft,0,0,1,1870,Yukon
+Abbotsford2022Mayor99,D. Paul,Loewen,Belcarra,1,1,1,1982,Saskatchewan
+Courtenay2022Mayor99,Patricia,Blue,Cache Creek,0,0,0,1869,Northwest Territories
+Comox2022Mayor99,Siemens,Loewen,Hudson,0,1,1,1948,Ontario
+Courtenay2022Mayor99,Siemens,Chahal,Cache Creek,0,1,0,1976,Alberta
+CacheCreek2022Mayor99,Bharathi,Ross,Hudson,1,0,0,1952,British Columbia
+Comox2022Mayor99,Ross,Pellikaan,Cache Creek,0,1,1,1934,Northwest Territories
+AlertBay2022Councillor99,Ross,Loewen,Ashcroft,0,1,0,1954,Quebec
+Courtenay2022Mayor99,Kelly,Sidhu,Hudson,1,1,0,1921,Newfoundland and Labrador
+Comox2022Mayor99,D. Paul,Sohi,Cache Creek,0,0,1,2021,Newfoundland and Labrador
+CacheCreek2022Mayor99,Patricia,Loewen,Anmore,0,1,0,1901,Manitoba
+AlertBay2022Councillor99,Kelly,Loewen,Belcarra,1,0,1,1913,Northwest Territories
+Abbotsford2022Mayor99,D. Paul,Blue,Campbell River,0,1,0,1959,Manitoba
+CacheCreek2022Mayor99,Patricia,Pellikaan,Anmore,0,0,1,1982,British Columbia
+Belcarra2022Mayor99,Dave,Warkentin,Anmore,0,0,1,1896,Alberta
+Belcarra2022Mayor99,Mark,Chahal,Campbell River,0,0,0,1965,Newfoundland and Labrador
+Belcarra2022Mayor99,Sandy,Chahal,Hudson,0,1,0,2008,Prince Edward Island
+Belcarra2022Mayor99,Bharathi,Sidhu,Belcarra,1,0,0,1937,New Brunswick
+Courtenay2022Mayor99,D. Paul,Chahal,Armstrong,1,0,1,1960,Quebec
+AlertBay2022Councillor99,Bharathi,Manjit,Hudson,0,1,1,1993,Alberta
+AlertBay2022Councillor99,D. Paul,Blue,Anmore,0,0,0,1990,Newfoundland and Labrador
+AlertBay2022Councillor99,Siemens,Chahal,Ashcroft,0,1,0,2000,Yukon
+AlertBay2022Councillor99,Kelly,Pellikaan,Cache Creek,0,1,1,1923,Nova Scotia
+Comox2022Mayor99,Siemens,Sohi,Cache Creek,1,1,1,1914,Manitoba
+Courtenay2022Mayor99,Ross,Sohi,Armstrong,1,0,1,1897,Saskatchewan
+Courtenay2022Mayor99,D. Paul,Blue,Cache Creek,0,1,1,1951,Yukon
+Comox2022Mayor99,Dave,Sandhu,Belcarra,1,1,0,1890,Alberta
+CacheCreek2022Mayor99,Mark,Chahal,Armstrong,0,1,0,1924,Ontario
+Courtenay2022Mayor99,Ross,Loewen,Belcarra,0,1,1,1985,British Columbia
+Belcarra2022Mayor99,Dave,Sidhu,Ashcroft,1,1,1,1954,Yukon
+Courtenay2022Mayor99,Mark,Sidhu,Hudson,0,0,1,1953,Nova Scotia
+AlertBay2022Councillor99,D. Paul,Blue,Ashcroft,0,1,0,1946,Nova Scotia
+Comox2022Mayor99,Bharathi,Chahal,Abbotsford,0,1,0,1899,Newfoundland and Labrador
+Belcarra2022Mayor99,Ross,Warkentin,Hudson,0,1,0,1922,Prince Edward Island
+Belcarra2022Mayor99,Bharathi,Blue,Campbell River,0,1,1,1955,Nova Scotia
+CacheCreek2022Mayor99,Kelly,Warkentin,Abbotsford,1,0,1,1939,Alberta
+Comox2022Mayor99,Dave,Manjit,Cache Creek,0,1,1,1979,Prince Edward Island
+Comox2022Mayor99,Mark,Sohi,Armstrong,1,0,0,1961,Yukon
+Comox2022Mayor99,Siemens,Blue,Abbotsford,0,0,0,2007,Saskatchewan
+AlertBay2022Councillor99,Ross,Pellikaan,Anmore,0,1,0,1921,Saskatchewan
+Abbotsford2022Mayor99,Ross,Chahal,Armstrong,0,1,0,1901,Quebec
+CacheCreek2022Mayor99,Ross,Ross,Campbell River,0,1,1,1927,Prince Edward Island
+AlertBay2022Councillor99,Bharathi,Chahal,Ashcroft,0,0,1,2006,Quebec
+AlertBay2022Councillor99,Dave,Manjit,Cache Creek,0,1,1,1867,Prince Edward Island
+CacheCreek2022Mayor99,D. Paul,Sidhu,Campbell River,1,0,0,1932,Saskatchewan
+Courtenay2022Mayor99,Ross,Ross,Ashcroft,1,1,0,1944,Nova Scotia
+Belcarra2022Mayor99,Dave,Ross,Anmore,0,0,0,1890,Prince Edward Island
+Comox2022Mayor99,Sandy,Manjit,Ashcroft,1,0,0,1888,Saskatchewan
+AlertBay2022Councillor99,Dave,Chahal,Abbotsford,0,1,1,1875,Manitoba
+Courtenay2022Mayor99,Bharathi,Pellikaan,Belcarra,0,1,0,1948,Manitoba
+Courtenay2022Mayor99,D. Paul,Sohi,Belcarra,1,0,1,2010,New Brunswick
+Courtenay2022Mayor99,Dave,Sohi,Ashcroft,1,0,1,1986,Saskatchewan
+Comox2022Mayor99,Kelly,Blue,Cache Creek,0,0,0,1912,Ontario
+Belcarra2022Mayor99,Dave,Chahal,Abbotsford,0,1,1,1960,Newfoundland and Labrador
+Courtenay2022Mayor99,Patricia,Manjit,Armstrong,0,1,0,2000,Saskatchewan
+CacheCreek2022Mayor99,D. Paul,Ross,Anmore,1,0,0,1910,British Columbia
+Belcarra2022Mayor99,Dave,Manjit,Anmore,1,1,0,1880,Northwest Territories
+AlertBay2022Councillor99,Dave,Loewen,Belcarra,1,0,1,1956,British Columbia
+CacheCreek2022Mayor99,Siemens,Sohi,Ashcroft,1,1,1,1905,Alberta
+Courtenay2022Mayor99,D. Paul,Manjit,Cache Creek,0,0,0,2015,Saskatchewan
+Courtenay2022Mayor99,Patricia,Loewen,Ashcroft,0,1,1,1994,Northwest Territories
+Courtenay2022Mayor99,Patricia,Sohi,Belcarra,0,0,1,1913,New Brunswick
+Comox2022Mayor99,Ross,Manjit,Belcarra,0,0,1,2010,Saskatchewan
+Belcarra2022Mayor99,Patricia,Warkentin,Abbotsford,0,1,0,1891,British Columbia
+Comox2022Mayor99,D. Paul,Sidhu,Belcarra,1,0,1,1871,Nova Scotia
+Courtenay2022Mayor99,Ross,Sandhu,Anmore,0,0,0,1891,New Brunswick
+CacheCreek2022Mayor99,Siemens,Pellikaan,Hudson,1,1,1,1972,Alberta
+Courtenay2022Mayor99,Patricia,Sidhu,Cache Creek,1,1,0,2020,Prince Edward Island
+Courtenay2022Mayor99,Sandy,Sohi,Anmore,0,0,0,1874,Yukon
+Abbotsford2022Mayor99,Kelly,Sidhu,Cache Creek,0,1,1,1906,Manitoba
+CacheCreek2022Mayor99,Patricia,Sidhu,Armstrong,0,0,1,1938,Ontario
+Belcarra2022Mayor99,Ross,Loewen,Campbell River,0,1,1,1933,Newfoundland and Labrador
+AlertBay2022Councillor99,Patricia,Chahal,Abbotsford,0,1,0,1990,Quebec
+CacheCreek2022Mayor99,Bharathi,Manjit,Anmore,0,1,1,2020,Alberta
+Comox2022Mayor99,Patricia,Sidhu,Belcarra,1,0,1,1922,British Columbia
+AlertBay2022Councillor99,Siemens,Warkentin,Campbell River,0,1,0,1980,Saskatchewan
+Belcarra2022Mayor99,Kelly,Sohi,Anmore,0,0,1,1952,Manitoba
+Comox2022Mayor99,Bharathi,Warkentin,Anmore,1,0,1,1900,Alberta
+Comox2022Mayor99,Mark,Sohi,Ashcroft,1,1,1,1998,Alberta
+Comox2022Mayor99,Siemens,Manjit,Belcarra,0,0,1,1988,Ontario
+Belcarra2022Mayor99,Siemens,Loewen,Anmore,0,1,0,2019,British Columbia
+Abbotsford2022Mayor99,Siemens,Warkentin,Cache Creek,0,1,1,2000,Quebec
+Belcarra2022Mayor99,Sandy,Ross,Belcarra,0,1,0,1993,Northwest Territories
+Abbotsford2022Mayor99,Patricia,Sandhu,Cache Creek,1,1,1,1878,Yukon
+CacheCreek2022Mayor99,Dave,Chahal,Cache Creek,1,0,1,1930,Nova Scotia
+Abbotsford2022Mayor99,Bharathi,Chahal,Anmore,0,0,1,1958,Quebec
+Courtenay2022Mayor99,Dave,Blue,Hudson,1,1,1,1893,British Columbia
+Courtenay2022Mayor99,Patricia,Manjit,Belcarra,0,0,1,2020,Ontario
+Courtenay2022Mayor99,Kelly,Sandhu,Hudson,1,1,1,1928,Northwest Territories
+Belcarra2022Mayor99,Kelly,Blue,Abbotsford,0,0,1,1883,Yukon
+CacheCreek2022Mayor99,Ross,Sandhu,Armstrong,0,0,1,1958,Prince Edward Island
+Comox2022Mayor99,Ross,Warkentin,Ashcroft,0,1,0,1968,Quebec
+Abbotsford2022Mayor99,Sandy,Pellikaan,Anmore,0,1,0,1879,Alberta
+Belcarra2022Mayor99,D. Paul,Blue,Ashcroft,1,0,0,1992,Alberta
+CacheCreek2022Mayor99,Dave,Sandhu,Campbell River,0,0,1,1987,New Brunswick
+Abbotsford2022Mayor99,Patricia,Loewen,Belcarra,0,0,0,1935,Northwest Territories
+Comox2022Mayor99,Patricia,Warkentin,Cache Creek,0,0,0,1968,Yukon
+Belcarra2022Mayor99,Dave,Warkentin,Cache Creek,0,1,1,1900,British Columbia
+AlertBay2022Councillor99,Mark,Sidhu,Belcarra,0,1,1,1948,Ontario
+Courtenay2022Mayor99,Dave,Loewen,Ashcroft,1,0,1,1959,Yukon
+AlertBay2022Councillor99,Dave,Loewen,Campbell River,1,0,0,1998,Newfoundland and Labrador
+AlertBay2022Councillor99,Sandy,Sohi,Armstrong,0,0,1,1904,New Brunswick
+Abbotsford2022Mayor99,Dave,Manjit,Cache Creek,0,1,0,1909,Quebec
+CacheCreek2022Mayor99,D. Paul,Sohi,Anmore,0,1,1,1981,New Brunswick
+AlertBay2022Councillor99,Mark,Blue,Campbell River,0,1,1,1955,Alberta
+Belcarra2022Mayor99,Dave,Chahal,Cache Creek,0,0,0,1959,Nova Scotia
+Belcarra2022Mayor99,Patricia,Manjit,Anmore,0,1,0,1958,Nova Scotia
+AlertBay2022Councillor99,Dave,Loewen,Armstrong,0,0,1,1975,Saskatchewan
+Belcarra2022Mayor99,D. Paul,Ross,Hudson,1,1,0,1889,Newfoundland and Labrador
+CacheCreek2022Mayor99,Kelly,Blue,Ashcroft,0,0,0,1904,Prince Edward Island
+Courtenay2022Mayor99,Dave,Blue,Cache Creek,0,0,0,2015,Manitoba
+Belcarra2022Mayor99,Dave,Ross,Abbotsford,0,1,0,1936,Ontario
+Belcarra2022Mayor99,Kelly,Sohi,Anmore,1,1,1,1876,British Columbia
+Courtenay2022Mayor99,Siemens,Warkentin,Ashcroft,0,0,1,1932,Ontario
+AlertBay2022Councillor99,Sandy,Sohi,Anmore,0,1,1,2008,Saskatchewan
+Abbotsford2022Mayor99,Siemens,Loewen,Armstrong,0,0,1,1900,Saskatchewan
+AlertBay2022Councillor99,Dave,Pellikaan,Abbotsford,0,0,1,1939,Alberta
+AlertBay2022Councillor99,Kelly,Pellikaan,Armstrong,0,1,0,1875,British Columbia
+Belcarra2022Mayor99,Mark,Blue,Belcarra,0,0,1,1963,Ontario
+Abbotsford2022Mayor99,Kelly,Manjit,Armstrong,0,1,0,1875,Quebec
+Abbotsford2022Mayor99,Bharathi,Sidhu,Ashcroft,0,0,1,1886,British Columbia
+Abbotsford2022Mayor99,Dave,Sidhu,Abbotsford,0,0,1,1869,New Brunswick
+AlertBay2022Councillor99,Kelly,Ross,Anmore,0,1,1,1955,Yukon
+Courtenay2022Mayor99,Siemens,Sohi,Abbotsford,1,0,0,1912,Newfoundland and Labrador
+AlertBay2022Councillor99,Kelly,Blue,Armstrong,0,1,1,1898,New Brunswick
+Belcarra2022Mayor99,Kelly,Warkentin,Belcarra,1,0,0,2005,Quebec
+Comox2022Mayor99,Dave,Blue,Armstrong,1,1,1,1970,Prince Edward Island
+Abbotsford2022Mayor99,Dave,Loewen,Ashcroft,0,0,0,1915,Manitoba
+Abbotsford2022Mayor99,Ross,Pellikaan,Cache Creek,0,1,0,2021,Alberta
+AlertBay2022Councillor99,Siemens,Ross,Abbotsford,0,1,0,1906,Northwest Territories
+AlertBay2022Councillor99,Sandy,Loewen,Ashcroft,1,1,0,1881,New Brunswick
+Belcarra2022Mayor99,Patricia,Pellikaan,Armstrong,0,0,1,1879,British Columbia
+Abbotsford2022Mayor99,Dave,Loewen,Hudson,0,1,0,1931,Saskatchewan
+Abbotsford2022Mayor99,Mark,Manjit,Anmore,0,1,1,1880,Yukon
+AlertBay2022Councillor99,Patricia,Sandhu,Hudson,0,0,1,1933,Manitoba
+AlertBay2022Councillor99,Kelly,Loewen,Campbell River,1,1,1,2006,Newfoundland and Labrador
+Abbotsford2022Mayor99,Dave,Sohi,Cache Creek,1,0,1,2017,Northwest Territories
+Courtenay2022Mayor99,Mark,Chahal,Abbotsford,0,0,1,1992,Yukon
+Courtenay2022Mayor99,Ross,Pellikaan,Belcarra,0,1,1,1940,Nova Scotia
+Belcarra2022Mayor99,Siemens,Warkentin,Anmore,0,0,0,1895,New Brunswick
+Comox2022Mayor99,Dave,Pellikaan,Abbotsford,1,1,0,1896,Yukon
+Belcarra2022Mayor99,Dave,Sohi,Abbotsford,0,1,0,1912,New Brunswick
+CacheCreek2022Mayor99,Mark,Sandhu,Abbotsford,0,1,0,1955,Alberta
+AlertBay2022Councillor99,D. Paul,Sidhu,Armstrong,0,0,1,1975,Saskatchewan
+Courtenay2022Mayor99,Patricia,Sohi,Abbotsford,1,1,1,1967,Nova Scotia
+Comox2022Mayor99,Kelly,Sohi,Abbotsford,0,1,1,1988,Newfoundland and Labrador
+CacheCreek2022Mayor99,Patricia,Sidhu,Armstrong,1,1,0,1939,Yukon
+AlertBay2022Councillor99,Bharathi,Blue,Campbell River,0,1,1,1882,Alberta
+Abbotsford2022Mayor99,Dave,Ross,Belcarra,0,1,0,1927,Prince Edward Island
+CacheCreek2022Mayor99,Mark,Sandhu,Campbell River,0,0,0,1940,Yukon
+Courtenay2022Mayor99,Bharathi,Sandhu,Ashcroft,0,0,1,1976,British Columbia
+Abbotsford2022Mayor99,Siemens,Manjit,Abbotsford,1,1,0,1951,Northwest Territories
+Comox2022Mayor99,Siemens,Warkentin,Hudson,1,1,0,1887,Ontario
+CacheCreek2022Mayor99,Ross,Manjit,Armstrong,0,0,0,2001,British Columbia
+AlertBay2022Councillor99,Kelly,Sohi,Cache Creek,0,0,1,1953,Newfoundland and Labrador
+Belcarra2022Mayor99,Bharathi,Warkentin,Anmore,0,1,1,1920,New Brunswick
+Belcarra2022Mayor99,Siemens,Sidhu,Cache Creek,1,0,0,2003,Quebec
+AlertBay2022Councillor99,Bharathi,Ross,Anmore,1,1,1,1872,Nova Scotia
+Abbotsford2022Mayor99,Dave,Sohi,Anmore,1,0,1,2016,Newfoundland and Labrador
+AlertBay2022Councillor99,Bharathi,Pellikaan,Abbotsford,0,0,1,1876,Newfoundland and Labrador
+Abbotsford2022Mayor99,Patricia,Pellikaan,Cache Creek,0,0,1,1936,Nova Scotia
+CacheCreek2022Mayor99,Dave,Warkentin,Campbell River,0,1,1,2021,Prince Edward Island
+Comox2022Mayor99,Sandy,Manjit,Hudson,0,1,1,1971,Manitoba
+Comox2022Mayor99,Bharathi,Sidhu,Cache Creek,0,1,1,2017,Prince Edward Island
+Courtenay2022Mayor99,Bharathi,Pellikaan,Belcarra,0,1,1,1968,Northwest Territories
+Abbotsford2022Mayor99,Sandy,Chahal,Ashcroft,1,1,1,1983,Ontario
+Abbotsford2022Mayor99,Bharathi,Warkentin,Abbotsford,0,1,1,1892,Manitoba
+CacheCreek2022Mayor99,Patricia,Sidhu,Ashcroft,1,0,0,1901,Quebec
+CacheCreek2022Mayor99,D. Paul,Warkentin,Armstrong,1,0,1,1919,New Brunswick
+Comox2022Mayor99,Siemens,Sidhu,Ashcroft,0,0,0,1949,Ontario
+Abbotsford2022Mayor99,Siemens,Sohi,Armstrong,0,1,0,1944,Prince Edward Island
+Abbotsford2022Mayor99,Sandy,Ross,Ashcroft,1,0,1,1939,Nova Scotia
+Comox2022Mayor99,Dave,Loewen,Anmore,0,1,0,1978,Nova Scotia
+Comox2022Mayor99,Ross,Manjit,Armstrong,0,1,0,1926,Newfoundland and Labrador
+AlertBay2022Councillor99,Patricia,Pellikaan,Anmore,0,1,1,1903,Manitoba
+Abbotsford2022Mayor99,Mark,Blue,Campbell River,0,0,1,1928,New Brunswick
+Abbotsford2022Mayor99,Patricia,Manjit,Abbotsford,0,0,0,1869,Yukon
+Abbotsford2022Mayor99,Dave,Sidhu,Campbell River,1,0,1,1918,Newfoundland and Labrador
+Comox2022Mayor99,Patricia,Sidhu,Campbell River,0,0,0,1952,Yukon
+AlertBay2022Councillor99,Bharathi,Loewen,Ashcroft,1,1,1,2002,Yukon
+Courtenay2022Mayor99,Patricia,Sohi,Hudson,0,0,1,1961,Saskatchewan
+Belcarra2022Mayor99,Kelly,Chahal,Anmore,0,1,0,1885,Saskatchewan
+CacheCreek2022Mayor99,Siemens,Ross,Hudson,0,0,0,1922,Northwest Territories
+Comox2022Mayor99,Siemens,Sandhu,Campbell River,0,1,1,1871,Manitoba
+Courtenay2022Mayor99,Dave,Blue,Campbell River,0,0,1,1961,Saskatchewan
+Courtenay2022Mayor99,Patricia,Sidhu,Armstrong,1,0,1,1877,New Brunswick
+Courtenay2022Mayor99,Siemens,Sohi,Anmore,0,1,1,1967,Newfoundland and Labrador
+CacheCreek2022Mayor99,Dave,Warkentin,Abbotsford,1,0,1,1904,Saskatchewan
+AlertBay2022Councillor99,Kelly,Manjit,Anmore,0,1,1,1918,Northwest Territories
+Abbotsford2022Mayor99,Dave,Chahal,Hudson,0,0,1,1897,British Columbia
+Abbotsford2022Mayor99,Sandy,Loewen,Campbell River,1,0,1,1884,Manitoba
+Abbotsford2022Mayor99,Dave,Sohi,Ashcroft,1,0,0,1932,Alberta
+AlertBay2022Councillor99,Sandy,Sohi,Armstrong,0,1,1,1887,Yukon
+Comox2022Mayor99,Dave,Pellikaan,Ashcroft,0,0,1,1872,Ontario
+Courtenay2022Mayor99,Dave,Chahal,Cache Creek,0,1,1,1900,New Brunswick
+Comox2022Mayor99,Mark,Sohi,Abbotsford,0,1,1,1996,Manitoba
+AlertBay2022Councillor99,Mark,Loewen,Campbell River,0,0,0,1872,Nova Scotia
+Belcarra2022Mayor99,Mark,Warkentin,Belcarra,0,1,1,1940,Prince Edward Island
+Abbotsford2022Mayor99,Ross,Pellikaan,Hudson,1,1,1,1995,New Brunswick
+Belcarra2022Mayor99,Ross,Ross,Campbell River,0,1,1,2016,Nova Scotia
+Courtenay2022Mayor99,Patricia,Blue,Abbotsford,0,0,0,2012,Northwest Territories
+Courtenay2022Mayor99,D. Paul,Manjit,Belcarra,0,1,0,1878,Alberta
+CacheCreek2022Mayor99,Sandy,Ross,Anmore,1,1,0,1931,Northwest Territories
+Comox2022Mayor99,Bharathi,Sohi,Belcarra,1,0,1,1995,Alberta
+Comox2022Mayor99,Kelly,Ross,Cache Creek,0,1,0,1919,New Brunswick
+CacheCreek2022Mayor99,Dave,Ross,Anmore,0,0,1,2006,Alberta
+CacheCreek2022Mayor99,Dave,Pellikaan,Hudson,1,1,0,1919,Ontario
+Courtenay2022Mayor99,Kelly,Warkentin,Hudson,1,1,0,1983,Manitoba
+Courtenay2022Mayor99,Dave,Loewen,Belcarra,1,0,0,1954,Prince Edward Island
+Courtenay2022Mayor99,Ross,Warkentin,Anmore,0,1,0,1917,Manitoba
+AlertBay2022Councillor99,Patricia,Blue,Anmore,0,1,1,1993,Saskatchewan
+CacheCreek2022Mayor99,Dave,Sidhu,Anmore,0,1,0,1971,Alberta
+CacheCreek2022Mayor99,Patricia,Ross,Ashcroft,1,1,1,2004,Manitoba
+Abbotsford2022Mayor99,Mark,Chahal,Cache Creek,0,0,1,1944,Alberta
+CacheCreek2022Mayor99,Dave,Warkentin,Armstrong,0,1,0,1924,New Brunswick
+AlertBay2022Councillor99,Ross,Sandhu,Belcarra,0,1,0,1987,British Columbia
+Abbotsford2022Mayor99,Mark,Ross,Campbell River,0,0,1,1874,Saskatchewan
+CacheCreek2022Mayor99,Ross,Sidhu,Anmore,1,0,1,1892,Prince Edward Island
+Abbotsford2022Mayor99,Patricia,Chahal,Ashcroft,0,0,1,1938,Prince Edward Island
+Abbotsford2022Mayor99,Kelly,Pellikaan,Cache Creek,0,0,1,1889,Saskatchewan
+Abbotsford2022Mayor99,Ross,Loewen,Campbell River,1,1,1,1916,Saskatchewan
+AlertBay2022Councillor99,Ross,Sohi,Anmore,0,0,1,1994,Nova Scotia
+Belcarra2022Mayor99,Kelly,Manjit,Campbell River,0,1,0,2005,New Brunswick
+Courtenay2022Mayor99,Patricia,Chahal,Campbell River,1,0,0,1976,Ontario
+AlertBay2022Councillor99,Kelly,Warkentin,Abbotsford,1,1,1,1981,Nova Scotia
+AlertBay2022Councillor99,Siemens,Sandhu,Campbell River,0,1,0,1975,Nova Scotia
+AlertBay2022Councillor99,Ross,Pellikaan,Anmore,0,1,0,1935,Ontario
+Courtenay2022Mayor99,Dave,Ross,Anmore,0,0,1,1939,Newfoundland and Labrador
+AlertBay2022Councillor99,Patricia,Sidhu,Anmore,1,0,1,1929,Nova Scotia
+AlertBay2022Councillor99,Kelly,Manjit,Campbell River,0,0,0,1930,Prince Edward Island
+Abbotsford2022Mayor99,Sandy,Pellikaan,Ashcroft,0,1,1,1882,Quebec
+Courtenay2022Mayor99,Siemens,Ross,Armstrong,0,1,0,1882,Ontario
+Abbotsford2022Mayor99,Bharathi,Manjit,Armstrong,0,1,1,2006,Quebec
+Comox2022Mayor99,Bharathi,Sidhu,Ashcroft,1,0,1,2008,Prince Edward Island
+CacheCreek2022Mayor99,Bharathi,Blue,Cache Creek,0,1,0,2010,New Brunswick
+CacheCreek2022Mayor99,Dave,Ross,Campbell River,0,1,0,1891,Prince Edward Island
+Courtenay2022Mayor99,Ross,Ross,Ashcroft,1,0,0,1961,Yukon
+Comox2022Mayor99,Sandy,Manjit,Hudson,0,0,0,1954,British Columbia
+Belcarra2022Mayor99,Sandy,Blue,Ashcroft,0,1,0,1933,British Columbia
+Abbotsford2022Mayor99,Sandy,Warkentin,Campbell River,0,1,1,1886,Nova Scotia
+Abbotsford2022Mayor99,Ross,Pellikaan,Armstrong,0,1,1,1993,Northwest Territories
+Abbotsford2022Mayor99,Patricia,Sohi,Hudson,1,0,0,1938,Nova Scotia
+Belcarra2022Mayor99,Ross,Sandhu,Cache Creek,0,0,1,1922,Yukon
+Belcarra2022Mayor99,Siemens,Loewen,Belcarra,0,0,0,2020,Newfoundland and Labrador
+Belcarra2022Mayor99,Dave,Manjit,Campbell River,0,1,0,1930,Prince Edward Island
+Belcarra2022Mayor99,Kelly,Ross,Armstrong,0,0,1,1937,Newfoundland and Labrador
+Abbotsford2022Mayor99,Dave,Blue,Abbotsford,0,1,1,1957,Manitoba
+AlertBay2022Councillor99,Dave,Manjit,Belcarra,1,1,1,1972,Northwest Territories
+Comox2022Mayor99,Patricia,Chahal,Cache Creek,1,1,1,1937,Newfoundland and Labrador
+Comox2022Mayor99,Mark,Sohi,Ashcroft,0,0,1,1939,Alberta
+Abbotsford2022Mayor99,Kelly,Blue,Abbotsford,0,1,0,1981,New Brunswick
+Courtenay2022Mayor99,Kelly,Sidhu,Armstrong,0,1,1,1983,Newfoundland and Labrador
+Belcarra2022Mayor99,Kelly,Manjit,Anmore,0,1,0,1893,Manitoba
+AlertBay2022Councillor99,Dave,Pellikaan,Abbotsford,0,0,0,1966,Nova Scotia
+AlertBay2022Councillor99,Dave,Manjit,Anmore,0,1,1,1876,Manitoba
+Comox2022Mayor99,D. Paul,Loewen,Anmore,0,0,0,1876,Yukon
+AlertBay2022Councillor99,Kelly,Chahal,Belcarra,0,0,0,1906,Quebec
+AlertBay2022Councillor99,Dave,Manjit,Armstrong,1,1,0,1916,Manitoba
+Belcarra2022Mayor99,Dave,Chahal,Anmore,0,1,0,1916,Alberta
+CacheCreek2022Mayor99,D. Paul,Sidhu,Hudson,0,1,1,1920,Northwest Territories
+Belcarra2022Mayor99,Siemens,Loewen,Cache Creek,1,1,1,1902,Alberta
+Comox2022Mayor99,Bharathi,Sidhu,Cache Creek,0,1,0,2014,Yukon
+Comox2022Mayor99,Kelly,Pellikaan,Campbell River,0,0,0,1968,Manitoba
+CacheCreek2022Mayor99,Ross,Warkentin,Hudson,0,1,0,2006,Manitoba
+CacheCreek2022Mayor99,Bharathi,Manjit,Abbotsford,0,0,1,1998,Ontario
+CacheCreek2022Mayor99,Mark,Warkentin,Cache Creek,0,1,0,1870,Ontario
+Comox2022Mayor99,Patricia,Chahal,Hudson,1,1,0,1883,Nova Scotia
+Courtenay2022Mayor99,Ross,Ross,Abbotsford,0,1,1,1961,Nova Scotia
+Comox2022Mayor99,Siemens,Chahal,Abbotsford,1,0,1,1882,Saskatchewan
+AlertBay2022Councillor99,Dave,Sohi,Abbotsford,1,0,0,2010,Manitoba
+AlertBay2022Councillor99,Dave,Blue,Anmore,1,1,0,1931,Yukon
+Courtenay2022Mayor99,Dave,Sohi,Campbell River,0,1,1,2006,Alberta
+Abbotsford2022Mayor99,Patricia,Sidhu,Campbell River,1,0,1,1971,Manitoba
+Comox2022Mayor99,Sandy,Warkentin,Abbotsford,1,0,0,2000,Manitoba
+CacheCreek2022Mayor99,Dave,Sandhu,Cache Creek,0,0,0,1957,Manitoba
+Courtenay2022Mayor99,Dave,Blue,Campbell River,0,1,0,1870,Ontario
+CacheCreek2022Mayor99,Ross,Blue,Ashcroft,0,0,1,1924,Manitoba
+Comox2022Mayor99,Siemens,Sohi,Armstrong,1,1,0,1902,Nova Scotia
+AlertBay2022Councillor99,Kelly,Ross,Anmore,0,0,0,1979,New Brunswick
+CacheCreek2022Mayor99,Dave,Loewen,Hudson,0,0,0,1955,Yukon
+AlertBay2022Councillor99,Patricia,Blue,Cache Creek,0,0,1,1888,Saskatchewan
+Belcarra2022Mayor99,Ross,Sandhu,Campbell River,0,1,1,1875,Manitoba
+Abbotsford2022Mayor99,D. Paul,Pellikaan,Belcarra,1,1,0,1894,Yukon
+Comox2022Mayor99,Patricia,Pellikaan,Cache Creek,0,1,1,1968,Prince Edward Island
+AlertBay2022Councillor99,D. Paul,Chahal,Abbotsford,1,0,1,1912,Alberta
+Belcarra2022Mayor99,Dave,Pellikaan,Campbell River,0,0,0,1995,Alberta
+CacheCreek2022Mayor99,Siemens,Blue,Belcarra,0,1,0,1974,Yukon
+Courtenay2022Mayor99,Sandy,Warkentin,Cache Creek,0,1,0,1932,Nova Scotia
+CacheCreek2022Mayor99,D. Paul,Ross,Anmore,1,1,0,1881,Yukon
+Belcarra2022Mayor99,Ross,Warkentin,Hudson,1,1,1,1945,Manitoba
+AlertBay2022Councillor99,Bharathi,Sohi,Anmore,0,1,0,1895,Manitoba
+Abbotsford2022Mayor99,Siemens,Loewen,Abbotsford,1,1,1,1928,Prince Edward Island
+Abbotsford2022Mayor99,Ross,Sidhu,Ashcroft,0,1,0,2020,Quebec
+CacheCreek2022Mayor99,Mark,Chahal,Hudson,1,0,1,2001,Alberta
+CacheCreek2022Mayor99,Sandy,Manjit,Anmore,1,0,1,1977,British Columbia
+Courtenay2022Mayor99,Bharathi,Sohi,Armstrong,1,0,0,1926,Saskatchewan
+Comox2022Mayor99,Mark,Sidhu,Abbotsford,0,1,0,1956,New Brunswick
+Abbotsford2022Mayor99,Bharathi,Ross,Abbotsford,0,0,0,1993,Quebec
+Abbotsford2022Mayor99,Dave,Chahal,Armstrong,0,1,1,1969,New Brunswick
+Comox2022Mayor99,Mark,Sandhu,Ashcroft,1,1,1,1924,Prince Edward Island
+Comox2022Mayor99,Bharathi,Sandhu,Campbell River,1,0,0,1881,Nova Scotia
+Abbotsford2022Mayor99,Ross,Ross,Anmore,0,0,0,1997,Prince Edward Island
+Abbotsford2022Mayor99,Patricia,Sidhu,Abbotsford,0,0,0,2001,Nova Scotia
+CacheCreek2022Mayor99,Dave,Chahal,Hudson,0,0,0,1990,New Brunswick
+Belcarra2022Mayor99,D. Paul,Manjit,Ashcroft,0,0,0,2003,Alberta
+CacheCreek2022Mayor99,Kelly,Chahal,Cache Creek,0,0,1,1955,Yukon
+Abbotsford2022Mayor99,Kelly,Ross,Belcarra,0,0,1,1947,Manitoba
+Abbotsford2022Mayor99,Siemens,Manjit,Abbotsford,0,0,1,1879,Prince Edward Island
+Abbotsford2022Mayor99,Dave,Chahal,Ashcroft,0,1,1,1956,New Brunswick
+Comox2022Mayor99,Siemens,Blue,Abbotsford,1,0,0,1955,Yukon
+Belcarra2022Mayor99,Siemens,Blue,Cache Creek,0,0,0,1972,Ontario
+Belcarra2022Mayor99,Patricia,Manjit,Anmore,1,0,1,2013,Prince Edward Island
+Abbotsford2022Mayor99,Patricia,Loewen,Campbell River,1,0,0,1896,Quebec
+Belcarra2022Mayor99,Siemens,Warkentin,Belcarra,0,1,1,1921,New Brunswick
+Belcarra2022Mayor99,Bharathi,Pellikaan,Hudson,1,1,0,1874,Newfoundland and Labrador
+Courtenay2022Mayor99,Sandy,Chahal,Ashcroft,0,1,0,1905,Nova Scotia
+Courtenay2022Mayor99,Dave,Loewen,Belcarra,1,0,1,1979,British Columbia
+Belcarra2022Mayor99,Kelly,Sohi,Armstrong,1,1,1,1972,British Columbia
+CacheCreek2022Mayor99,Ross,Blue,Ashcroft,1,0,1,1993,Nova Scotia
+CacheCreek2022Mayor99,Dave,Warkentin,Cache Creek,1,1,1,1959,Prince Edward Island
+Belcarra2022Mayor99,Dave,Chahal,Belcarra,1,1,0,2013,Quebec
+AlertBay2022Councillor99,Mark,Sohi,Hudson,0,1,0,1885,Manitoba
+Comox2022Mayor99,Patricia,Blue,Armstrong,0,1,1,1871,Northwest Territories
+Abbotsford2022Mayor99,Mark,Sidhu,Armstrong,0,1,0,1974,Manitoba
+Courtenay2022Mayor99,Siemens,Blue,Belcarra,0,0,1,1962,New Brunswick
+CacheCreek2022Mayor99,Dave,Pellikaan,Armstrong,0,1,1,2011,Manitoba
+AlertBay2022Councillor99,Siemens,Sohi,Armstrong,1,1,0,1936,Yukon
+AlertBay2022Councillor99,Dave,Warkentin,Cache Creek,0,0,1,1996,Nova Scotia
+Courtenay2022Mayor99,D. Paul,Manjit,Armstrong,0,1,1,1908,Newfoundland and Labrador
+CacheCreek2022Mayor99,Kelly,Chahal,Campbell River,0,1,0,1914,Prince Edward Island
+Belcarra2022Mayor99,Patricia,Warkentin,Belcarra,0,1,0,1936,Quebec
+Belcarra2022Mayor99,Dave,Loewen,Belcarra,0,0,0,1913,Ontario
+Comox2022Mayor99,Ross,Blue,Armstrong,1,0,0,2012,Quebec
+CacheCreek2022Mayor99,Patricia,Sohi,Belcarra,0,1,0,1920,Yukon
+Belcarra2022Mayor99,Sandy,Loewen,Anmore,1,0,0,2018,Northwest Territories
+Abbotsford2022Mayor99,Ross,Sidhu,Belcarra,0,1,1,1975,New Brunswick
+Comox2022Mayor99,Ross,Manjit,Anmore,1,1,1,1990,Northwest Territories
+Comox2022Mayor99,Siemens,Warkentin,Hudson,0,1,1,1948,Manitoba
+CacheCreek2022Mayor99,Dave,Sohi,Ashcroft,0,0,1,1913,Prince Edward Island
+Comox2022Mayor99,Ross,Manjit,Campbell River,0,0,1,1911,Saskatchewan
+Comox2022Mayor99,Mark,Loewen,Belcarra,1,1,0,1951,Quebec
+Courtenay2022Mayor99,Dave,Sohi,Anmore,0,1,0,1902,Prince Edward Island
+Courtenay2022Mayor99,Kelly,Warkentin,Cache Creek,0,1,1,2007,Yukon
+Abbotsford2022Mayor99,Bharathi,Ross,Ashcroft,0,0,0,1886,Alberta
+AlertBay2022Councillor99,D. Paul,Manjit,Cache Creek,1,1,1,1968,Nova Scotia
+AlertBay2022Councillor99,Ross,Ross,Campbell River,0,0,1,1956,Nova Scotia
+Courtenay2022Mayor99,Sandy,Sandhu,Abbotsford,0,1,1,1962,Ontario
+CacheCreek2022Mayor99,Dave,Loewen,Armstrong,0,1,1,1977,Alberta
+Abbotsford2022Mayor99,Mark,Sohi,Belcarra,0,1,1,2002,Alberta
+AlertBay2022Councillor99,D. Paul,Warkentin,Anmore,0,0,1,1934,Newfoundland and Labrador
+AlertBay2022Councillor99,Dave,Pellikaan,Campbell River,0,1,0,1945,Nova Scotia
+Abbotsford2022Mayor99,Dave,Manjit,Cache Creek,0,1,0,1952,Quebec
+Comox2022Mayor99,Dave,Loewen,Cache Creek,0,0,0,1933,Northwest Territories
+Courtenay2022Mayor99,Dave,Blue,Abbotsford,1,1,0,1952,Nova Scotia
+Belcarra2022Mayor99,D. Paul,Manjit,Anmore,1,0,0,1914,Manitoba
+AlertBay2022Councillor99,Ross,Chahal,Belcarra,1,1,1,1994,Quebec
+Abbotsford2022Mayor99,Mark,Sidhu,Abbotsford,1,1,0,1973,Saskatchewan
+Courtenay2022Mayor99,Kelly,Pellikaan,Belcarra,0,0,1,1936,New Brunswick
+AlertBay2022Councillor99,Dave,Sandhu,Anmore,0,1,1,1938,Northwest Territories
+Courtenay2022Mayor99,Patricia,Chahal,Cache Creek,1,0,1,1962,British Columbia
+Belcarra2022Mayor99,Mark,Manjit,Hudson,0,0,0,1916,Northwest Territories
+Abbotsford2022Mayor99,Dave,Pellikaan,Ashcroft,1,1,1,1904,Newfoundland and Labrador
+CacheCreek2022Mayor99,Mark,Manjit,Belcarra,1,1,1,1873,Ontario
+Comox2022Mayor99,Sandy,Warkentin,Abbotsford,0,1,1,2014,British Columbia
+Abbotsford2022Mayor99,Ross,Ross,Cache Creek,1,1,1,1886,Yukon
+Belcarra2022Mayor99,Siemens,Sandhu,Ashcroft,0,0,1,1954,New Brunswick
+Belcarra2022Mayor99,Sandy,Ross,Abbotsford,1,0,1,1907,New Brunswick
+Comox2022Mayor99,Dave,Manjit,Anmore,0,1,1,1916,Saskatchewan
+Comox2022Mayor99,Ross,Blue,Hudson,0,1,1,1918,Yukon
+Belcarra2022Mayor99,Dave,Manjit,Hudson,0,1,1,1896,Quebec
+Comox2022Mayor99,Sandy,Sidhu,Cache Creek,0,1,0,1920,Manitoba
+AlertBay2022Councillor99,Bharathi,Blue,Abbotsford,1,1,0,1870,Nova Scotia
+Courtenay2022Mayor99,D. Paul,Sidhu,Campbell River,0,1,1,1886,Saskatchewan
+Courtenay2022Mayor99,D. Paul,Warkentin,Anmore,0,0,0,1918,Alberta
+AlertBay2022Councillor99,Ross,Pellikaan,Hudson,0,0,0,2018,Quebec
+AlertBay2022Councillor99,Dave,Chahal,Anmore,0,0,0,1902,British Columbia
+AlertBay2022Councillor99,Sandy,Ross,Ashcroft,0,0,0,2011,Northwest Territories
+Comox2022Mayor99,Mark,Sandhu,Campbell River,0,0,1,1986,Manitoba
+Abbotsford2022Mayor99,Siemens,Ross,Cache Creek,1,1,1,1948,Saskatchewan
+AlertBay2022Councillor99,Sandy,Sandhu,Ashcroft,0,0,1,2002,Newfoundland and Labrador
+CacheCreek2022Mayor99,Mark,Sandhu,Ashcroft,0,0,0,1960,Nova Scotia
+Comox2022Mayor99,Mark,Pellikaan,Cache Creek,0,1,1,1983,New Brunswick
+Abbotsford2022Mayor99,Bharathi,Loewen,Belcarra,1,0,1,1998,New Brunswick
+Abbotsford2022Mayor99,Dave,Pellikaan,Campbell River,0,1,0,1945,Alberta
+Belcarra2022Mayor99,Bharathi,Chahal,Belcarra,0,1,0,1929,New Brunswick
+Abbotsford2022Mayor99,Patricia,Blue,Cache Creek,0,0,1,1991,Quebec
+AlertBay2022Councillor99,Dave,Sohi,Cache Creek,1,0,0,1869,Alberta
+CacheCreek2022Mayor99,Kelly,Pellikaan,Campbell River,1,0,1,1934,Nova Scotia
+AlertBay2022Councillor99,Kelly,Chahal,Hudson,0,1,0,1942,Alberta
+Abbotsford2022Mayor99,Ross,Manjit,Abbotsford,0,0,1,2022,Saskatchewan
+Belcarra2022Mayor99,Patricia,Ross,Armstrong,0,0,0,1903,Nova Scotia
+Abbotsford2022Mayor99,Siemens,Loewen,Anmore,0,1,0,1965,Northwest Territories
+Belcarra2022Mayor99,Bharathi,Chahal,Armstrong,1,0,0,1882,Manitoba
+Abbotsford2022Mayor99,Mark,Chahal,Cache Creek,0,0,1,1992,Quebec
+Abbotsford2022Mayor99,Bharathi,Sandhu,Anmore,0,0,0,1951,Northwest Territories
+Courtenay2022Mayor99,Dave,Chahal,Armstrong,0,1,0,1938,Northwest Territories
+CacheCreek2022Mayor99,Kelly,Sandhu,Hudson,0,0,1,1911,Alberta
+Courtenay2022Mayor99,Patricia,Sidhu,Campbell River,1,1,0,2006,Manitoba
+Abbotsford2022Mayor99,Siemens,Chahal,Ashcroft,0,0,1,2003,British Columbia
+AlertBay2022Councillor99,Ross,Loewen,Hudson,0,1,0,1883,Newfoundland and Labrador
+Courtenay2022Mayor99,Kelly,Warkentin,Cache Creek,1,1,0,1880,Quebec
+CacheCreek2022Mayor99,D. Paul,Blue,Campbell River,1,0,1,1972,Ontario
+AlertBay2022Councillor99,Ross,Sandhu,Abbotsford,1,0,1,1941,New Brunswick
+Courtenay2022Mayor99,Bharathi,Sidhu,Campbell River,1,0,0,1949,Saskatchewan
+Abbotsford2022Mayor99,Dave,Pellikaan,Ashcroft,0,1,0,2022,Alberta
+Belcarra2022Mayor99,Bharathi,Chahal,Cache Creek,1,1,0,1889,Alberta
+AlertBay2022Councillor99,Mark,Blue,Campbell River,1,0,0,1905,Saskatchewan
+Abbotsford2022Mayor99,Siemens,Ross,Campbell River,1,0,1,1931,Alberta
+Courtenay2022Mayor99,Patricia,Sohi,Anmore,1,1,0,1992,Quebec
+Comox2022Mayor99,Patricia,Pellikaan,Campbell River,0,0,0,1996,Northwest Territories
+Courtenay2022Mayor99,D. Paul,Chahal,Belcarra,0,0,1,1940,Ontario
+AlertBay2022Councillor99,Patricia,Warkentin,Cache Creek,0,1,0,1988,British Columbia
+Courtenay2022Mayor99,Ross,Loewen,Abbotsford,0,1,1,1967,New Brunswick
+CacheCreek2022Mayor99,Dave,Pellikaan,Ashcroft,0,0,1,1959,Alberta
+AlertBay2022Councillor99,Ross,Chahal,Armstrong,0,0,1,1923,New Brunswick
+Comox2022Mayor99,Mark,Sandhu,Campbell River,1,1,1,1919,Prince Edward Island
+Comox2022Mayor99,Siemens,Sidhu,Anmore,1,1,0,1945,Yukon
+Courtenay2022Mayor99,Patricia,Sandhu,Campbell River,0,1,0,1918,Manitoba
+Belcarra2022Mayor99,Ross,Sandhu,Campbell River,0,1,0,1975,Newfoundland and Labrador
+Courtenay2022Mayor99,Dave,Loewen,Armstrong,0,1,1,1871,Prince Edward Island
+Courtenay2022Mayor99,D. Paul,Pellikaan,Campbell River,0,0,1,1933,Manitoba
+AlertBay2022Councillor99,Patricia,Sidhu,Belcarra,0,0,1,1980,British Columbia
+Abbotsford2022Mayor99,Dave,Chahal,Cache Creek,0,0,1,1883,Newfoundland and Labrador
+Courtenay2022Mayor99,Mark,Sidhu,Cache Creek,1,0,1,1985,Ontario
+Abbotsford2022Mayor99,Siemens,Warkentin,Ashcroft,0,0,0,1875,Northwest Territories
+Belcarra2022Mayor99,Kelly,Blue,Abbotsford,0,0,1,1893,Manitoba
+AlertBay2022Councillor99,Dave,Pellikaan,Cache Creek,1,1,1,2009,Nova Scotia
+CacheCreek2022Mayor99,Sandy,Manjit,Anmore,0,0,0,1993,British Columbia
+AlertBay2022Councillor99,Kelly,Loewen,Campbell River,0,1,0,2011,Alberta
+AlertBay2022Councillor99,Siemens,Sidhu,Abbotsford,0,1,0,1907,Newfoundland and Labrador
+Comox2022Mayor99,Bharathi,Pellikaan,Cache Creek,0,0,1,1965,Nova Scotia
+Belcarra2022Mayor99,Sandy,Sandhu,Anmore,0,1,1,1874,Ontario
+Comox2022Mayor99,Kelly,Ross,Armstrong,0,0,0,1943,British Columbia
+Courtenay2022Mayor99,Bharathi,Sohi,Abbotsford,0,0,1,1921,Newfoundland and Labrador
+CacheCreek2022Mayor99,Sandy,Ross,Abbotsford,1,1,0,1923,Alberta
+Courtenay2022Mayor99,Bharathi,Manjit,Campbell River,0,0,1,1880,Manitoba
+Comox2022Mayor99,Patricia,Blue,Campbell River,0,1,1,1929,Quebec
+Belcarra2022Mayor99,Dave,Blue,Armstrong,0,0,0,2005,Northwest Territories
+CacheCreek2022Mayor99,Siemens,Sohi,Cache Creek,0,0,1,1873,Yukon
+CacheCreek2022Mayor99,D. Paul,Blue,Cache Creek,0,1,0,1944,British Columbia
+AlertBay2022Councillor99,Ross,Loewen,Campbell River,1,0,0,1913,British Columbia
+Comox2022Mayor99,Ross,Ross,Hudson,0,1,0,1926,Yukon
+Abbotsford2022Mayor99,Siemens,Ross,Anmore,0,1,0,2002,Prince Edward Island
+AlertBay2022Councillor99,Sandy,Loewen,Belcarra,0,1,0,1918,Newfoundland and Labrador
+Comox2022Mayor99,Kelly,Chahal,Armstrong,0,1,1,1881,Newfoundland and Labrador
+Belcarra2022Mayor99,Dave,Manjit,Ashcroft,1,0,0,1888,New Brunswick
+CacheCreek2022Mayor99,D. Paul,Sidhu,Ashcroft,0,1,0,1960,Quebec
+Belcarra2022Mayor99,Ross,Warkentin,Hudson,0,1,0,1891,Prince Edward Island
+Belcarra2022Mayor99,Patricia,Ross,Campbell River,1,0,1,1947,New Brunswick
+Courtenay2022Mayor99,Siemens,Sidhu,Campbell River,0,1,1,1929,Manitoba
+Belcarra2022Mayor99,Siemens,Sidhu,Ashcroft,0,1,0,1929,Ontario
+Courtenay2022Mayor99,Mark,Ross,Abbotsford,0,1,0,2006,Prince Edward Island
+Comox2022Mayor99,D. Paul,Pellikaan,Belcarra,1,0,0,1897,New Brunswick
+Abbotsford2022Mayor99,Dave,Blue,Anmore,0,1,0,1886,Northwest Territories
+Abbotsford2022Mayor99,Ross,Chahal,Belcarra,0,0,0,2017,Newfoundland and Labrador
+AlertBay2022Councillor99,Dave,Warkentin,Hudson,0,0,1,1953,Manitoba
+CacheCreek2022Mayor99,Kelly,Pellikaan,Belcarra,0,1,1,1902,Prince Edward Island
+Belcarra2022Mayor99,Ross,Ross,Belcarra,0,1,0,1915,Saskatchewan
+Abbotsford2022Mayor99,Mark,Blue,Cache Creek,1,0,0,1919,Prince Edward Island
+Abbotsford2022Mayor99,Mark,Sandhu,Ashcroft,0,0,1,2020,Northwest Territories
+Belcarra2022Mayor99,Kelly,Sandhu,Hudson,0,0,0,1903,Newfoundland and Labrador
+AlertBay2022Councillor99,Bharathi,Pellikaan,Campbell River,0,0,1,1993,Nova Scotia
+Courtenay2022Mayor99,Dave,Sidhu,Anmore,0,1,0,2018,Manitoba
+Courtenay2022Mayor99,Siemens,Loewen,Ashcroft,0,0,1,2017,Saskatchewan
+AlertBay2022Councillor99,Mark,Sohi,Abbotsford,0,0,0,2019,Alberta
+Abbotsford2022Mayor99,Siemens,Pellikaan,Belcarra,0,0,1,1881,Ontario
+CacheCreek2022Mayor99,D. Paul,Chahal,Anmore,0,0,1,1893,Yukon
+Belcarra2022Mayor99,Bharathi,Sohi,Armstrong,0,1,0,1921,Manitoba
+AlertBay2022Councillor99,Siemens,Sohi,Belcarra,0,1,1,1902,Alberta
+Courtenay2022Mayor99,Mark,Loewen,Anmore,1,1,1,1931,Ontario
+Comox2022Mayor99,Kelly,Sohi,Ashcroft,1,1,1,1967,Northwest Territories
+CacheCreek2022Mayor99,D. Paul,Sohi,Cache Creek,0,1,1,1908,British Columbia
+Belcarra2022Mayor99,Patricia,Pellikaan,Cache Creek,1,1,0,1935,Quebec
+Courtenay2022Mayor99,Dave,Manjit,Hudson,1,1,0,1945,Quebec
+Belcarra2022Mayor99,Bharathi,Pellikaan,Anmore,0,0,1,2014,New Brunswick
+Comox2022Mayor99,Siemens,Chahal,Campbell River,0,1,1,1894,Newfoundland and Labrador
+Courtenay2022Mayor99,Dave,Chahal,Hudson,1,0,1,1883,New Brunswick
+CacheCreek2022Mayor99,Kelly,Chahal,Armstrong,0,0,0,1997,Saskatchewan
+Belcarra2022Mayor99,Mark,Manjit,Anmore,0,0,0,1911,Saskatchewan
+AlertBay2022Councillor99,Ross,Ross,Belcarra,0,1,0,2002,Northwest Territories
+AlertBay2022Councillor99,Ross,Sohi,Campbell River,0,0,0,1960,Alberta
+Courtenay2022Mayor99,Ross,Sandhu,Anmore,1,0,1,1940,New Brunswick
+AlertBay2022Councillor99,Bharathi,Chahal,Abbotsford,0,0,1,1954,Quebec
+CacheCreek2022Mayor99,Siemens,Manjit,Ashcroft,0,0,1,1913,Quebec
+Belcarra2022Mayor99,D. Paul,Sohi,Cache Creek,1,0,1,1911,Northwest Territories
+CacheCreek2022Mayor99,Siemens,Chahal,Armstrong,0,1,1,1979,Newfoundland and Labrador
+CacheCreek2022Mayor99,Siemens,Warkentin,Campbell River,0,0,0,1988,Prince Edward Island
+Belcarra2022Mayor99,Mark,Pellikaan,Ashcroft,0,0,1,1971,Alberta
+AlertBay2022Councillor99,Siemens,Sidhu,Armstrong,0,1,1,2000,Ontario
+Abbotsford2022Mayor99,D. Paul,Ross,Cache Creek,0,1,0,1946,Prince Edward Island
+CacheCreek2022Mayor99,Ross,Sohi,Abbotsford,0,1,1,1931,Ontario
+Belcarra2022Mayor99,Kelly,Chahal,Cache Creek,0,0,1,1956,Northwest Territories
+CacheCreek2022Mayor99,D. Paul,Sidhu,Abbotsford,1,0,1,1938,New Brunswick
+Belcarra2022Mayor99,Ross,Pellikaan,Abbotsford,0,1,1,1992,Yukon
+Comox2022Mayor99,Dave,Warkentin,Belcarra,0,1,1,1933,Yukon
+Comox2022Mayor99,Sandy,Warkentin,Hudson,1,0,0,1955,Prince Edward Island
+AlertBay2022Councillor99,Dave,Chahal,Belcarra,1,0,1,1918,Newfoundland and Labrador
+Comox2022Mayor99,Sandy,Loewen,Ashcroft,0,1,0,1900,Ontario
+Courtenay2022Mayor99,D. Paul,Ross,Hudson,1,0,1,1995,Saskatchewan
+Belcarra2022Mayor99,Kelly,Chahal,Campbell River,0,1,1,1881,Manitoba
+AlertBay2022Councillor99,Bharathi,Sidhu,Armstrong,1,0,0,1928,New Brunswick
+Comox2022Mayor99,Bharathi,Manjit,Cache Creek,1,0,0,1914,Saskatchewan
+AlertBay2022Councillor99,Mark,Warkentin,Anmore,0,1,1,1934,New Brunswick
+Comox2022Mayor99,D. Paul,Sidhu,Hudson,0,0,1,1986,Newfoundland and Labrador
+Belcarra2022Mayor99,Ross,Ross,Ashcroft,1,1,0,1991,Northwest Territories
+Abbotsford2022Mayor99,Bharathi,Sidhu,Abbotsford,0,0,0,1901,Yukon
+Abbotsford2022Mayor99,Ross,Sidhu,Abbotsford,0,0,1,2019,Alberta
+Courtenay2022Mayor99,Ross,Manjit,Armstrong,0,1,0,1999,Alberta
+Comox2022Mayor99,Ross,Blue,Hudson,0,0,1,2005,Alberta
+Abbotsford2022Mayor99,Dave,Sandhu,Ashcroft,0,1,1,1954,Prince Edward Island
+CacheCreek2022Mayor99,Siemens,Warkentin,Cache Creek,1,0,1,1892,Ontario
+AlertBay2022Councillor99,Bharathi,Ross,Belcarra,0,0,1,1908,Quebec
+Abbotsford2022Mayor99,Bharathi,Blue,Armstrong,0,1,0,1925,New Brunswick
+Comox2022Mayor99,Mark,Manjit,Hudson,0,0,1,1979,British Columbia
+Courtenay2022Mayor99,D. Paul,Sidhu,Belcarra,0,0,1,1969,New Brunswick
+Abbotsford2022Mayor99,Ross,Warkentin,Campbell River,1,0,1,1934,Northwest Territories
+CacheCreek2022Mayor99,Kelly,Loewen,Ashcroft,0,1,1,1914,New Brunswick
+CacheCreek2022Mayor99,Dave,Loewen,Armstrong,0,1,0,1900,Alberta
+Belcarra2022Mayor99,Kelly,Ross,Abbotsford,0,0,1,1963,New Brunswick
+Abbotsford2022Mayor99,Kelly,Sohi,Abbotsford,0,0,1,1998,New Brunswick
+Comox2022Mayor99,Dave,Loewen,Cache Creek,1,1,1,1918,British Columbia
+Comox2022Mayor99,Dave,Pellikaan,Anmore,0,1,0,1869,Ontario
+Comox2022Mayor99,Siemens,Warkentin,Cache Creek,0,1,0,2004,Nova Scotia
+CacheCreek2022Mayor99,D. Paul,Warkentin,Campbell River,0,1,1,1870,Nova Scotia
+Abbotsford2022Mayor99,Dave,Sohi,Belcarra,0,0,1,1969,Quebec
+Belcarra2022Mayor99,Kelly,Warkentin,Abbotsford,0,1,1,1979,Yukon
+Courtenay2022Mayor99,Dave,Sohi,Anmore,0,0,0,1940,Newfoundland and Labrador
+AlertBay2022Councillor99,Ross,Sohi,Anmore,1,1,1,1884,British Columbia
+Belcarra2022Mayor99,Bharathi,Sidhu,Ashcroft,0,0,0,1902,Yukon
+AlertBay2022Councillor99,Sandy,Warkentin,Hudson,0,0,0,1923,British Columbia
+Belcarra2022Mayor99,Dave,Manjit,Cache Creek,0,0,0,2018,Quebec
+CacheCreek2022Mayor99,Patricia,Loewen,Ashcroft,1,0,1,1880,Manitoba
+Abbotsford2022Mayor99,Siemens,Blue,Cache Creek,0,1,1,1937,Northwest Territories
+CacheCreek2022Mayor99,Bharathi,Chahal,Ashcroft,0,0,0,1904,Northwest Territories
+Comox2022Mayor99,Siemens,Sohi,Belcarra,0,1,0,1989,Ontario
+Abbotsford2022Mayor99,Kelly,Chahal,Hudson,1,1,1,1930,Northwest Territories
+Abbotsford2022Mayor99,Kelly,Ross,Campbell River,0,1,0,1931,New Brunswick
+Courtenay2022Mayor99,Sandy,Loewen,Hudson,1,0,1,1885,Manitoba
+Courtenay2022Mayor99,Dave,Blue,Abbotsford,0,0,1,2005,Manitoba
+Courtenay2022Mayor99,D. Paul,Sohi,Anmore,0,1,0,1938,Ontario
+CacheCreek2022Mayor99,Bharathi,Manjit,Abbotsford,1,0,0,2003,Nova Scotia
+Belcarra2022Mayor99,Ross,Manjit,Anmore,0,1,0,1958,Quebec
+CacheCreek2022Mayor99,Kelly,Manjit,Anmore,0,0,1,1905,New Brunswick
+Comox2022Mayor99,Bharathi,Blue,Cache Creek,0,1,1,1977,Northwest Territories
+Courtenay2022Mayor99,Bharathi,Chahal,Belcarra,0,1,0,1986,Newfoundland and Labrador
+Abbotsford2022Mayor99,Sandy,Ross,Cache Creek,0,1,0,1903,Ontario
+Courtenay2022Mayor99,Siemens,Loewen,Abbotsford,0,1,0,1893,Alberta
+Abbotsford2022Mayor99,Dave,Manjit,Belcarra,0,1,1,1918,British Columbia
+CacheCreek2022Mayor99,Mark,Sandhu,Campbell River,0,1,0,2001,Saskatchewan
+CacheCreek2022Mayor99,Dave,Ross,Campbell River,0,1,0,1961,Manitoba
+Belcarra2022Mayor99,Bharathi,Sandhu,Armstrong,0,0,0,1919,Nova Scotia
+Abbotsford2022Mayor99,Dave,Warkentin,Armstrong,0,0,1,1896,Northwest Territories
+Abbotsford2022Mayor99,Kelly,Sandhu,Abbotsford,0,1,0,1998,Manitoba
+Abbotsford2022Mayor99,Sandy,Ross,Armstrong,0,1,1,1955,New Brunswick
+Courtenay2022Mayor99,Kelly,Pellikaan,Belcarra,1,1,1,1944,Saskatchewan
+Abbotsford2022Mayor99,Sandy,Blue,Belcarra,0,1,1,1905,Prince Edward Island
+AlertBay2022Councillor99,Siemens,Warkentin,Campbell River,0,1,0,1973,New Brunswick
+Abbotsford2022Mayor99,Kelly,Manjit,Abbotsford,0,0,0,1942,Nova Scotia
+Belcarra2022Mayor99,Dave,Sandhu,Hudson,0,1,1,1919,New Brunswick
+AlertBay2022Councillor99,Mark,Sohi,Anmore,1,0,1,1982,Nova Scotia
+Belcarra2022Mayor99,Kelly,Sidhu,Hudson,1,1,0,1930,New Brunswick
+Abbotsford2022Mayor99,Dave,Sohi,Hudson,0,1,1,1902,Yukon
+Belcarra2022Mayor99,D. Paul,Manjit,Ashcroft,0,0,1,1885,British Columbia
+Belcarra2022Mayor99,D. Paul,Warkentin,Ashcroft,0,1,0,1891,Saskatchewan
+AlertBay2022Councillor99,D. Paul,Pellikaan,Ashcroft,1,1,1,1963,Ontario
+AlertBay2022Councillor99,Mark,Sohi,Abbotsford,1,0,0,1966,British Columbia
+Courtenay2022Mayor99,Dave,Blue,Abbotsford,1,0,1,1921,Quebec
+Abbotsford2022Mayor99,Patricia,Sandhu,Ashcroft,0,1,0,1927,British Columbia
+Courtenay2022Mayor99,Bharathi,Sohi,Abbotsford,1,0,1,1975,Saskatchewan
+Courtenay2022Mayor99,Siemens,Ross,Belcarra,1,1,0,1993,Northwest Territories
+Belcarra2022Mayor99,Sandy,Sandhu,Cache Creek,1,0,0,1898,Saskatchewan
+Abbotsford2022Mayor99,Bharathi,Warkentin,Cache Creek,0,1,0,1991,Nova Scotia
+CacheCreek2022Mayor99,Bharathi,Sandhu,Campbell River,0,1,0,1971,Nova Scotia
+Abbotsford2022Mayor99,Ross,Sohi,Belcarra,1,0,1,1972,Northwest Territories
+Comox2022Mayor99,Siemens,Warkentin,Campbell River,0,1,0,2014,Ontario
+CacheCreek2022Mayor99,Mark,Manjit,Anmore,1,1,1,1982,British Columbia
+Courtenay2022Mayor99,Ross,Blue,Hudson,0,1,0,1964,Nova Scotia
+CacheCreek2022Mayor99,Patricia,Ross,Anmore,0,1,1,1919,Nova Scotia
+CacheCreek2022Mayor99,Dave,Sidhu,Hudson,1,0,0,1968,Yukon
+Courtenay2022Mayor99,Kelly,Blue,Armstrong,1,1,1,1910,Ontario
+AlertBay2022Councillor99,D. Paul,Sohi,Belcarra,0,0,0,1957,Alberta
+Abbotsford2022Mayor99,Patricia,Blue,Ashcroft,0,1,1,1996,Yukon
+Courtenay2022Mayor99,Ross,Ross,Ashcroft,0,1,0,2022,Quebec
+Courtenay2022Mayor99,Patricia,Loewen,Belcarra,0,1,1,1930,Nova Scotia
+Abbotsford2022Mayor99,Dave,Sandhu,Ashcroft,0,0,0,1921,Prince Edward Island
+Belcarra2022Mayor99,Dave,Chahal,Abbotsford,1,0,0,1883,Prince Edward Island
+Abbotsford2022Mayor99,Patricia,Manjit,Ashcroft,1,1,1,1936,Newfoundland and Labrador
+Courtenay2022Mayor99,D. Paul,Pellikaan,Belcarra,1,0,1,1900,Manitoba
+Courtenay2022Mayor99,Dave,Loewen,Hudson,0,1,0,1947,Alberta
+Abbotsford2022Mayor99,Ross,Warkentin,Abbotsford,0,0,1,1944,Alberta
+AlertBay2022Councillor99,Sandy,Sandhu,Armstrong,0,0,0,1997,Ontario
+CacheCreek2022Mayor99,Sandy,Sohi,Hudson,1,1,0,1968,New Brunswick
+AlertBay2022Councillor99,Sandy,Sidhu,Hudson,0,1,0,1952,Prince Edward Island
+CacheCreek2022Mayor99,Dave,Warkentin,Abbotsford,0,1,1,1974,Prince Edward Island
+Abbotsford2022Mayor99,Mark,Chahal,Armstrong,1,1,1,1889,Nova Scotia
+AlertBay2022Councillor99,Mark,Warkentin,Hudson,0,0,0,2013,Ontario
+Belcarra2022Mayor99,Sandy,Loewen,Belcarra,0,1,0,1935,British Columbia
+Comox2022Mayor99,Dave,Loewen,Hudson,0,0,0,1983,Saskatchewan
+CacheCreek2022Mayor99,Patricia,Loewen,Hudson,0,1,0,1891,New Brunswick
+Courtenay2022Mayor99,Patricia,Blue,Armstrong,0,0,1,1992,Ontario
+Belcarra2022Mayor99,Patricia,Ross,Hudson,1,1,0,1975,Prince Edward Island
+CacheCreek2022Mayor99,Sandy,Pellikaan,Cache Creek,0,1,1,1980,Quebec
+Belcarra2022Mayor99,Ross,Sidhu,Cache Creek,0,1,0,1925,Ontario
+Belcarra2022Mayor99,Dave,Loewen,Belcarra,0,0,1,1970,Alberta
+Comox2022Mayor99,Patricia,Sidhu,Armstrong,1,0,0,1880,Newfoundland and Labrador
+Comox2022Mayor99,Mark,Chahal,Ashcroft,1,1,0,1959,Ontario
+Belcarra2022Mayor99,Siemens,Warkentin,Belcarra,0,1,0,1883,Northwest Territories
